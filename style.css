@@ -18,7 +18,7 @@
   --pill-radius: 9999px;
   --border-subtle: rgba(0, 0, 0, 0.07);
 
-  --stage-width: 720px;
+  --stage-width: 860px;
 }
 
 *, *::before, *::after {
@@ -201,7 +201,7 @@ body.cursor-click .cursor-square {
   justify-content: space-between;
   align-items: flex-start;
   min-height: 140px;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   width: 100%;
 }
 
@@ -643,78 +643,6 @@ body.cursor-click .cursor-square {
   transform: translateY(0);
 }
 
-/* Featured Project Info Row (2-column editorial split matching reference) */
-.hero-project-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 36px;
-  margin-top: 22px;
-  padding: 0 4px;
-}
-
-.hero-info-left {
-  flex: 1.1;
-  min-width: 0;
-}
-
-.hero-project-tag {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.hero-project-title {
-  font-size: 1.42rem;
-  font-weight: 700;
-  color: var(--text-main);
-  line-height: 1.26;
-  letter-spacing: -0.018em;
-}
-
-.hero-info-right {
-  flex: 1.15;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.hero-project-desc {
-  font-size: 0.96rem;
-  line-height: 1.5;
-  color: var(--text-secondary);
-}
-
-.hero-arrow-glyph {
-  font-size: 1.35rem;
-  line-height: 1;
-  color: var(--text-main);
-  flex-shrink: 0;
-  margin-top: 2px;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
-}
-
-.hero-project-card:hover .hero-arrow-glyph {
-  color: var(--accent-orange);
-  transform: translate(3px, -3px);
-}
-
-@media (max-width: 640px) {
-  .hero-project-info {
-    flex-direction: column;
-    gap: 14px;
-  }
-  .hero-info-right {
-    width: 100%;
-  }
-}
-
 /* ==========================================================================
    7. "OTHER PROJECTS" Section (2-Column Grid)
    ========================================================================== */
@@ -1004,7 +932,6 @@ body.cursor-click .cursor-square {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
   position: relative;
   text-align: left;
   transition: color 0.2s ease;
@@ -1015,24 +942,36 @@ body.cursor-click .cursor-square {
   color: var(--accent-orange);
 }
 
-.sitemap-email-btn .copy-icon {
-  width: 14px;
-  height: 14px;
-  stroke: currentColor;
-  opacity: 0.65;
-  flex-shrink: 0;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+.email-address-text {
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.sitemap-email-btn:hover .copy-icon {
-  opacity: 1;
-  transform: scale(1.1);
+.email-copy-feedback {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(4px);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 2px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
 }
 
-.sitemap-email-btn.is-copied .copy-icon {
-  stroke: var(--accent-orange);
+.sitemap-email-btn.is-copied .email-address-text {
+  opacity: 0;
+  transform: translateY(-2px);
+}
+
+.sitemap-email-btn.is-copied .email-copy-feedback {
   opacity: 1;
-  transform: scale(1.2);
+  transform: translateY(-50%) translateX(0);
 }
 
 .sitemap-socials-row {
@@ -1270,9 +1209,6 @@ html.preloader-done #sitePreloader {
   max-width: 200px !important;
   max-height: 200px !important;
   object-fit: contain;
-  mix-blend-mode: multiply;
-  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
-  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
   pointer-events: none;
   display: block;
 }
@@ -1299,17 +1235,6 @@ html.preloader-done #sitePreloader {
 /* ==========================================================================
    12. About Page Editorial Story & Figma-style Orange Picture Frame
    ========================================================================== */
-/* Dedicated About Page Stage Spacing */
-body.about-page .page-stage {
-  padding-top: 90px;
-}
-
-@media (max-width: 860px) {
-  body.about-page .page-stage {
-    padding-top: 48px;
-  }
-}
-
 .about-story-layout {
   display: grid;
   grid-template-columns: 1fr 340px;
@@ -1453,37 +1378,9 @@ body.about-page .page-stage {
   display: block;
 }
 
-/* About me photo 4: shifted a bit towards right inside the frame */
+/* About me photo 4: shifted a bit towards left inside the frame */
 .frame-slide:nth-child(4) .frame-slide-img {
-  object-position: 28% center;
-}
-
-/* Circular Back Button on About Page (matching reference screenshot) */
-.back-circle-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #f1f1ef;
-  color: #4a4a4a;
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
-  margin-bottom: 48px;
-}
-
-.back-circle-btn:hover {
-  background: #e4e4e0;
-  color: var(--text-main);
-  transform: translateX(-3px);
-}
-
-.back-circle-btn svg {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  stroke-width: 2;
+  object-position: 72% center;
 }
 
 .slider-dots {
