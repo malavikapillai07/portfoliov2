@@ -240,7 +240,7 @@
     /* ==========================================================================
        6. Hero Image Panel: filled with filler.png
        ========================================================================== */
-    .hero-image-panel {
+        .hero-image-panel {
       position: relative;
       width: 100%;
       border-radius: 24px;
@@ -249,6 +249,7 @@
       border: 1px solid var(--border-subtle);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
       background-color: #f0f4f8;
+      cursor: pointer;
     }
 
     .hero-panel-img {
@@ -256,6 +257,13 @@
       height: auto;
       display: block;
       object-fit: cover;
+      will-change: transform;
+      transform: translateZ(0);
+      transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .hero-image-panel:hover .hero-panel-img {
+      transform: scale(1.035) translateZ(0);
     }
 
     /* ==========================================================================
@@ -263,7 +271,7 @@
        ========================================================================== */
     .meta-strip-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 10px 0 32px;
     }
@@ -448,17 +456,12 @@
       <span>← Projects</span>
       <span style="color: var(--text-muted); font-size: 0.74rem;">| Overview</span>
     </a>
-    <div class="hud-right-cluster">
-      <span class="hud-status-badge">LoopLink AI · 2026</span>
-    </div>
-  </header>
+    </header>
 
   <!-- Centred Column Stage (720px - 760px wide) -->
   <main class="case-study-stage">
 
     <!-- Top Line -->
-    <div class="top-meta-line">LoopLink AI · 2026</div>
-
     <!-- Title -->
     <h1 class="case-title">Product Design Internship</h1>
 
@@ -467,7 +470,7 @@
 
     <!-- Hero Image Panel filled with filler.png -->
     <div class="hero-image-panel" aria-label="LoopLink AI Overview Hero Image">
-      <img src="filler.png" alt="LoopLink AI Overview" class="hero-panel-img">
+      <img src="filler.jpg" alt="LoopLink AI Overview" class="hero-panel-img" loading="eager" fetchpriority="high">
     </div>
 
     <!-- Meta Strip: Role / Timeline / Team / Platform -->
@@ -480,28 +483,19 @@
         <span class="meta-label">Timeline</span>
         <span class="meta-value">June to July 2026</span>
       </div>
-      <div class="meta-item">
-        <span class="meta-label">Team</span>
-        <span class="meta-value">[ ]</span>
       </div>
-      <div class="meta-item">
-        <span class="meta-label">Platform</span>
-        <span class="meta-value">[ ]</span>
-      </div>
-    </div>
 
     <!-- Divider -->
     <div class="section-divider" aria-hidden="true"></div>
 
     <!-- Section: Overview -->
     <section class="case-section-block">
-      <span class="section-category-label">About LoopLink</span>
+      <h2 class="section-heading-text">About LoopLink</h2>
       <p class="section-para">
         LoopLink AI is an AI-native retail technology company building intelligent commerce infrastructure for physical retail. Its platform connects offline retail activity with digital intelligence, so retailers and brands can create, distribute, track and optimise campaigns, rewards, vouchers and engagement programmes across channels.
       </p>
 
       <div style="margin-top: 36px;">
-        <span class="section-category-label">Overview</span>
         <h2 class="section-heading-text">Under NDA</h2>
         <p class="section-para">
           This project is protected under a non-disclosure agreement and cannot be shared publicly.
@@ -514,7 +508,6 @@
 
     <!-- Section: My part -->
     <section class="case-section-block">
-      <span class="section-category-label">Contribution</span>
       <h2 class="section-heading-text">My part</h2>
       <ol class="simple-parts-list">
         <li class="simple-parts-item">
@@ -538,7 +531,6 @@
 
     <!-- Section: The outcome -->
     <section class="case-section-block">
-      <span class="section-category-label">Impact</span>
       <h2 class="section-heading-text">The outcome</h2>
       <div class="outcome-quote-block">
         &ldquo;A stronger understanding of product design, from visual systems to user experiences.&rdquo;

@@ -201,7 +201,7 @@ body.cursor-click .cursor-square {
   justify-content: space-between;
   align-items: flex-start;
   min-height: 140px;
-  margin-bottom: 120px;
+  margin-bottom: 165px;
   width: 100%;
 }
 
@@ -1299,14 +1299,25 @@ html.preloader-done #sitePreloader {
 /* ==========================================================================
    12. About Page Editorial Story & Figma-style Orange Picture Frame
    ========================================================================== */
-/* Dedicated About Page Stage Spacing */
+/* Dedicated About Page Stage Spacing & Aligned Top Bar */
 body.about-page .page-stage {
-  padding-top: 90px;
+  padding-top: 140px;
+}
+
+body.about-page .about-nav-bar {
+  position: absolute;
+  top: 54px;
+  left: max(20px, calc((100vw - var(--stage-width)) / 2 + 20px));
+  z-index: 100;
 }
 
 @media (max-width: 860px) {
   body.about-page .page-stage {
-    padding-top: 48px;
+    padding-top: 96px;
+  }
+  body.about-page .about-nav-bar {
+    top: 22px;
+    left: 20px;
   }
 }
 
@@ -1470,7 +1481,7 @@ body.about-page .page-stage {
   color: #4a4a4a;
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
-  margin-bottom: 48px;
+  margin-bottom: 0;
 }
 
 .back-circle-btn:hover {
