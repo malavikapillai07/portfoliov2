@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReflexLabs AI — UX Case Study | Malavika Pillai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+  <!-- Square Orange Cursor matching portfolio -->
+  <div id="cursor-square" class="cursor-square" aria-hidden="true"></div>
+
+  <!-- Top Orange Reading Progress Bar -->
+  <div class="top-progress-bar" id="topProgressBar"></div>
+
+  <!-- Background Layer: download (60) in white color contrasting with black, matching home screen -->
+  <div class="bg-blueprint-layer" id="bgBlueprint" aria-hidden="true"></div>
+
+  <!-- Floating HUD Navigation -->
+  <header class="floating-hud">
+    <a href="../../index.html" class="hud-pill" title="Return to main portfolio">
+      <span class="hud-tag-dot"></span>
+      <span>← Malavika Pillai</span>
+      <span style="color: var(--muted); font-size: 0.74rem;">/ ReflexLabs AI</span>
+    </a>
+    <div class="hud-right-cluster">
+      <span class="hud-status-badge">Internship Case Study · 2024</span>
+    </div>
+  </header>
+
+  <!-- Centered Narrow Stage (~860px column matching portfolio) -->
+  <main class="case-study-stage">
+
+<!-- ══════════════════════════════════
+  01  COVER
+══════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+
+
+
+  <div class="hero-logo">
+    <span class="block"></span><span class="block"></span><span class="block"></span><span class="empty"></span>
+    <span class="block"></span><span class="empty"></span><span class="empty"></span><span class="block"></span>
+    <span class="block"></span><span class="block"></span><span class="block"></span><span class="empty"></span>
+    <span class="block"></span><span class="empty"></span><span class="empty"></span><span class="block orange-flicker"></span>
+  </div>
+
+  <div class="cover-content">
+    <h1 class="cover-title">ReflexLabs<span class="highlight">.</span>AI</h1>
+    <p class="cover-descriptor">Website Redesign — From unclear identity to creator-first platform</p>
+
+    <div class="cover-bottom">
+      <div class="cover-meta-row">
+        <div class="cover-meta-item">
+          <span>Project Type</span>
+          <p>UX Research + UI Design</p>
+        </div>
+        <div class="cover-meta-item">
+          <span>Duration</span>
+          <p>1 Month Internship</p>
+        </div>
+        <div class="cover-meta-item">
+          <span>Deliverable</span>
+          <p>Homepage + Team Page</p>
+        </div>
+      </div>
+
+      <!-- Cover Showcase Mockup -->
+      <div class="screen-slot" style="margin-top: 36px; width: 100%; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 14px 40px rgba(0,0,0,0.45);">
+        <img src="Reflexlab cover.png" alt="ReflexLabs AI Website Redesign Cover Showcase" style="width: 100%; height: auto; display: block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+  INTERNSHIP CONTEXT
+══════════════════════════════════ -->
+<div class="internship-banner">
+  <div class="internship-title">Internship Project</div>
+  <div class="internship-divider"></div>
+  <p class="internship-text">This project was done during a <strong style="color:var(--white);font-weight:600;">UI/UX Design Internship at ReflexLabs AI</strong>. The work reflects real-world constraints — a brief, a one-month timeline, and deliverables that were reviewed and implemented by the brand.</p>
+</div>
+
+<!-- ══════════════════════════════════
+  02  THE BRIEF
+══════════════════════════════════ -->
+<section class="s-darker">
+  <div class="tag">01 — The Brief</div>
+
+  <div class="two-col">
+    <div>
+      <h2 class="big-text">A launchpad that didn't look like <span class="o">one.</span></h2>
+    </div>
+    <div class="body-text">
+      <p>During my internship at ReflexLabs AI, I was tasked with addressing a core challenge: the existing website failed to communicate the brand's true identity. While ReflexLabs had a powerful story — built around its two founders, a symbolic handshake, and the iconic orange pixel — these core elements were missing from the experience.</p>
+      <p>The objective was clear: redesign the homepage and team page to make the platform feel <strong>approachable, credible, and true to its creator-focused mission.</strong></p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- brand story highlight -->
+  <div class="brand-story-wrapper" style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:40px; max-width:920px; margin:64px auto;">
+    <!-- R Logo Grid -->
+    <div class="story-logo" style="margin:0 auto;">
+      <span class="block"></span><span class="block"></span><span class="block"></span><span class="empty"></span>
+      <span class="block"></span><span class="empty"></span><span class="empty"></span><span class="block"></span>
+      <span class="block"></span><span class="block"></span><span class="block"></span><span class="empty"></span>
+      <span class="block"></span><span class="empty"></span><span class="empty"></span><span class="block orange-flicker"></span>
+    </div>
+
+    <div style="padding:0; max-width:800px;">
+      <p style="font-size:clamp(22px,2.8vw,34px); font-weight:600; line-height:1.3; color:var(--white); letter-spacing:-0.01em; margin-bottom:16px;">"Make the last pixel orange."</p>
+      <p style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.18em; color:var(--orange); text-transform:uppercase; margin-bottom:32px;">— Basil's father, on the brand's defining moment</p>
+      <div class="body-text" style="max-width:100%; margin:0 auto;">That single suggestion gave ReflexLabs its identity — a spark in the system, the human touch in an otherwise digital product. Our redesign had to carry that spirit forward.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- old site placeholder -->
+  <div class="tag">Existing Website — Before Redesign</div>
+  <div class="screen-slot wide" style="max-width:1000px; margin:0 auto; width:100%;">
+    <div class="screen-tag">Before</div>
+    <div class="screen-inner" style="padding:0; overflow:hidden; aspect-ratio:auto; display:block;">
+      <video src="olddesign.mp4" autoplay loop muted playsinline style="width:100%; height:auto; display:block;"></video>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+  PULL QUOTE
+══════════════════════════════════ -->
+<div class="pull-quote">
+  <p>The brand promised to catalyze the next wave of digital innovation. The website looked like it had never heard of it.</p>
+  <cite>— Core problem statement driving the redesign</cite>
+</div>
+
+<!-- ══════════════════════════════════
+  03  PROBLEM STATEMENT
+══════════════════════════════════ -->
+<section class="s-dark">
+  <div class="tag">02 — Problem Statement</div>
+  <h2 class="big-text" style="max-width:800px;margin-bottom:56px;">Three gaps. One <span class="o">broken</span> first impression.</h2>
+
+  <div class="insight-row">
+    <div class="insight-card">
+      <div class="insight-icon">01</div>
+      <div class="insight-title">No Identity</div>
+      <p>The existing site had minimal use of the brand's defining elements — the orange pixel, the innovation-first tone, the creator narrative. Visitors had no way to feel the brand's personality.</p>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">02</div>
+      <div class="insight-title">No Trust Signal</div>
+      <p>There was no team page, no founder story, no social proof. For a platform asking creators to invest time and money, this made the brand feel anonymous and unaccountable.</p>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">03</div>
+      <div class="insight-title">No Proof of Work</div>
+      <p>Past ventures like Lily AI — a validated hotel bot — were nowhere to be seen. Visitors couldn't assess the platform's capability or track record before committing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+  04  UX PROCESS OVERVIEW
+══════════════════════════════════ -->
+<section class="s-darker">
+  <div class="tag">03 — Design Process</div>
+  <h2 class="big-text" style="max-width:600px;">Design Thinking. Five <span class="o">stages.</span></h2>
+
+  <div class="process-row">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-title">Empathise</div>
+      <p>Competitor analysis of 3 platforms. Social listening. Client brief deep-dive. Understanding who visits and why they leave.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-title">Define</div>
+      <p>3 user personas. Empathy mapping across user types. Identifying the core trust and identity gaps.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-title">Ideate</div>
+      <p>Information architecture. Wireframe sketches. Design system — colours, typography, iconography.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-title">Prototype</div>
+      <p>Medium and high fidelity screens in Figma. Interactive prototype for client review and iteration.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">05</div>
+      <div class="step-title">Test</div>
+      <p>Internal review walkthrough. Client feedback loop. Handoff and implementation review.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+  05  COMPETITOR ANALYSIS
+══════════════════════════════════ -->
+<section class="s-dark">
+  <div class="tag">04 — Competitor Analysis</div>
+  <h2 class="big-text" style="max-width:700px;margin-bottom:16px;">What others do. What we <span class="o">don't.</span></h2>
+  <p class="body-text" style="margin-bottom:0;">Benchmarked against 3 platforms operating in adjacent spaces — VC launchpads, design studios, AI product builders. The gap ReflexLabs could own was clear: <strong>creator-first, approachable, human.</strong></p>
+
+  <div class="comp-cards">
+
+    <!-- ReflexLabs — Before -->
+    <div class="comp-card reflexlabs">
+      <div class="comp-card-name">ReflexLabs AI</div>
+      <div class="comp-card-sub">Before redesign</div>
+      <div class="comp-divider"></div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Navigation</span>
+        <div class="comp-attr-val">Text links, unclear hierarchy</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Branding</span>
+        <div class="comp-attr-val">Minimal, unclear purpose</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Work Display</span>
+        <div class="comp-attr-val">Not shown</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Team</span>
+        <div class="comp-attr-val">None</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Visual Identity</span>
+        <div class="comp-attr-val">Underused orange + black</div>
+      </div>
+      <div class="comp-opp-block">
+        <span class="comp-opp-label">Opportunity</span>
+        <div class="comp-opp-val">Needs clarity, approachability, stronger recall</div>
+      </div>
+    </div>
+
+    <!-- Antler -->
+    <div class="comp-card">
+      <div class="comp-card-name">Antler</div>
+      <div class="comp-card-sub">VC Launchpad</div>
+      <div class="comp-divider"></div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Navigation</span>
+        <div class="comp-attr-val">Structured, section-defined</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Branding</span>
+        <div class="comp-attr-val">Professional, VC corporate tone</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Work Display</span>
+        <div class="comp-attr-val">Startups highlighted</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Team</span>
+        <div class="comp-attr-val">Founders + advisors</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Visual Identity</span>
+        <div class="comp-attr-val">Corporate palette</div>
+      </div>
+      <div class="comp-opp-block">
+        <span class="comp-opp-label">Opportunity</span>
+        <div class="comp-opp-val">Differentiate: creator-focused, execution-oriented</div>
+      </div>
+    </div>
+
+    <!-- Hexa -->
+    <div class="comp-card">
+      <div class="comp-card-name">Hexa</div>
+      <div class="comp-card-sub">Design Studio</div>
+      <div class="comp-divider"></div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Navigation</span>
+        <div class="comp-attr-val">Clean, clear separation</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Branding</span>
+        <div class="comp-attr-val">Minimalist studio authority</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Work Display</span>
+        <div class="comp-attr-val">Ventures with clean visuals</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Team</span>
+        <div class="comp-attr-val">Listed, static</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Visual Identity</span>
+        <div class="comp-attr-val">Authority-driven minimalism</div>
+      </div>
+      <div class="comp-opp-block">
+        <span class="comp-opp-label">Opportunity</span>
+        <div class="comp-opp-val">Differentiate: approachable UI, interactive elements</div>
+      </div>
+    </div>
+
+    <!-- All Turtles -->
+    <div class="comp-card">
+      <div class="comp-card-name">All Turtles</div>
+      <div class="comp-card-sub">AI Product Builder</div>
+      <div class="comp-divider"></div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Navigation</span>
+        <div class="comp-attr-val">Product-focused</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Branding</span>
+        <div class="comp-attr-val">AI product-building, technical</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Work Display</span>
+        <div class="comp-attr-val">Portfolio emphasized</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Team</span>
+        <div class="comp-attr-val">Team listed</div>
+      </div>
+      <div class="comp-attr">
+        <span class="comp-attr-label">Visual Identity</span>
+        <div class="comp-attr-val">Neutral, technical</div>
+      </div>
+      <div class="comp-opp-block">
+        <span class="comp-opp-label">Opportunity</span>
+        <div class="comp-opp-val">Differentiate: approachable, clear creator value</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+  06  PERSONAS
+══════════════════════════════════ -->
+<section class="s-darker">
+  <div class="tag">05 — User Personas</div>
+  <h2 class="big-text" style="max-width:700px;margin-bottom:16px;">Three users. Three <span class="o">reasons</span> the site fails them.</h2>
+  <p class="body-text" style="margin-bottom:0;">Each persona represents a distinct user need that the existing site was actively working against. These aren't archetypes for decoration — they drove every design decision that followed.</p>
+
+  <div class="persona-grid">
+
+    <!-- Persona 1 -->
+    <div class="persona-card">
+      <!-- Photo slot -->
+      <div class="persona-photo">
+        <img src="persona/p1.png" alt="Persona 1: Arjun" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="persona-num">Persona 01</div>
+      <div class="persona-name">Arjun</div>
+      <div class="persona-role">26 · Startup Founder · Bangalore</div>
+
+      <div class="persona-detail">
+        <label>Tech Level</label>
+        <div class="tech-bar-row">
+          <div class="tech-bar-segments">
+            <div class="tech-seg on"></div>
+            <div class="tech-seg on"></div>
+            <div class="tech-seg on"></div>
+            <div class="tech-seg on"></div>
+            <div class="tech-seg"></div>
+          </div>
+          <span class="tech-bar-label">High (4/5)</span>
+        </div>
+      </div>
+
+      <div class="persona-detail">
+        <label>The Problem</label>
+        <p>No team page → no trust → no sign-up</p>
+      </div>
+
+      <p class="persona-quote">Wants to know who's behind the platform before investing time or money. Credibility is everything for a first-time founder.</p>
+
+      <div class="persona-goals">
+        <label>Goals</label>
+        <ul class="goal-list">
+          <li>Find a trusted platform to launch his startup idea</li>
+          <li>Verify the team's credibility before committing</li>
+          <li>See real proof of past work before signing up</li>
+        </ul>
+      </div>
+
+      <div class="persona-frustrations">
+        <label>Frustrations</label>
+        <ul class="frustration-list">
+          <li>No founder or team information anywhere</li>
+          <li>Cannot verify expertise or background</li>
+          <li>Hesitates to sign up due to lack of transparency</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Persona 2 -->
+    <div class="persona-card">
+      <!-- Photo slot -->
+      <div class="persona-photo">
+        <img src="persona/p2.png" alt="Persona 2: Anita" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="persona-num">Persona 02</div>
+      <div class="persona-name">Anita</div>
+      <div class="persona-role">34 · Aspiring Entrepreneur · Kochi</div>
+
+      <div class="persona-detail">
+        <label>Tech Level</label>
+        <div class="tech-bar-row">
+          <div class="tech-bar-segments">
+            <div class="tech-seg on"></div>
+            <div class="tech-seg on"></div>
+            <div class="tech-seg"></div>
+            <div class="tech-seg"></div>
+            <div class="tech-seg"></div>
+          </div>
+          <span class="tech-bar-label">Low (2/5)</span>
+        </div>
+      </div>
+
+      <div class="persona-detail">
+        <label>The Problem</label>
+        <p>No work shown → no proof → no trust</p>
+      </div>
+
+      <p class="persona-quote">A homemaker turning passion into business. Needs visible proof and simple language — not promises and jargon.</p>
+
+      <div class="persona-goals">
+        <label>Goals</label>
+        <ul class="goal-list">
+          <li>Find a platform that speaks her language, not tech jargon</li>
+          <li>See success stories she can relate to personally</li>
+          <li>Understand the service without needing a tech background</li>
+        </ul>
+      </div>
+
+      <div class="persona-frustrations">
+        <label>Frustrations</label>
+        <ul class="frustration-list">
+          <li>No case studies or real success stories</li>
+          <li>Cannot relate — no small business representation</li>
+          <li>Intimidated by technical language without clarity</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Persona 3 -->
+    <div class="persona-card">
+      <!-- Photo slot -->
+      <div class="persona-photo">
+        <img src="persona/p3.png" alt="Persona 3: Kabir" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="persona-num">Persona 03</div>
+      <div class="persona-name">Kabir</div>
+      <div class="persona-role">24 · UX/UI Designer · Delhi</div>
+
+      <div class="persona-detail">
+        <label>Tech Level</label>
+        <div class="tech-bar-row">
+          <div class="tech-bar-segments">
+            <div class="tech-seg on"></div>
+            <div class="tech-seg on"></div>
+            <div class="tech-seg on"></div>
+            <div class="tech-seg on"></div>
+            <div class="tech-seg on"></div>
+          </div>
+          <span class="tech-bar-label">Expert (5/5)</span>
+        </div>
+      </div>
+
+      <div class="persona-detail">
+        <label>The Problem</label>
+        <p>Weak branding → no inspiration → no connection</p>
+      </div>
+
+      <p class="persona-quote">Values aesthetics and coherence. A platform promising digital innovation must demonstrate it through its own interface.</p>
+
+      <div class="persona-goals">
+        <label>Goals</label>
+        <ul class="goal-list">
+          <li>Find a platform that reflects strong design thinking</li>
+          <li>Collaborate with a team that values visual craft</li>
+          <li>Be inspired by a brand before committing to it</li>
+        </ul>
+      </div>
+
+      <div class="persona-frustrations">
+        <label>Frustrations</label>
+        <ul class="frustration-list">
+          <li>Website feels visually bland and disconnected</li>
+          <li>No distinct brand identity to build trust from</li>
+          <li>Inconsistent visual structure throughout</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+  07  EMPATHY MAP
+══════════════════════════════════ -->
+<section class="s-dark">
+  <div class="tag">06 — Empathy Mapping</div>
+  <h2 class="big-text" style="max-width:700px;margin-bottom:16px;">Inside the user's <span class="o">head.</span></h2>
+  <p class="body-text" style="margin-bottom:0;">Mapping what users say, think, do, and feel helped us move past surface complaints and understand the <strong>emotional state</strong> driving their behaviour on the site.</p>
+
+  <div class="empathy-grid">
+
+    <div class="emp-cell">
+      <span class="emp-icon" style="color:var(--white);font-size:20px;font-family:'Space Mono',monospace;letter-spacing:0.1em;">SAYS</span>
+      <div class="emp-title">What they say out loud</div>
+      <ul class="emp-list">
+        <li>"What exactly does this platform do?"</li>
+        <li>"Who is behind this product?"</li>
+        <li>"Can this really help someone like me?"</li>
+        <li>"Do they have any real success stories?"</li>
+        <li>"Where do I even start?"</li>
+        <li>"This doesn't look very engaging."</li>
+      </ul>
+    </div>
+
+    <div class="emp-cell" style="background:var(--surface2);">
+      <span class="emp-icon" style="color:var(--white);font-size:20px;font-family:'Space Mono',monospace;letter-spacing:0.1em;">THINKS</span>
+      <div class="emp-title">What they think silently</div>
+      <ul class="emp-list">
+        <li>This feels unclear and difficult to trust</li>
+        <li>I want to know who is behind this platform</li>
+        <li>I need proof before committing anything</li>
+        <li>They promise a lot — but where's the evidence?</li>
+        <li>I might be wasting my time here</li>
+      </ul>
+    </div>
+
+    <div class="emp-cell" style="background:var(--surface2);">
+      <span class="emp-icon" style="color:var(--white);font-size:20px;font-family:'Space Mono',monospace;letter-spacing:0.1em;">DOES</span>
+      <div class="emp-title">Observable behaviour</div>
+      <ul class="emp-list">
+        <li>Scans the site for team info or credentials</li>
+        <li>Searches for portfolio, case studies, testimonials</li>
+        <li>Scrolls quickly trying to understand the offering</li>
+        <li>Compares with other platforms immediately</li>
+        <li>Leaves the site if clarity isn't found fast</li>
+      </ul>
+    </div>
+
+    <div class="emp-cell" style="background:var(--orange-dim);border-left:2px solid var(--orange);">
+      <span class="emp-icon" style="color:var(--orange);font-size:20px;font-family:'Space Mono',monospace;letter-spacing:0.1em;">FEELS</span>
+      <div class="emp-title" style="color:var(--orange);">Emotional state</div>
+      <ul class="emp-list">
+        <li>Uncertain about the platform's legitimacy</li>
+        <li>Skeptical — too many promises, too little proof</li>
+        <li>Confused by unclear information architecture</li>
+        <li>Uninspired by the visual experience</li>
+        <li>Hesitant — on the edge of leaving</li>
+        <li>Overwhelmed by lack of a clear entry point</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Key insight from empathy map -->
+  <div style="margin-top:40px;padding:36px 40px;border:1px solid var(--border);border-left:3px solid var(--orange);background:var(--surface);">
+    <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;">Key Insight</p>
+    <p style="font-size:clamp(16px,2vw,22px);font-weight:600;color:var(--white);line-height:1.4;">Users weren't failing to understand the product — they were failing to <em style="color:var(--orange);font-style:normal;">trust it.</em> Clarity and credibility had to come before any other design decision.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+  08  INFORMATION ARCHITECTURE
+══════════════════════════════════ -->
+<section class="s-darker">
+  <div class="tag">07 — Information Architecture</div>
+  <h2 class="big-text" style="max-width:700px;margin-bottom:16px;">Structuring content so users <span class="o">stay.</span></h2>
+  <p class="body-text" style="margin-bottom:0;">The IA was built around one principle: <strong>earn trust, then earn action.</strong> Every section exists to answer a question the user is already asking before they ask it aloud.</p>
+
+  <img src="IAfinal.png" alt="Information Architecture Flow" style="width:100%; max-width:80%; display:block; margin:100px auto 0 auto;">
+</section>
+
+<!-- ══════════════════════════════════
+  09  DESIGN SYSTEM
+══════════════════════════════════ -->
+<section class="s-dark">
+  <div class="tag">08 — Design System</div>
+  <h2 class="big-text" style="max-width:600px;margin-bottom:56px;">A cohesive <span class="o">visual</span> language.</h2>
+
+  <div class="ds-row">
+    <!-- Colours -->
+    <div style="padding-left: 40px;">
+      <p style="font-family:'Space Mono',monospace;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;">Colour Palette</p>
+      <div class="color-swatches">
+        <div class="swatch">
+          <div class="swatch-block" style="background:#000000;border:1px solid #333;"></div>
+          <div class="swatch-info">
+            <label>Background</label>
+            <p>#000000</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#FF6E43;"></div>
+          <div class="swatch-info">
+            <label>Primary / Spark</label>
+            <p>#FF6E43</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#FFFFFF;border:1px solid #333;"></div>
+          <div class="swatch-info">
+            <label>Text / Primary</label>
+            <p>#FFFFFF</p>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-block" style="background:#262626;border:1px solid #333;"></div>
+          <div class="swatch-info">
+            <label>Surface</label>
+            <p>#262626</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typography -->
+    <div>
+      <p style="font-family:'Space Mono',monospace;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;">Typography — Sudo Var</p>
+      <div class="type-showcase">
+        <div class="type-row">
+          <div class="type-specimen" style="font-size:48px; font-weight:700;">Sudo Var</div>
+          <div class="type-meta">Bold</div>
+        </div>
+        <div class="type-row">
+          <div class="type-specimen" style="font-size:48px; font-weight:400;">Sudo Var</div>
+          <div class="type-meta">Regular</div>
+        </div>
+        <div class="type-row" style="border-bottom:none;">
+          <div class="type-specimen" style="font-size:48px; font-weight:400; font-style:italic;">Sudo Var</div>
+          <div class="type-meta">Italic</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<!-- ══════════════════════════════════
+  10  WIREFRAMES
+══════════════════════════════════ -->
+<section class="s-darker">
+  <div class="tag">09 — Wireframes</div>
+  <h2 class="big-text" style="max-width:600px;margin-bottom:40px;">Low-Fidelity <span class="o">Wireframes.</span></h2>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; align-items: start;">
+    <div class="wireframe-col-4">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Landing Page</p>
+      <img src="Lo-fidelity/Landingpage.PNG" alt="Landing Page" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-4">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">About</p>
+      <img src="Lo-fidelity/about.PNG" alt="About" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-4">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Projects</p>
+      <img src="Lo-fidelity/projects.PNG" alt="Projects" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-4">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Team</p>
+      <img src="Lo-fidelity/team.PNG" alt="Team" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-4">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Inside Team 1</p>
+      <img src="Lo-fidelity/insideteam1.PNG" alt="Inside Team 1" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-4">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Inside Team 2</p>
+      <img src="Lo-fidelity/insideteam2.PNG" alt="Inside Team 2" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-4">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Contact Page</p>
+      <img src="Lo-fidelity/contact page.PNG" alt="Contact Page" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+  </div>
+  <h2 class="big-text" style="max-width:600px;margin-top:80px;margin-bottom:40px;">Mid-Fidelity <span class="o">Wireframes.</span></h2>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; align-items: start;">
+    <div class="wireframe-col-3">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Preload Animation</p>
+      <img src="Mid-fidelity/preloadanimation.png" alt="Preload Animation" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-3">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Handshake Animation</p>
+      <img src="Mid-fidelity/handshakemicroanimation.png" alt="Handshake Animation" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-3">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Landing Page</p>
+      <img src="Mid-fidelity/landingpage.png" alt="Landing Page" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-3">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">About</p>
+      <img src="Mid-fidelity/about.png" alt="About" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-3">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Projects</p>
+      <img src="Mid-fidelity/projects.png" alt="Projects" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-3">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Team</p>
+      <img src="Mid-fidelity/team.png" alt="Team" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-3">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Inside Team 1</p>
+      <img src="Mid-fidelity/teaminside1.png" alt="Inside Team 1" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-3">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Inside Team 2</p>
+      <img src="Mid-fidelity/teaminside2.png" alt="Inside Team 2" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+    <div class="wireframe-col-3">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;">Contact Us</p>
+      <img src="Mid-fidelity/contactus.png" alt="Contact Us" style="width:100%; display:block; border:1px solid var(--border); border-radius:4px;">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+  11  FINAL UI
+══════════════════════════════════ -->
+<section class="s-dark">
+  <div class="tag" style="justify-content:center;">10 — Final UI Screens</div>
+  <h2 class="big-text" style="max-width:700px;margin-bottom:16px;margin-left:auto;margin-right:auto;text-align:center;">The <span class="o">orange pixel</span> comes alive.</h2>
+  <p class="body-text" style="margin-bottom:32px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto;">High fidelity screens for the homepage and team page — Sudo Var, orange on black, pixel-grid motifs carrying the brand identity through every section.</p>
+
+  <!-- Mockups full-bleed wrapper to ensure true centering -->
+  <div class="final-ui-wrap" style="margin-left:-64px; margin-right:-64px; padding:0 64px; text-align:center;">
+
+    <!-- Homepage mockup -->
+    <p style="font-family:'Space Mono',monospace;font-size:22px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-top:40px;margin-bottom:12px;">Homepage</p>
+    <div class="final-homepage-mockup" style="max-width:1000px; margin:0 auto 56px auto;">
+      <img class="final-ui-image" src="highfidelitymock.png" alt="High Fidelity Hero" style="width:100%; height:auto; display:block; border-radius:6px;">
+    </div>
+
+    <!-- Team Pages mockup -->
+    <p style="font-family:'Space Mono',monospace;font-size:22px;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:24px;">Team Pages</p>
+    <div class="final-team-row" style="display:flex; justify-content:center; gap:24px; max-width:1100px; margin:0 auto 16px auto;">
+      <img class="final-ui-image" src="teaminside11.png" alt="Team Inside 1" style="width:50%; height:auto; display:block; border-radius:6px;">
+      <img class="final-ui-image" src="teaminside22.png" alt="Team Inside 2" style="width:50%; height:auto; display:block; border-radius:6px;">
+    </div>
+
+  </div>
+<!-- ══════════════════════════════════
+  11  DESIGN DETAILS & ELEMENTS
+══════════════════════════════════ -->
+<section class="s-darker">
+  <div class="tag">11 — Design Details & Elements</div>
+  <h2 class="big-text" style="max-width:700px;margin-bottom:16px;">The DNA of the <span class="o">redesign.</span></h2>
+  <p class="body-text" style="margin-bottom:56px;">A modular, scalable design system built on custom pixel-grid logic. Every element—from navigation to the core identity—carries the same futuristic blueprint.</p>
+
+  <div class="elements-grid">
+    <!-- Box 1: Preloading Animation -->
+    <div class="element-card">
+      <div class="element-label">Preloading Animation</div>
+      <div class="element-preview" style="height:260px; min-height:260px; max-height:260px; background:var(--bg); border:none; padding:16px; overflow:hidden; display:flex; align-items:center; justify-content:center; box-sizing:border-box;">
+        <img src="Preloading-gif.gif" alt="Preloading Animation" style="width:100%; height:100%; object-fit:contain; object-position:center center; display:block; border-radius:6px;">
+      </div>
+      <div class="element-info">
+        <p>A minimal loading screen that keeps users engaged during wait time, using a dotted circular motion and the brand’s orange and black palette for consistency.</p>
+      </div>
+    </div>
+
+    <!-- Box 2: Handshake Element -->
+    <div class="element-card">
+      <div class="element-label">Handshake Element</div>
+      <div class="element-preview" style="height:260px; min-height:260px; max-height:260px; background:var(--bg); border:none; padding:16px; overflow:hidden; display:flex; align-items:center; justify-content:center; box-sizing:border-box;">
+        <img src="handshake.gif" alt="Handshake Micro-animation" style="width:100%; height:100%; object-fit:contain; object-position:center center; display:block; border-radius:6px;">
+      </div>
+      <div class="element-info">
+        <p>An abstract handshake visual built with simple shapes, where forms move apart in the transition and come together in the contact page, symbolizing both the beginning and completion of collaboration.</p>
+      </div>
+    </div>
+
+    <!-- Box 3: Landing Page Animation -->
+    <div class="element-card">
+      <div class="element-label">Landing Page Animation</div>
+      <div class="element-preview" style="height:260px; min-height:260px; max-height:260px; background:#ffffff; border:none; padding:16px; overflow:hidden; display:flex; align-items:center; justify-content:center; box-sizing:border-box;">
+        <img src="LANDING PAGE ANIMATION.gif" alt="Landing Page Animation" style="width:100%; height:100%; object-fit:contain; object-position:center center; display:block; border-radius:6px; margin:auto; transform:translate(-8px, -8px);">
+      </div>
+      <div class="element-info">
+        <p>Two abstract figures, also resembling chat bubbles, interact to form a lit bulb, representing ideas generated through communication between the user and the platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Prototype link -->
+  <h2 class="big-text" style="max-width:800px; margin:80px 0 40px 0; text-align:left;">Interactive <span class="o">Prototype.</span></h2>
+  
+  <div style="width:100%; border-radius:8px; overflow:hidden; margin-bottom:24px;">
+    <iframe style="border: 1px solid rgba(255, 255, 255, 0.1); width: 100%; height: 800px;" src="https://embed.figma.com/proto/IjJFYuXrioVYuCVdfSXAhQ/Untitled?node-id=1-787&viewport=155%2C-3652%2C0.27&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A679&page-id=0%3A1&embed-host=share" allowfullscreen></iframe>
+  </div>
+  
+  <div style="background:rgba(255,110,67,0.05); border-left:3px solid var(--orange); padding:24px; border-radius:0 4px 4px 0;">
+    <p style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;">Disclaimer</p>
+    <p style="font-size:14px;color:var(--muted);line-height:1.7;margin:0;">
+      This prototype was developed during my internship and is intended to demonstrate design structure and user experience. Due to confidentiality constraints, actual project names, and team member details were not disclosed and have been represented using placeholders. For more information about the organization, visit <a href="https://reflexlabs.ai" target="_blank" style="color:var(--orange);text-decoration:none;">reflexlabs.ai</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+  12  BEFORE / AFTER
+══════════════════════════════════ -->
+<section class="s-darker">
+  <div class="tag">11 — Before / After</div>
+  <h2 class="big-text" style="max-width:600px;margin-bottom:56px;">Same brand. Different <span class="o">story.</span></h2>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div>
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Before</p>
+      <div class="screen-slot">
+
+        <div class="screen-inner" style="aspect-ratio: auto; padding:0; background:none; display:block;">
+          <img src="COMPARISON OLD.jpg" alt="Before Redesign" style="width:100%; height:auto; display:block;">
+        </div>
+      </div>
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+        <div style="padding:10px 14px;border:1px solid #333;font-size:12px;color:#666;display:flex;align-items:center;gap:10px;"><span style="color:#c05050;">✗</span> Unclear brand purpose</div>
+        <div style="padding:10px 14px;border:1px solid #333;font-size:12px;color:#666;display:flex;align-items:center;gap:10px;"><span style="color:#c05050;">✗</span> No team or founder presence</div>
+        <div style="padding:10px 14px;border:1px solid #333;font-size:12px;color:#666;display:flex;align-items:center;gap:10px;"><span style="color:#c05050;">✗</span> No work or case studies shown</div>
+        <div style="padding:10px 14px;border:1px solid #333;font-size:12px;color:#666;display:flex;align-items:center;gap:10px;"><span style="color:#c05050;">✗</span> Weak visual identity</div>
+        <div style="padding:10px 14px;border:1px solid #333;font-size:12px;color:#666;display:flex;align-items:center;gap:10px;"><span style="color:#c05050;">✗</span> Confusing contact / CTA</div>
+      </div>
+    </div>
+    <div>
+      <p style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;">After</p>
+      <div class="screen-slot" style="border-color:var(--orange);border-opacity:0.3;">
+
+        <div class="screen-inner" style="aspect-ratio: auto; padding:0; background:none; display:block;">
+          <img src="COMPARISONNEW.png" alt="After Redesign" style="width:100%; height:auto; display:block;">
+        </div>
+      </div>
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+        <div style="padding:10px 14px;border:1px solid var(--border);background:var(--orange-dim);font-size:12px;color:var(--white);display:flex;align-items:center;gap:10px;"><span style="color:var(--orange);">✓</span> Clear mission + narrative from hero</div>
+        <div style="padding:10px 14px;border:1px solid var(--border);background:var(--orange-dim);font-size:12px;color:var(--white);display:flex;align-items:center;gap:10px;"><span style="color:var(--orange);">✓</span> Dedicated team page with founders</div>
+        <div style="padding:10px 14px;border:1px solid var(--border);background:var(--orange-dim);font-size:12px;color:var(--white);display:flex;align-items:center;gap:10px;"><span style="color:var(--orange);">✓</span> Lily AI venture showcased as proof</div>
+        <div style="padding:10px 14px;border:1px solid var(--border);background:var(--orange-dim);font-size:12px;color:var(--white);display:flex;align-items:center;gap:10px;"><span style="color:var(--orange);">✓</span> Cohesive orange pixel brand language</div>
+        <div style="padding:10px 14px;border:1px solid var(--border);background:var(--orange-dim);font-size:12px;color:var(--white);display:flex;align-items:center;gap:10px;"><span style="color:var(--orange);">✓</span> Clear CTA + structured contact</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ══════════════════════════════════
+  END
+══════════════════════════════════ -->
+<section class="end-section">
+  <div class="end-glow"></div>
+  <div class="tag">ReflexLabs AI</div>
+  <h2 class="end-word"><span class="w">STOP</span><br><span class="o">DREAMING.</span><br><span class="w">START</span><br><span class="o">BUILDING.</span></h2>
+  <div class="end-meta">
+    <div class="end-item">
+      <span>Project</span>
+      <p>ReflexLabs AI Website Redesign</p>
+    </div>
+    <div class="end-item">
+      <span>Role</span>
+      <p>UX Research + UI Design</p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="case-study-footer">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Malavika Pillai · ReflexLabs AI Internship Case Study</span>
+      <div class="footer-links">
+        <a href="../../index.html" class="footer-link">Portfolio Home ↑</a>
+        <a href="../../about.html" class="footer-link">About ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malavika Pillai — Product Designer</title>
+  <meta name="description" content="Portfolio of Malavika Pillai — Product Designer. I design what people feel, not what they notice. Accessible, clear & intentional.">
+  
+  <!-- Modern Clean Typography matching original reference -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Instant Session Check: Only play preloader on first site entry, never on re-visits -->
+  <script>
+    if (sessionStorage.getItem('sitePreloaderShown') === 'true') {
+      document.documentElement.classList.add('preloader-done');
+    }
+  </script>
+
+  <!-- Site Launch Preloader Overlay (2x speed, muted, cropped, pure white bg) -->
+  <aside id="sitePreloader" class="site-preloader" aria-label="Loading site">
+    <div class="preloader-frame">
+      <video id="preloaderVideo" src="preloader.mp4" playsinline muted autoplay></video>
+    </div>
+    <button id="preloaderSkipBtn" class="preloader-skip-btn" type="button" aria-label="Skip preloader">Skip ↗</button>
+  </aside>
+
+  <!-- Single Square Orange Cursor -->
+  <div id="cursor-square" class="cursor-square" aria-hidden="true"></div>
+
+  <!-- Background Layer: download (60).jpg permanently at 36% opacity -->
+  <div class="bg-blueprint-layer" id="bgBlueprint" aria-hidden="true"></div>
+
+  <!-- Top Right Header Cluster: Live Time & Location (Kochi) -->
+  <aside class="top-status-cluster" aria-label="Status & Controls">
+    <div class="live-location-time" id="liveTimeWidget" title="Local time in Kochi">
+      <span class="live-status-indicator"></span>
+      <span class="time-digits" id="kochiTime">--:--</span>,
+      <span class="location-name">Kochi</span>
+    </div>
+  </aside>
+
+  <!-- Centered Content Stage: generous top padding -->
+  <main class="page-stage">
+
+    <!-- Top Two-Column Hero Grid -->
+    <header class="hero-layout">
+      
+      <!-- Left Column: Logo + Name + Role + Multilingual Typewriter Greeting -->
+      <div class="hero-left">
+        <div class="name-block" id="nameBlock">
+          <!-- Malu Logo Black placed to the side of Malavika Pillai, flips to malu official picture on hover -->
+          <div class="brand-logo-wrap" id="brandLogoWrap">
+            <div class="logo-flip-container" id="logoFlipContainer">
+              <div class="logo-face logo-face-front">
+                <img src="malu logo black.PNG" alt="Malu Logo" class="malu-logo-img">
+              </div>
+              <div class="logo-face logo-face-back">
+                <img src="malu official picture.jpeg" alt="Malavika Pillai" class="malu-picture-img">
+              </div>
+            </div>
+          </div>
+          <div class="author-identity-text">
+            <h1 class="author-title" id="authorTitle">Malavika Pillai</h1>
+            <div class="author-role-line">
+              <span class="role-text" style="font-size: 0.82rem; letter-spacing: 0.03em; color: var(--text-secondary); font-weight: 500;">UI/UX · Product Designer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Projects Pill (no outer rectangle outline) + Headline -->
+      <div class="hero-right">
+        
+        <!-- Navigation: Only Projects pill has rounded rectangle with grey gradient; NO outer enclosing rectangle -->
+        <div class="nav-cluster-wrapper">
+          <div class="nav-pill-track" id="navPillTrack">
+            <a href="#mainFlow" class="nav-pill-main active" id="btnProjects">
+              Projects
+            </a>
+            <!-- Hidden by default, smoothly revealed on hover -->
+            <div class="nav-pill-revealable" id="navRevealable">
+              <a href="about.html" class="nav-pill-item" id="btnAbout">About</a>
+              <a href="#resume" class="nav-pill-item" id="btnResume">Resume</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Headline Statement: Same size as Malavika Pillai, shifted right, 'Accessible, clear & intentional.' in one line -->
+        <h2 class="hero-headline">
+          I design what people feel,<br>
+          not what they notice.<br>
+          <span class="headline-nowrap">Accessible, clear &amp; intentional.</span>
+        </h2>
+
+      </div>
+
+    </header>
+
+    <!-- Main Content Flow -->
+    <section class="main-content-flow" id="mainFlow">
+      
+      <!-- Featured Project Card: LoopLink AI Product Design Internship -->
+      <a href="Looplink AI/index.html" class="hero-project-card" style="text-decoration: none; color: inherit; display: block;">
+        <div class="hero-card-viewport">
+          <img src="Looplink AI/Looplink cover page.png" alt="LoopLink AI Case Study Cover" class="hero-card-img" loading="eager">
+          <div class="hero-card-hover-hint">
+            <span>View Case Study ↗</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Other Projects Section -->
+      <section class="other-projects-block">
+        <div class="section-tag-row">
+          <span class="label-mono section-label">OTHER PROJECTS</span>
+        </div>
+
+        <div class="other-projects-grid">
+          
+          <!-- Card 1: Eravathody Handloom Weavers (Designed & Coded Case Study) -->
+          <a href="eravathody/index.html" class="project-entry project-entry-link">
+            <div class="project-thumb-frame">
+              <img src="assets/eravathody_handloom.jpg" alt="Eravathody Handloom Weavers' Co-operative Society Case Study" class="project-thumb-img" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-title-line">
+                <h3 class="project-heading">Eravathody Handloom<br>Weavers' Co-op</h3>
+                <span class="arrow-glyph">↗</span>
+              </div>
+              <p class="project-blurb">
+                Field immersion, respectful UI/UX, and self-authored code for Kerala's historic handloom weaving society.
+              </p>
+            </div>
+          </a>
+
+          <!-- Card 2: ReflexLabs AI Website Redesign (Internship Case Study) -->
+          <a href="ReflexLabsAI (1)/ReflexLabsAI/reflexlabs-casestudy-v3.html" class="project-entry project-entry-link">
+            <div class="project-thumb-frame">
+              <img src="assets/reflexlab_cover.png" alt="ReflexLabs AI Website Redesign Cover" class="project-thumb-img" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-title-line">
+                <h3 class="project-heading">ReflexLabs AI<br>Website Redesign</h3>
+                <span class="arrow-glyph">↗</span>
+              </div>
+              <p class="project-blurb">
+                From unclear identity to creator-first platform: UX research, founder narrative, and UI design during a 1-month internship.
+              </p>
+            </div>
+          </a>
+
+          <!-- Card 3: Redefining grocery photography -->
+          <article class="project-entry" data-modal="grocery-photo">
+            <div class="project-thumb-frame">
+              <img src="assets/grocery_photo.jpg" alt="Redefining grocery photography collage" class="project-thumb-img" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-title-line">
+                <h3 class="project-heading">Redefining<br>grocery photography</h3>
+                <span class="arrow-glyph">↗</span>
+              </div>
+              <p class="project-blurb">
+                Reimagining catalogue photography as a standard for trust in quick commerce.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2: Flâneur website redesign -->
+          <article class="project-entry" data-modal="flaneur-redesign">
+            <div class="project-thumb-frame">
+              <img src="assets/chocolate_laptop.jpg" alt="Flâneur website redesign mockup" class="project-thumb-img" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-title-line">
+                <h3 class="project-heading">Flâneur<br>website redesign</h3>
+                <span class="arrow-glyph">↗</span>
+              </div>
+              <p class="project-blurb">
+                Designing a website for a premium chocolate brand in 12 hours under evolving constraints.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Sitemap Footer (matching reference layout) -->
+      <footer class="sitemap-footer">
+        <div class="sitemap-grid">
+          
+          <!-- Column 1: Logo + Malavika Pillai + Subtitle -->
+          <div class="sitemap-col-author">
+            <img src="malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img">
+            <div class="sitemap-author-info">
+              <h3 class="sitemap-author-name">Malavika Pillai</h3>
+              <p class="sitemap-author-role">UI/UX · Product Designer</p>
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation Links (No heading) -->
+          <div class="sitemap-col-links">
+            <a href="#mainFlow" class="sitemap-link">Projects</a>
+            <a href="about.html" class="sitemap-link">About</a>
+            <a href="#resume" class="sitemap-link" id="footerResumeLink">Resume</a>
+          </div>
+
+          <!-- Column 3: Contact & Socials (No heading) -->
+          <div class="sitemap-col-contact">
+            <button class="sitemap-email-btn" id="sitemapEmailBtn" type="button" title="Click to copy email">
+              <span class="email-address-text">malavikapillaiofficial@gmail.com</span>
+              <span class="email-copy-feedback" aria-hidden="true">Link copied ✓</span>
+            </button>
+            <div class="sitemap-socials-row">
+              <a href="https://linkedin.com/in/malavika-pillai" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="LinkedIn" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Instagram" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Behance" aria-label="Behance">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7.6 11.2c.9-.2 1.6-.7 2-1.4.4-.7.6-1.5.6-2.5 0-1.2-.4-2.1-1.1-2.8-.8-.7-1.9-1-3.3-1H0v15h6.3c1.6 0 2.8-.4 3.7-1.1.9-.8 1.4-1.9 1.4-3.3 0-1.2-.3-2.1-.8-2.9h-.1zm-4.7-5.4h2.7c.8 0 1.4.2 1.8.5.4.3.6.8.6 1.4 0 .6-.2 1.1-.6 1.4-.4.3-1 .5-1.8.5H2.9V5.8zm3.3 10.3H2.9v-3.7h3.3c.9 0 1.6.2 2 .6.4.4.6 1 .6 1.7 0 .8-.2 1.4-.6 1.8-.4-.4-1.1-.4-2-.4zM16.5 13.5c0-.6.1-1.1.3-1.6.2-.5.5-.9.9-1.2.4-.3.9-.5 1.4-.7.6-.1 1.2-.2 1.8-.2.8 0 1.5.1 2.2.4.7.3 1.2.7 1.6 1.2l-1.8 1.4c-.4-.5-.9-.8-1.7-.8-.4 0-.8.1-1.1.3-.3.2-.6.5-.7.9h6.1c0-.4.1-.7.1-1.1 0-1.2-.3-2.2-.9-3-.6-.8-1.5-1.4-2.5-1.8-1-.4-2.1-.5-3.3-.5-1.2 0-2.3.2-3.2.7-.9.5-1.7 1.1-2.2 2-.5.8-.8 1.8-.8 2.9 0 1.1.3 2.1.8 3 .5.9 1.3 1.5 2.2 2 .9.5 2 .7 3.2.7 1.4 0 2.5-.3 3.4-.9.9-.6 1.6-1.4 2-2.4l-2-1c-.3.6-.6 1-1.1 1.3-.5.3-1.1.4-1.8.4-.7 0-1.4-.2-1.9-.6-.5-.4-.8-1-.9-1.8h7zm4.3-2.4h-3.9c.1-.4.3-.7.6-1 .3-.3.8-.4 1.4-.4.6 0 1 .1 1.3.4.4.3.6.6.6 1zM15.4 6.7h6.2v1.5h-6.2z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- Interactive Project Detail Modal -->
+  <aside class="case-study-modal" id="caseStudyModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-inner-content" id="modalContentTarget"></div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
