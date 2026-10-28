@@ -616,6 +616,253 @@
         grid-template-columns: 1fr;
       }
     }
+    /* ==========================================================================
+       Zigzag Thread Design Process
+       ========================================================================== */
+    .zigzag-process-canvas {
+      position: relative;
+      width: 100%;
+      padding: 30px 10px 40px;
+      margin-top: 24px;
+    }
+
+    .zigzag-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .zigzag-step {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 380px;
+      margin-bottom: 70px;
+    }
+
+    .zigzag-step.step-1 {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .zigzag-step.step-2 {
+      margin-left: auto;
+      margin-right: 0;
+      padding-left: 20px;
+    }
+
+    .zigzag-step.step-3 {
+      margin-left: 20px;
+      margin-right: auto;
+    }
+
+    .zigzag-step.step-4 {
+      margin-left: auto;
+      margin-right: 0;
+      margin-bottom: 0;
+      padding-left: 20px;
+    }
+
+    .zigzag-media-box {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      margin: 12px 0 16px;
+    }
+
+    .zigzag-media-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .zigzag-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #68422d;
+      box-shadow: 0 0 0 4px rgba(104, 66, 45, 0.18);
+      margin: 10px 0;
+      display: inline-block;
+    }
+
+    .zigzag-info-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .zigzag-week-title {
+      font-family: var(--font-main);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 2px;
+    }
+
+    .zigzag-stage-title {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-loom-mid);
+      margin-bottom: 8px;
+    }
+
+    .zigzag-desc {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 680px) {
+      .zigzag-step {
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        margin-bottom: 50px;
+      }
+    }
+
+    /* ==========================================================================
+       Design System Specification (Matching Inspo)
+       ========================================================================== */
+    .ds-header-row {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 36px;
+      padding-bottom: 24px;
+      margin-bottom: 26px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .ds-header-col {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ds-header-label {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .ds-header-title {
+      font-family: var(--font-main);
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .ds-header-desc {
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .ds-content-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 20px;
+    }
+
+    .ds-type-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    }
+
+    .ds-type-card-title {
+      font-family: var(--font-main);
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .ds-type-card-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.06);
+      margin: 14px 0 16px;
+    }
+
+    .ds-big-glyph {
+      font-family: var(--font-main);
+      font-size: 6rem;
+      font-weight: 700;
+      line-height: 0.95;
+      color: var(--text-main);
+      margin-top: auto;
+      letter-spacing: -0.04em;
+    }
+
+    .ds-swatches-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .ds-swatch {
+      border-radius: 14px;
+      min-height: 88px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease;
+    }
+
+    .ds-swatch:hover {
+      transform: translateY(-2px);
+    }
+
+    .ds-swatch-name {
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .ds-swatch-hex {
+      font-family: var(--font-mono);
+      font-size: 0.70rem;
+      text-align: right;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 768px) {
+      .ds-header-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .ds-content-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .ds-swatches-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
@@ -653,8 +900,8 @@
       <p class="case-subtitle">AI-Assisted Website Design &amp; Development</p>
 
       <!-- Clean space below heading for project image to be added later -->
-      <div class="media-frame" style="min-height: 380px;" aria-label="Eravathody Handloom Project Hero Visual Frame">
-        <span class="frame-caption">[Project image placeholder: Eravathody Handloom Society Hero Screen]</span>
+      <div class="media-frame hero-video-frame" style="min-height: 420px; max-height: 480px;" aria-label="Eravathody Handloom Society Hero Screen">
+        <video src="video at beginning.mp4" autoplay loop muted playsinline class="hero-video-gif"></video>
       </div>
     </header>
 
@@ -706,34 +953,65 @@
     <section class="case-section" id="design-process">
       <h2 class="section-title">Design Process</h2>
       
-      <div class="process-stages-stack">
-        <div class="process-stage-item">
-          <div class="stage-week-header">Week 01 — Craft Research &amp; Fieldwork</div>
-          <p class="stage-desc">
-            Understanding the weaving traditions, handloom products, artisans, production processes, and heritage of Eravathody Handloom Society through on-site research and conversations with the people involved.
-          </p>
+      <div class="zigzag-process-canvas" id="zigzagProcessCanvas">
+        <svg class="zigzag-svg" id="zigzagThreadSvg">
+          <path id="zigzagThreadPath" d="" stroke="#68422d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+        <!-- Step 1 (Left): Media on Top, Info, Dot at Bottom -->
+        <div class="zigzag-step step-1" id="stepNode1">
+          <div class="zigzag-media-box">
+            <img src="artisan 1 int.gif" alt="Week 1 — Craft Research & Fieldwork" class="zigzag-media-img" loading="lazy">
+          </div>
+          <div class="zigzag-info-box">
+            <h3 class="zigzag-week-title">Week 1</h3>
+            <h4 class="zigzag-stage-title">Craft Research &amp; Fieldwork</h4>
+            <p class="zigzag-desc">
+              Understanding the weaving traditions, handloom products, artisans, production processes, and heritage of Eravathody Handloom Society through on-site research and conversations with the people involved.
+            </p>
+          </div>
+          <div class="zigzag-dot" id="dot1" aria-hidden="true"></div>
         </div>
 
-        <div class="process-stage-item">
-          <div class="stage-week-header">Week 02 — Content Strategy</div>
-          <p class="stage-desc">
-            Defining the website's objectives, information priorities, content structure, storytelling approach, and the way craft traditions, products, and artisan stories would be communicated digitally.
-          </p>
+        <!-- Step 2 (Right): Dot, Info -->
+        <div class="zigzag-step step-2" id="stepNode2">
+          <div class="zigzag-dot" id="dot2" aria-hidden="true"></div>
+          <div class="zigzag-info-box">
+            <h3 class="zigzag-week-title">Week 2</h3>
+            <h4 class="zigzag-stage-title">Content Strategy</h4>
+            <p class="zigzag-desc">
+              Defining the website's objectives, information priorities, content structure, storytelling approach, and the way craft traditions, products, and artisan stories would be communicated digitally.
+            </p>
+          </div>
         </div>
 
-        <div class="process-stage-item">
-          <div class="stage-week-header">Week 03 — UX &amp; UI Design</div>
-          <p class="stage-desc">
-            Translating the research into a clear website structure, developing the information architecture, establishing the visual direction, and designing the interface and wireframes.
-          </p>
+        <!-- Step 3 (Left): Dot, Info -->
+        <div class="zigzag-step step-3" id="stepNode3">
+          <div class="zigzag-dot" id="dot3" aria-hidden="true"></div>
+          <div class="zigzag-info-box">
+            <h3 class="zigzag-week-title">Week 3</h3>
+            <h4 class="zigzag-stage-title">UX &amp; UI Design</h4>
+            <p class="zigzag-desc">
+              Translating the research into a clear website structure, developing the information architecture, establishing the visual direction, and designing the interface and wireframes.
+            </p>
+          </div>
         </div>
 
-        <div class="process-stage-item">
-          <div class="stage-week-header">Week 04 — AI-Assisted Development</div>
-          <p class="stage-desc">
-            Using AI-assisted coding to translate the designs into a functioning website, refining the implementation, and bringing the digital experience together.
-          </p>
+        <!-- Step 4 (Right): Dot, Info, Media on Bottom -->
+        <div class="zigzag-step step-4" id="stepNode4">
+          <div class="zigzag-dot" id="dot4" aria-hidden="true"></div>
+          <div class="zigzag-info-box">
+            <h3 class="zigzag-week-title">Week 4</h3>
+            <h4 class="zigzag-stage-title">AI-Assisted Development</h4>
+            <p class="zigzag-desc">
+              Using AI-assisted coding to translate the designs into a functioning website, refining the implementation, and bringing the digital experience together.
+            </p>
+          </div>
+          <div class="zigzag-media-box">
+            <img src="week 4.png" alt="Week 4 — AI-Assisted Development" class="zigzag-media-img" loading="lazy">
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -752,8 +1030,8 @@
       </p>
 
       <!-- Dedicated visual placement for interview GIF or video clip -->
-      <div class="media-frame" style="min-height: 340px;" aria-label="Fieldwork Video or GIF Space">
-        <span class="frame-caption">[Dedicated space for interview video clip / GIF: Conversations with artisans and the society secretary at Thiruvillamala]</span>
+      <div class="media-frame" style="min-height: 380px;" aria-label="Fieldwork Video or GIF Space">
+        <img src="amoomma colour.jpg" alt="Conversations with artisans and the society secretary at Thiruvillamala" class="case-study-img" loading="lazy">
       </div>
     </section>
 
@@ -771,9 +1049,7 @@
         From a UX perspective, this meant structuring the digital journey so visitors can discover the society's unique identity, understand how unbleached cotton and kasavu zari are woven, explore the curated collection with clarity, and navigate detailed product specifications with ease.
       </p>
 
-      <div class="media-frame" style="min-height: 280px;" aria-label="Craft Context Representation">
-        <span class="frame-caption">[Visual: Physical Pitloom Weaving &amp; Digital Website Representation Comparison]</span>
-      </div>
+
     </section>
 
 
@@ -787,7 +1063,7 @@
       <div class="findings-grid">
         <div class="finding-card">
           <div class="finding-img-frame">
-            <span class="frame-caption">[Research Visual 01: Weaving Technique &amp; Texture]</span>
+            <img src="showcasing products.jpg" alt="Weaving Technique & Texture" class="case-study-img" loading="lazy">
           </div>
           <div class="finding-content">
             <h3 class="finding-heading">Tactile Nuance &amp; Yarn Authenticity</h3>
@@ -799,7 +1075,7 @@
 
         <div class="finding-card">
           <div class="finding-img-frame">
-            <span class="frame-caption">[Research Visual 02: Artisan Portrait &amp; Story]</span>
+            <img src="highlighting artisans.jpg" alt="Artisan Portrait & Story" class="case-study-img" loading="lazy">
           </div>
           <div class="finding-content">
             <h3 class="finding-heading">Artisan Recognition &amp; Living Heritage</h3>
@@ -811,7 +1087,7 @@
 
         <div class="finding-card">
           <div class="finding-img-frame">
-            <span class="frame-caption">[Research Visual 03: Cooperative Society Heritage]</span>
+            <img src="craft heritage.jpg" alt="Cooperative Society Heritage" class="case-study-img" loading="lazy">
           </div>
           <div class="finding-content">
             <h3 class="finding-heading">Co-operative Transparency &amp; Trust</h3>
@@ -823,7 +1099,7 @@
 
         <div class="finding-card">
           <div class="finding-img-frame">
-            <span class="frame-caption">[Research Visual 04: Order &amp; Billing Accessibility]</span>
+            <img src="shopping.png" alt="Order & Billing Accessibility" class="case-study-img" loading="lazy">
           </div>
           <div class="finding-content">
             <h3 class="finding-heading">Streamlined Direct Ordering</h3>
@@ -924,47 +1200,53 @@
          Typography, colour palette, spacing, and UI components
          ====================================================================== -->
     <section class="case-section" id="design-system">
-      <h2 class="section-title">Design System</h2>
-      <p class="section-para">
-        The design system draws directly from the natural materials of the handloom cluster: unbleached organic cotton, dark loom timber, and subtle kasavu gold.
-      </p>
-
-      <div class="design-system-spec">
-        <div>
-          <div class="spec-block-title">Typography &amp; Hierarchy</div>
-          <p class="section-para" style="margin-bottom: 0;">
-            Primary Heading &amp; Interface: Plus Jakarta Sans / Inter Tight (Clean geometric clarity).<br>
-            Technical &amp; Spec Labels: Space Mono (Architectural rhythm and documentation cadence).
+      <div class="ds-header-row">
+        <div class="ds-header-col">
+          <span class="ds-header-label">Stage</span>
+          <h2 class="ds-header-title">Design system</h2>
+        </div>
+        <div class="ds-header-col">
+          <span class="ds-header-label">Description</span>
+          <p class="ds-header-desc">
+            Systematized all interface elements into a design system: grids, typography, colors, and components.
           </p>
         </div>
+      </div>
 
-        <div>
-          <div class="spec-block-title">Colour Palette</div>
-          <div class="spec-color-row">
-            <div class="color-swatch-item">
-              <span class="swatch-circle" style="background: #3d2314;"></span>
-              <span>Loom Brown (#3D2314)</span>
-            </div>
-            <div class="color-swatch-item">
-              <span class="swatch-circle" style="background: #fcfcfb;"></span>
-              <span>Off-White Canvas (#FCFCFB)</span>
-            </div>
-            <div class="color-swatch-item">
-              <span class="swatch-circle" style="background: #c9a66b;"></span>
-              <span>Kasavu Gold (#C9A66B)</span>
-            </div>
-            <div class="color-swatch-item">
-              <span class="swatch-circle" style="background: #eae2d8;"></span>
-              <span>Raw Cotton (#EAE2D8)</span>
-            </div>
+      <div class="ds-content-grid">
+        <!-- Typography Card -->
+        <div class="ds-type-card">
+          <div class="ds-type-card-title">Plus Jakarta Sans</div>
+          <div class="ds-type-card-divider"></div>
+          <div class="ds-big-glyph">Aa</div>
+        </div>
+
+        <!-- Color Palette Grid (6 rounded swatch cards) -->
+        <div class="ds-swatches-grid">
+          <div class="ds-swatch" style="background: #3d2314; color: #ffffff;">
+            <span class="ds-swatch-name">Loom Brown</span>
+            <span class="ds-swatch-hex">#3D2314</span>
           </div>
-        </div>
-
-        <div>
-          <div class="spec-block-title">UI Components &amp; Linework</div>
-          <p class="section-para" style="margin-bottom: 0;">
-            Generous 20px card corner radii, subtle hairline borders (0.08 alpha), and soft tactile shadows reflect the organic warmth of handloom textiles.
-          </p>
+          <div class="ds-swatch" style="background: #c9a66b; color: #ffffff;">
+            <span class="ds-swatch-name">Kasavu Gold</span>
+            <span class="ds-swatch-hex">#C9A66B</span>
+          </div>
+          <div class="ds-swatch" style="background: #96462d; color: #ffffff;">
+            <span class="ds-swatch-name">Earthy Terracotta</span>
+            <span class="ds-swatch-hex">#96462D</span>
+          </div>
+          <div class="ds-swatch" style="background: #141414; color: #ffffff;">
+            <span class="ds-swatch-name">Anvil Black</span>
+            <span class="ds-swatch-hex">#141414</span>
+          </div>
+          <div class="ds-swatch" style="background: #d97706; color: #ffffff;">
+            <span class="ds-swatch-name">Earthy Ochre</span>
+            <span class="ds-swatch-hex">#D97706</span>
+          </div>
+          <div class="ds-swatch" style="background: #f5efe9; color: #3d2314; border: 1px solid rgba(0, 0, 0, 0.08);">
+            <span class="ds-swatch-name">Raw Cotton</span>
+            <span class="ds-swatch-hex">#F5EFE9</span>
+          </div>
         </div>
       </div>
     </section>
@@ -980,14 +1262,7 @@
         Translating design specifications into clean, production-ready frontend code using an AI-assisted development workflow. Prompt engineering, component scoping, and rapid iteration enabled tight synchronization between Figma layouts and the living web experience.
       </p>
 
-      <div class="showcase-row-2">
-        <div class="media-frame" style="min-height: 260px;">
-          <span class="frame-caption">[Screenshot: Code Editor &amp; Component Implementation]</span>
-        </div>
-        <div class="media-frame" style="min-height: 260px;">
-          <span class="frame-caption">[Screenshot: AI-Assisted Development Iteration Workflow]</span>
-        </div>
-      </div>
+
     </section>
 
 
@@ -1028,13 +1303,13 @@
 
       <div class="showcase-row-3">
         <div class="media-frame" style="min-height: 220px;">
-          <span class="frame-caption">[Interaction Visual: Cursor-following Fabric Zoom]</span>
+          <img src="zoom gif (1).gif" alt="Cursor-following Fabric Zoom" class="case-study-img" loading="lazy">
         </div>
         <div class="media-frame" style="min-height: 220px;">
-          <span class="frame-caption">[Interaction Visual: Product Image Hover Swap]</span>
+          <img src="hover gif (1).gif" alt="Product Image Hover Swap" class="case-study-img" loading="lazy">
         </div>
         <div class="media-frame" style="min-height: 220px;">
-          <span class="frame-caption">[Interaction Visual: Smooth Scroll-Triggered Reveal]</span>
+          <img src="scroll gif (1).gif" alt="Smooth Scroll-Triggered Reveal" class="case-study-img" loading="lazy">
         </div>
       </div>
     </section>
