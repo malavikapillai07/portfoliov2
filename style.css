@@ -1173,12 +1173,12 @@ html.preloader-done #sitePreloader {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: #ffffff;
+  background: #f2f2f2;
   z-index: 99999999;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s ease;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s ease;
   pointer-events: all;
 }
 
@@ -1190,26 +1190,25 @@ html.preloader-done #sitePreloader {
 
 .preloader-frame {
   position: relative;
-  width: 100px;
-  height: 100px;
-  max-width: 100px;
-  max-height: 100px;
+  width: 200px;
+  height: 200px;
+  max-width: 75vw;
+  max-height: 75vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: #f2f2f2;
   overflow: hidden;
 }
 
 .preloader-frame video,
 .preloader-video,
 #preloaderVideo {
-  width: 100px !important;
-  height: 100px !important;
-  max-width: 100px !important;
-  max-height: 100px !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
   object-fit: contain;
-  mix-blend-mode: multiply;
   pointer-events: none;
   display: block;
 }
