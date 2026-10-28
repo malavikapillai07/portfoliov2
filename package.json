@@ -1,0 +1,11 @@
+{
+  "name": "portfoliov2",
+  "version": "1.0.0",
+  "description": "Portfolio of Malavika Pillai — Product Designer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Malavika Pillai",
+  "license": "ISC"
+}
