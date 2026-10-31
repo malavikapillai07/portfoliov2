@@ -581,77 +581,76 @@ body.cursor-click .cursor-square {
 }
 
 /* ==========================================================================
-   Typography Wipe Reveal Animation (Matching Inspo)
-   A bold orange block expands across the text, then contracts to reveal it
+   Kinetic Typography Animation
+   Staggered word rise & subtle spring scale with accent highlights
    ========================================================================== */
-.hero-line-reveal {
-  position: relative;
+.hero-text-wrap {
   display: inline-block;
-  vertical-align: bottom;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.hero-line-text {
+.hero-text-word {
   display: inline-block;
   opacity: 0;
-  animation: heroTextReveal 0.05s forwards;
+  transform: translateY(18px) rotate(1deg);
+  animation: heroWordSpring 0.7s cubic-bezier(0.16, 1.2, 0.3, 1) forwards;
+  will-change: transform, opacity;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), color 0.2s ease;
 }
 
-.hero-line-reveal:nth-child(1) .hero-line-text {
-  animation-delay: 0.52s;
+.hero-text-word:hover {
+  transform: translateY(-2px) scale(1.06);
+  color: var(--accent-orange);
 }
 
-.hero-line-reveal:nth-of-type(2) .hero-line-text {
-  animation-delay: 0.72s;
+.hero-accent-word {
+  color: var(--text-main);
+  position: relative;
+  font-weight: 700;
 }
 
-.hero-wipe-block {
+.hero-accent-word::after {
+  content: "";
   position: absolute;
-  top: 0;
   left: 0;
+  bottom: 2px;
   width: 100%;
-  height: 100%;
+  height: 2px;
   background-color: var(--accent-orange);
   transform: scaleX(0);
-  transform-origin: left center;
-  pointer-events: none;
-  z-index: 2;
-  will-change: transform;
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-line-reveal:nth-child(1) .hero-wipe-block {
-  animation: heroWipeCover 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.15s forwards;
+.hero-accent-word:hover::after {
+  transform: scaleX(1);
 }
 
-.hero-line-reveal:nth-of-type(2) .hero-wipe-block {
-  animation: heroWipeCover 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.35s forwards;
-}
+/* Stagger animation delays for natural cadence */
+.hero-headline .hero-text-wrap:nth-of-type(1) .hero-text-word:nth-child(1)  { animation-delay: 0.10s; }
+.hero-headline .hero-text-wrap:nth-of-type(1) .hero-text-word:nth-child(2)  { animation-delay: 0.16s; }
+.hero-headline .hero-text-wrap:nth-of-type(1) .hero-text-word:nth-child(3)  { animation-delay: 0.22s; }
+.hero-headline .hero-text-wrap:nth-of-type(1) .hero-text-word:nth-child(4)  { animation-delay: 0.28s; }
+.hero-headline .hero-text-wrap:nth-of-type(1) .hero-text-word:nth-child(5)  { animation-delay: 0.34s; }
+.hero-headline .hero-text-wrap:nth-of-type(1) .hero-text-word:nth-child(6)  { animation-delay: 0.40s; }
+.hero-headline .hero-text-wrap:nth-of-type(1) .hero-text-word:nth-child(7)  { animation-delay: 0.46s; }
+.hero-headline .hero-text-wrap:nth-of-type(1) .hero-text-word:nth-child(8)  { animation-delay: 0.52s; }
+.hero-headline .hero-text-wrap:nth-of-type(1) .hero-text-word:nth-child(9)  { animation-delay: 0.58s; }
 
-@keyframes heroWipeCover {
-  0% {
-    transform: scaleX(0);
-    transform-origin: left center;
-  }
-  48% {
-    transform: scaleX(1);
-    transform-origin: left center;
-  }
-  52% {
-    transform: scaleX(1);
-    transform-origin: right center;
-  }
-  100% {
-    transform: scaleX(0);
-    transform-origin: right center;
-  }
-}
+.hero-headline .hero-text-wrap:nth-of-type(2) .hero-text-word:nth-child(1)  { animation-delay: 0.66s; }
+.hero-headline .hero-text-wrap:nth-of-type(2) .hero-text-word:nth-child(2)  { animation-delay: 0.72s; }
+.hero-headline .hero-text-wrap:nth-of-type(2) .hero-text-word:nth-child(3)  { animation-delay: 0.78s; }
+.hero-headline .hero-text-wrap:nth-of-type(2) .hero-text-word:nth-child(4)  { animation-delay: 0.84s; }
+.hero-headline .hero-text-wrap:nth-of-type(2) .hero-text-word:nth-child(5)  { animation-delay: 0.90s; }
 
-@keyframes heroTextReveal {
+@keyframes heroWordSpring {
   0% {
     opacity: 0;
+    transform: translateY(18px) rotate(1deg);
   }
   100% {
     opacity: 1;
+    transform: translateY(0) rotate(0deg);
   }
 }
 
@@ -1348,7 +1347,7 @@ html.preloader-done #sitePreloader {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: #f2f2f2;
+  background: #f0f0f0;
   z-index: 99999999;
   display: flex;
   align-items: center;
@@ -1365,14 +1364,14 @@ html.preloader-done #sitePreloader {
 
 .preloader-frame {
   position: relative;
-  width: 200px;
-  height: 200px;
-  max-width: 75vw;
-  max-height: 75vw;
+  width: 320px;
+  height: 320px;
+  max-width: 85vw;
+  max-height: 85vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f2f2f2;
+  background: #f0f0f0;
   overflow: hidden;
 }
 
@@ -1381,12 +1380,9 @@ html.preloader-done #sitePreloader {
 #preloaderVideo {
   width: 100% !important;
   height: 100% !important;
-  max-width: 200px !important;
-  max-height: 200px !important;
+  max-width: 320px !important;
+  max-height: 320px !important;
   object-fit: contain;
-  mix-blend-mode: multiply;
-  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
-  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
   pointer-events: none;
   display: block;
 }
