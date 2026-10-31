@@ -573,10 +573,86 @@ body.cursor-click .cursor-square {
   line-height: 1.34;
   letter-spacing: -0.025em;
   color: var(--text-main);
+  position: relative;
 }
 
 .headline-nowrap {
   white-space: nowrap;
+}
+
+/* ==========================================================================
+   Typography Wipe Reveal Animation (Matching Inspo)
+   A bold orange block expands across the text, then contracts to reveal it
+   ========================================================================== */
+.hero-line-reveal {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
+.hero-line-text {
+  display: inline-block;
+  opacity: 0;
+  animation: heroTextReveal 0.05s forwards;
+}
+
+.hero-line-reveal:nth-child(1) .hero-line-text {
+  animation-delay: 0.52s;
+}
+
+.hero-line-reveal:nth-of-type(2) .hero-line-text {
+  animation-delay: 0.72s;
+}
+
+.hero-wipe-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  z-index: 2;
+  will-change: transform;
+}
+
+.hero-line-reveal:nth-child(1) .hero-wipe-block {
+  animation: heroWipeCover 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.15s forwards;
+}
+
+.hero-line-reveal:nth-of-type(2) .hero-wipe-block {
+  animation: heroWipeCover 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.35s forwards;
+}
+
+@keyframes heroWipeCover {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  48% {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+  52% {
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+}
+
+@keyframes heroTextReveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ==========================================================================
