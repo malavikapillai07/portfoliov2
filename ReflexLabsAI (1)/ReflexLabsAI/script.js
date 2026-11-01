@@ -55,3 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+
+// IntersectionObserver for lazy videos to boost page load speed
+document.addEventListener('DOMContentLoaded', () => {
+  const lazyVideos = document.querySelectorAll('video[loading="lazy"], video[preload="metadata"]');
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    lazyVideos.forEach(v => videoObserver.observe(v));
+  }
+});
