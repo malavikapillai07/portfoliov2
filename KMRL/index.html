@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kochi1 Metro App Redesign — Malavika Pillai</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #f7f7f5;
+      --card-bg: #ffffff;
+      --text-main: #141414;
+      --text-muted: #666666;
+      --text-dim: #999999;
+      --border: #e6e6e2;
+      --border-dark: #141414;
+      --teal-main: #1c95a6;
+      --teal-light: #e6f6f8;
+      --lime-main: #8dc63f;
+      --lime-light: #f1f9e6;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 247, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: opacity 0.2s;
+    }
+
+    .nav-back-link:hover {
+      opacity: 0.7;
+    }
+
+    .nav-breadcrumb-dim {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-pdf {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #141414;
+      color: #ffffff;
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-pdf:hover {
+      background: var(--teal-main);
+      transform: translateY(-1px);
+    }
+
+    .btn-pdf svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Hero Section */
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 60px 40px 40px;
+    }
+
+    .hero-tag {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal-main);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      color: var(--text-main);
+      margin-bottom: 18px;
+    }
+
+    .hero-title span {
+      color: var(--teal-main);
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      color: var(--text-muted);
+      max-width: 820px;
+      line-height: 1.55;
+      margin-bottom: 36px;
+    }
+
+    .meta-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .meta-pill {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .meta-pill.highlight {
+      background: var(--teal-light);
+      border-color: #bee3e8;
+      color: var(--teal-main);
+    }
+
+    /* PDF Viewer Container */
+    .viewer-section {
+      max-width: 1280px;
+      margin: 0 auto 80px;
+      padding: 0 40px;
+    }
+
+    .viewer-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .viewer-toolbar {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      background: #fbfbf9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .viewer-toolbar-title {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #333333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .viewer-toolbar-title::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal-main);
+    }
+
+    .viewer-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-secondary {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      transition: all 0.15s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: #141414;
+    }
+
+    .pdf-embed-frame {
+      width: 100%;
+      height: 760px;
+      border: none;
+      background: #ececec;
+    }
+
+    /* Key Insights Grid */
+    .insights-section {
+      max-width: 1280px;
+      margin: 0 auto 90px;
+      padding: 0 40px;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .insight-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .insight-num {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--teal-main);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .insight-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.015em;
+    }
+
+    .insight-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Sitemap Footer */
+    .sitemap-footer {
+      border-top: 1px solid var(--border);
+      padding: 80px 40px 60px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .sitemap-col-author h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .sitemap-col-author p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .sitemap-col-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .sitemap-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sitemap-link {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.92rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .sitemap-link:hover {
+      opacity: 0.6;
+    }
+
+    .sitemap-link-img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .top-nav {
+        padding: 14px 20px;
+      }
+      .hero-container {
+        padding: 40px 20px 24px;
+      }
+      .viewer-section {
+        padding: 0 20px;
+      }
+      .pdf-embed-frame {
+        height: 520px;
+      }
+      .insights-section {
+        padding: 0 20px;
+      }
+      .sitemap-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-nav">
+    <a href="../index.html" class="nav-back-link">
+      <span>←</span>
+      <span>Malavika Pillai</span>
+      <span class="nav-breadcrumb-dim">/ Kochi1 Metro App Redesign</span>
+    </a>
+
+    <div class="nav-actions">
+      <a href="Kochi1_App_Redesign_UX_Case_Study.pdf" target="_blank" class="btn-pdf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>View Full PDF (29 Pages)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Intro -->
+  <main>
+    <section class="hero-container">
+      <span class="hero-tag">KMRL × Axis Bank · Interface &amp; UX Redesign</span>
+      <h1 class="hero-title">Kochi1 <span>Redesign</span></h1>
+      <p class="hero-lead">
+        Kochi1 brings transit, payments and everyday mobility into one ecosystem. However, our fieldwork revealed a gap between what the app offers and how easily commuters can use it (68% awareness vs only 29% adoption). This case study maps user research, heuristics, 3 commuter personas, restructured information architecture, and core journey flows.
+      </p>
+
+      <div class="meta-pills-row">
+        <span class="meta-pill highlight">Landscape 16:9 Deck</span>
+        <span class="meta-pill">29 Case Study Pages</span>
+        <span class="meta-pill">Multimodal Mobility</span>
+        <span class="meta-pill">3 Commuter Personas</span>
+        <span class="meta-pill">Heuristic Evaluation</span>
+        <span class="meta-pill">Information Architecture</span>
+        <span class="meta-pill">User Flows</span>
+      </div>
+    </section>
+
+    <!-- Embedded Presentation Viewer -->
+    <section class="viewer-section">
+      <div class="viewer-card">
+        <div class="viewer-toolbar">
+          <div class="viewer-toolbar-title">Presentation Deck · 29 Slides (16:9 Landscape)</div>
+          <div class="viewer-actions">
+            <a href="Kochi1_App_Redesign_UX_Case_Study.pdf" target="_blank" class="btn-secondary">Open in New Tab ↗</a>
+            <a href="Kochi1_App_Redesign_UX_Case_Study.pdf" download="Kochi1_App_Redesign_Malavika_Pillai.pdf" class="btn-secondary">Download PDF ↓</a>
+          </div>
+        </div>
+
+        <iframe src="Kochi1_App_Redesign_UX_Case_Study.pdf#toolbar=1&navpanes=0&scrollbar=1" class="pdf-embed-frame" title="Kochi1 App Redesign UX Case Study Presentation">
+          <p>Your browser does not support embedded PDFs. <a href="Kochi1_App_Redesign_UX_Case_Study.pdf">Click here to download the PDF.</a></p>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Case Study Structure & Key Findings -->
+    <section class="insights-section">
+      <h2 class="section-title">Case Study Scope &amp; Deliverables</h2>
+      <div class="insights-grid">
+        <div class="insight-card">
+          <span class="insight-num">01 · PROBLEM DISCOVERY</span>
+          <h3>Awareness ≠ Adoption</h3>
+          <p>
+            While 68% of surveyed commuters were aware of Kochi1, only 29% had used it. Real store reviews and interviews revealed persistent friction in multimodal planning, QR scanning errors, and confusing card balances.
+          </p>
+        </div>
+
+        <div class="insight-card">
+          <span class="insight-num">02 · EVALUATION</span>
+          <h3>Heuristic Breakdown</h3>
+          <p>
+            Identified critical usability breaches: missing system feedback on profile updates, deceptive category labels ("Offers" opening unrelated directories), and circular navigation loops that erode user trust.
+          </p>
+        </div>
+
+        <div class="insight-card">
+          <span class="insight-num">03 · PERSONAS</span>
+          <h3>3 Real Commuter Profiles</h3>
+          <p>
+            Developed detailed personas (Rahul, Anu, Meera) complete with realistic journey scenarios, illustrated storyboards, and comprehensive 4-quadrant empathy maps (Says, Does, Feels, Thinks).
+          </p>
+        </div>
+
+        <div class="insight-card">
+          <span class="insight-num">04 · ARCHITECTURE</span>
+          <h3>Information Architecture</h3>
+          <p>
+            Restructuring the existing fragmented multi-tier navigation into a streamlined multimodal hierarchy that unifies metro, water metro, and bus connections into a cohesive digital pathway.
+          </p>
+        </div>
+
+        <div class="insight-card">
+          <span class="insight-num">05 · INTERACTIONS</span>
+          <h3>Optimized User Flows</h3>
+          <p>
+            Targeted decision flows for instant QR ticket generation, multimodal transfers, and one-tap card balance recharges designed to alleviate anxiety during time-critical transit.
+          </p>
+        </div>
+
+        <div class="insight-card">
+          <span class="insight-num">06 · DESIGN STATUS</span>
+          <h3>Active Development</h3>
+          <p>
+            The UX research foundation, IA restructuring, and core flows are complete. High-fidelity interface screens and design tokens are actively in the process of being designed.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sitemap Footer -->
+  <footer class="sitemap-footer">
+    <div class="sitemap-grid">
+      <div class="sitemap-col-author">
+        <h3>Malavika Pillai</h3>
+        <p>UI/UX &amp; Product Designer</p>
+      </div>
+
+      <div class="sitemap-col">
+        <div class="sitemap-col-title">Portfolio</div>
+        <ul class="sitemap-links-list">
+          <li><a href="../index.html" class="sitemap-link">Projects</a></li>
+          <li><a href="../about.html" class="sitemap-link">About Me</a></li>
+          <li><a href="../eravathody/index.html" class="sitemap-link">Eravathody Handloom</a></li>
+          <li><a href="../ReflexLabsAI (1)/ReflexLabsAI/reflexlabs-casestudy-v3.html" class="sitemap-link">ReflexLabs AI</a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-col">
+        <div class="sitemap-col-title">Connect</div>
+        <ul class="sitemap-links-list">
+          <li>
+            <a href="https://www.behance.net/malavikapillai" target="_blank" rel="noopener" class="sitemap-link">
+              <img src="../behance logo.png" alt="Behance" class="sitemap-link-img">
+              <span>Behance</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:malavika.pillai07@gmail.com" class="sitemap-link">Email</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

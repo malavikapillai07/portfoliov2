@@ -7,6 +7,9 @@
     "start": "node server.js"
   },
   "author": "Malavika Pillai",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "pdfreader": "^3.0.8"
+  }
 }
-
