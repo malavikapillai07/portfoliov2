@@ -1441,10 +1441,11 @@ body.cursor-click .cursor-square {
   }
 
   .hero-layout {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0;
-    min-height: auto;
+    display: flex !important;
+    flex-direction: column !important;
+    row-gap: 0 !important;
+    min-height: auto !important;
+    margin-bottom: 24px !important;
   }
 
   .hero-left {
@@ -1463,15 +1464,21 @@ body.cursor-click .cursor-square {
   }
 
   .logo-flip-container {
-    height: 44px !important;
-    width: 44px !important;
+    height: 52px !important;
+    width: 52px !important;
   }
 
   .malu-logo-img {
-    height: 44px !important;
-    width: 44px !important;
+    height: 52px !important;
+    width: 52px !important;
     object-fit: contain !important;
     margin-left: 0 !important;
+  }
+
+  .malu-picture-img {
+    height: 52px !important;
+    width: 52px !important;
+    border-radius: 12px !important;
   }
 
   .author-identity-text {
@@ -1524,7 +1531,7 @@ body.cursor-click .cursor-square {
 
   .mobile-role-strip {
     display: block !important;
-    margin-top: 28px !important;
+    margin-top: 50px !important;
     margin-bottom: 12px !important;
   }
 
@@ -1556,7 +1563,7 @@ body.cursor-click .cursor-square {
     letter-spacing: -0.03em !important;
     color: #141414 !important;
     margin-top: 6px !important;
-    margin-bottom: 28px !important;
+    margin-bottom: 0 !important;
     text-align: left !important;
     width: 100% !important;
   }

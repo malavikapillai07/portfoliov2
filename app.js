@@ -136,6 +136,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const brandLogoWrap = document.getElementById('brandLogoWrap');
   const nameBlock = document.getElementById('nameBlock');
 
+  // Mobile Automatic 5-second Logo Flip Loop
+  if (logoFlipContainer) {
+    let isFlippedMobile = false;
+    setInterval(() => {
+      if (window.innerWidth <= 768) {
+        isFlippedMobile = !isFlippedMobile;
+        if (isFlippedMobile) {
+          logoFlipContainer.classList.add('is-flipped');
+        } else {
+          logoFlipContainer.classList.remove('is-flipped');
+        }
+      }
+    }, 5000);
+  }
+
   if (logoFlipContainer) {
     const flipTargets = [authorTitle, brandLogoWrap, nameBlock].filter(Boolean);
     flipTargets.forEach(target => {

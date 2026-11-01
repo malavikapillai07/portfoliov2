@@ -805,13 +805,46 @@
       margin: 0;
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 768px) {
+      .zigzag-process-canvas {
+        padding: 20px 10px 30px !important;
+      }
+
       .zigzag-step {
         max-width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
-        padding-left: 0 !important;
-        margin-bottom: 50px;
+        padding-left: 42px !important;
+        margin-bottom: 54px !important;
+        position: relative !important;
+      }
+
+      .zigzag-step.step-1,
+      .zigzag-step.step-2,
+      .zigzag-step.step-3,
+      .zigzag-step.step-4 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 42px !important;
+      }
+
+      .zigzag-dot {
+        position: absolute !important;
+        left: 4px !important;
+        top: 4px !important;
+        margin: 0 !important;
+        z-index: 5 !important;
+      }
+
+      .zigzag-step.step-1 .zigzag-media-wrapper {
+        margin-bottom: 20px;
+        margin-left: -42px;
+        width: calc(100% + 42px);
+      }
+
+      .zigzag-step.step-1 .zigzag-dot {
+        top: auto !important;
+        margin-top: 4px !important;
       }
     }
 
@@ -1855,8 +1888,24 @@
         const p3 = getCenter(d3);
         const p4 = getCenter(d4);
 
-        if (path123) path123.setAttribute('d', `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} L ${p3.x} ${p3.y}`);
-        if (path34) path34.setAttribute('d', `M ${p3.x} ${p3.y} L ${p4.x} ${p4.y}`);
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+          if (path123) {
+            path123.setAttribute('d', `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} L ${p3.x} ${p3.y} L ${p4.x} ${p4.y}`);
+            path123.style.opacity = '1';
+            path123.setAttribute('stroke-width', '2.5');
+          }
+          if (path34) path34.setAttribute('d', '');
+        } else {
+          if (path123) {
+            path123.setAttribute('d', `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} L ${p3.x} ${p3.y}`);
+            path123.style.opacity = '1';
+          }
+          if (path34) {
+            path34.setAttribute('d', `M ${p3.x} ${p3.y} L ${p4.x} ${p4.y}`);
+            path34.style.opacity = '0.22';
+          }
+        }
       };
 
       updateZigzagLines();
