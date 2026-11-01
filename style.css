@@ -566,18 +566,46 @@ body.cursor-click .cursor-square {
   font-weight: 600;
 }
 
-/* Headline Statement: Exactly same font-size as Malavika Pillai (1.55rem) */
-.hero-headline {
-  font-size: 1.55rem;
-  font-weight: 600;
-  line-height: 1.34;
-  letter-spacing: -0.025em;
+/* Headline Statement: Clean card layout matching reference in portfolio's font */
+.hero-headline.statement-card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  padding: 22px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.035);
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
   color: var(--text-main);
   position: relative;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.2s ease;
 }
 
-.headline-nowrap {
+.hero-headline.statement-card-layout:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 0, 0, 0.14);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+}
+
+.hero-headline.statement-card-layout .statement-line {
+  display: block;
   white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .hero-headline.statement-card-layout {
+    font-size: 0.92rem;
+    padding: 18px 20px;
+    border-radius: 14px;
+  }
+  .hero-headline.statement-card-layout .statement-line {
+    white-space: normal;
+  }
 }
 
 /* ==========================================================================
