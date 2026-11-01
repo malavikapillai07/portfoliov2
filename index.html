@@ -51,7 +51,7 @@
     <!-- Top Two-Column Hero Grid -->
     <header class="hero-layout">
       
-      <!-- Left Column: Logo + Name + Role + Multilingual Typewriter Greeting -->
+      <!-- Left Column: Logo + Name + Role + Mobile Hamburger Button -->
       <div class="hero-left">
         <div class="name-block" id="nameBlock">
           <!-- Malu Logo Black placed to the side of Malavika Pillai, flips to malu official picture on hover -->
@@ -67,14 +67,26 @@
           </div>
           <div class="author-identity-text">
             <h1 class="author-title" id="authorTitle">Malavika Pillai</h1>
-            <div class="author-role-line">
+            <div class="author-role-line desktop-only-role">
               <span class="role-text" style="font-size: 0.82rem; letter-spacing: 0.03em; color: var(--text-secondary); font-weight: 500;">UI/UX · Product Designer</span>
             </div>
           </div>
         </div>
+
+        <!-- Mobile Hamburger Button (sleek 3-bar icon matching reference) -->
+        <button class="mobile-hamburger-btn" id="mobileHamburgerBtn" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
       </div>
 
-      <!-- Right Column: Projects Pill (no outer rectangle outline) + Headline -->
+      <!-- Mobile Role Strip (visible only on <=768px, directly below header bar matching reference) -->
+      <div class="mobile-role-strip" aria-hidden="true">
+        <span class="mobile-role-text">UI/UX &nbsp;&bull;&nbsp; PRODUCT DESIGNER</span>
+      </div>
+
+      <!-- Right Column: Projects Pill + Headline -->
       <div class="hero-right">
         
         <!-- Navigation: Only Projects pill has rounded rectangle with grey gradient; NO outer enclosing rectangle -->
@@ -91,8 +103,8 @@
           </div>
         </div>
 
-        <!-- Headline Statement: Same size as Malavika Pillai, shifted right, 'Accessible, clear & intentional.' in one line -->
-        <h2 class="hero-headline statement-card-layout">
+        <!-- Headline Statement: Pure editorial typography matching user reference image -->
+        <h2 class="hero-headline">
           <span class="statement-line">I make users feel smart,</span>
           <span class="statement-line">not stuck or lost.</span>
           <span class="statement-line">Accessible, clear &amp; low-key sneaky.</span>
@@ -131,7 +143,7 @@
           <!-- Card 1: Eravathody Handloom Weavers (Designed & Coded Case Study) -->
           <a href="eravathody/index.html" class="project-entry project-entry-link">
             <div class="project-thumb-frame">
-              <img src="assets/eravathody_handloom.jpg" alt="Eravathody Handloom Weavers' Co-operative Society Case Study" class="project-thumb-img" loading="lazy">
+              <img src="assets/eravathody_cover.jpg" alt="Eravathody Handloom Weavers' Co-operative Society Case Study" class="project-thumb-img" loading="lazy">
             </div>
             <div class="project-info">
               <div class="project-title-line">
@@ -254,6 +266,27 @@
     </section>
 
   </main>
+
+  <!-- Mobile Navigation Overlay (drawer for phone view) -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <span class="mobile-nav-title">Menu</span>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="#mainFlow" class="mobile-nav-link" id="mobLinkProjects">Projects ↗</a>
+        <a href="about.html" class="mobile-nav-link" id="mobLinkAbout">About ↗</a>
+        <a href="#resume" class="mobile-nav-link" id="mobLinkResume">Resume ↗</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <div class="mobile-kochi-time">
+          <span class="live-status-indicator"></span>
+          <span id="mobileKochiTime">--:--</span>, Kochi
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Interactive Project Detail Modal -->
   <aside class="case-study-modal" id="caseStudyModal" aria-hidden="true">

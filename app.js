@@ -196,8 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   const kochiTimeEl = document.getElementById('kochiTime');
 
+  const mobileKochiTimeEl = document.getElementById('mobileKochiTime');
+
   function updateKochiClock() {
-    if (!kochiTimeEl) return;
+    let timeStr = '--:--';
     try {
       const options = {
         timeZone: 'Asia/Kolkata',
@@ -206,13 +208,15 @@ document.addEventListener('DOMContentLoaded', () => {
         hour12: false
       };
       const formatter = new Intl.DateTimeFormat([], options);
-      kochiTimeEl.textContent = formatter.format(new Date());
+      timeStr = formatter.format(new Date());
     } catch {
       const now = new Date();
       const hrs = String(now.getHours()).padStart(2, '0');
       const mins = String(now.getMinutes()).padStart(2, '0');
-      kochiTimeEl.textContent = `${hrs}:${mins}`;
+      timeStr = `${hrs}:${mins}`;
     }
+    if (kochiTimeEl) kochiTimeEl.textContent = timeStr;
+    if (mobileKochiTimeEl) mobileKochiTimeEl.textContent = timeStr;
   }
 
   updateKochiClock();
@@ -476,6 +480,35 @@ document.addEventListener('DOMContentLoaded', () => {
         autoSlideInterval = setInterval(() => goToSlide(currentSlide + 1), 4500);
       });
     }
+  }
+
+  // =========================================================================
+  // 12. Mobile Hamburger Drawer Toggle
+  // =========================================================================
+  const mobileHamburgerBtn = document.getElementById('mobileHamburgerBtn');
+  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+  const mobileNavClose = document.getElementById('mobileNavClose');
+
+  if (mobileHamburgerBtn && mobileNavOverlay) {
+    const openMobileNav = () => {
+      mobileNavOverlay.classList.add('open');
+      mobileHamburgerBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMobileNav = () => {
+      mobileNavOverlay.classList.remove('open');
+      mobileHamburgerBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    mobileHamburgerBtn.addEventListener('click', openMobileNav);
+    if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileNav);
+    mobileNavOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileNavOverlay) closeMobileNav();
+    });
+    mobileNavOverlay.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
   }
 
 });
