@@ -1226,9 +1226,7 @@
       <span>← Malavika Pillai</span>
       <span style="color: var(--text-muted); font-size: 0.74rem;">/ Case Study</span>
     </a>
-    <div class="hud-right-cluster">
-      <span class="hud-status-badge">Eravathody Handloom Society · 2026</span>
-    </div>
+    <div class="hud-right-cluster"></div>
   </header>
 
   <!-- Focused Centered Column Stage -->
@@ -1298,7 +1296,10 @@
       
       <div class="zigzag-process-canvas" id="zigzagProcessCanvas">
         <svg class="zigzag-svg" id="zigzagThreadSvg">
-          <path id="zigzagThreadPath" d="" stroke="#68422d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Weeks 1 -> 2 -> 3 full opacity -->
+          <path id="zigzagThreadPath123" d="" stroke="#68422d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Week 3 -> 4 subtle lesser opacity -->
+          <path id="zigzagThreadPath34" d="" stroke="#68422d" stroke-width="2" opacity="0.22" fill="none" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
 
         <!-- Step 1 (Left): Media on Top, Info, Dot at Bottom -->
@@ -1794,12 +1795,13 @@
       // 3. Connect Design Process Dots with Straight Brown Lines
       const updateZigzagLines = () => {
         const canvas = document.getElementById('zigzagProcessCanvas');
-        const path = document.getElementById('zigzagThreadPath');
+        const path123 = document.getElementById('zigzagThreadPath123');
+        const path34 = document.getElementById('zigzagThreadPath34');
         const d1 = document.getElementById('dot1');
         const d2 = document.getElementById('dot2');
         const d3 = document.getElementById('dot3');
         const d4 = document.getElementById('dot4');
-        if (!canvas || !path || !d1 || !d2 || !d3 || !d4) return;
+        if (!canvas || !d1 || !d2 || !d3 || !d4) return;
 
         const cRect = canvas.getBoundingClientRect();
         const getCenter = (el) => {
@@ -1815,8 +1817,8 @@
         const p3 = getCenter(d3);
         const p4 = getCenter(d4);
 
-        // Brown straight lines from week 1 -> week 2 -> week 3 -> week 4
-        path.setAttribute('d', `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} L ${p3.x} ${p3.y} L ${p4.x} ${p4.y}`);
+        if (path123) path123.setAttribute('d', `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} L ${p3.x} ${p3.y}`);
+        if (path34) path34.setAttribute('d', `M ${p3.x} ${p3.y} L ${p4.x} ${p4.y}`);
       };
 
       updateZigzagLines();

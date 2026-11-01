@@ -12,6 +12,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
+  <!-- Critical Preloader Screen Color matching video background #F2F2F2 -->
+  <style>
+    html:not(.preloader-done),
+    html:not(.preloader-done) body {
+      background-color: #F2F2F2 !important;
+      background-image: none !important;
+    }
+    #sitePreloader {
+      background-color: #F2F2F2 !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,7 +34,7 @@
   </script>
 
   <!-- Site Launch Preloader Overlay (compact, cute centered animation) -->
-  <aside id="sitePreloader" class="site-preloader" aria-label="Loading site">
+  <aside id="sitePreloader" class="site-preloader" style="background-color: #F2F2F2 !important;" aria-label="Loading site">
     <div class="preloader-frame">
       <video id="preloaderVideo" class="preloader-video" src="preloader.mp4" playsinline muted autoplay></video>
     </div>
@@ -66,7 +77,7 @@
             </div>
           </div>
           <div class="author-identity-text">
-            <h1 class="author-title" id="authorTitle"><span class="name-first">Malavika</span> <span class="name-last">Pillai</span></h1>
+            <h1 class="author-title" id="authorTitle"><span class="name-first">Malavika</span><span class="mobile-name-break"><br></span><span class="name-space"> </span><span class="name-last">Pillai</span></h1>
             <div class="author-role-line desktop-only-role">
               <span class="role-text" style="font-size: 0.82rem; letter-spacing: 0.03em; color: var(--text-secondary); font-weight: 500;">UI/UX · Product Designer</span>
             </div>

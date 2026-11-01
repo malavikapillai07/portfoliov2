@@ -28,7 +28,7 @@
       <span style="color: var(--muted); font-size: 0.74rem;">/ ReflexLabs AI</span>
     </a>
     <div class="hud-right-cluster">
-      <span class="hud-status-badge">Internship Case Study · 2024</span>
+      
     </div>
   </header>
 
@@ -894,5 +894,24 @@
   </footer>
 
   <script src="script.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sitemapEmailBtn = document.getElementById('sitemapEmailBtn');
+      if (sitemapEmailBtn) {
+        sitemapEmailBtn.addEventListener('click', async () => {
+          const email = 'malavikapillaiofficial@gmail.com';
+          try {
+            await navigator.clipboard.writeText(email);
+            sitemapEmailBtn.classList.add('is-copied');
+            setTimeout(() => sitemapEmailBtn.classList.remove('is-copied'), 2400);
+          } catch {
+            sitemapEmailBtn.classList.add('is-copied');
+            setTimeout(() => sitemapEmailBtn.classList.remove('is-copied'), 2400);
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
