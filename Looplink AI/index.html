@@ -436,6 +436,166 @@
         gap: 22px;
       }
     }
+
+    /* Sitemap Footer in LoopLink Case Study */
+    .sitemap-footer {
+      margin-top: 80px;
+      padding: 40px 0 24px;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-main);
+    }
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.2fr;
+      gap: 36px;
+      align-items: start;
+    }
+    .sitemap-col-author {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sitemap-logo-img {
+      height: 44px;
+      width: auto;
+      align-self: flex-start;
+      mix-blend-mode: multiply;
+      margin-left: -15px;
+    }
+    .sitemap-author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .sitemap-author-name {
+      font-family: var(--font-main);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+    .sitemap-author-role {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .sitemap-col-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .sitemap-link {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    .sitemap-link:hover {
+      color: var(--accent-orange);
+      transform: translateX(2px);
+    }
+    .sitemap-col-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .sitemap-email-btn {
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      position: relative;
+      text-align: left;
+      transition: color 0.2s ease;
+    }
+    .sitemap-email-btn:hover {
+      color: var(--accent-orange);
+    }
+    .sitemap-email-btn .copy-icon {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      opacity: 0.65;
+      flex-shrink: 0;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    .sitemap-email-btn:hover .copy-icon {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    .sitemap-email-btn.is-copied .copy-icon {
+      stroke: var(--accent-orange);
+      opacity: 1;
+      transform: scale(1.15);
+    }
+    .sitemap-email-btn .email-toast {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 0;
+      background: #181818;
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      padding: 5px 11px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .sitemap-email-btn .email-toast::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 18px;
+      border-width: 4px;
+      border-style: solid;
+      border-color: #181818 transparent transparent transparent;
+    }
+    .sitemap-email-btn.is-copied .email-toast {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .sitemap-socials-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--text-secondary);
+    }
+    .sitemap-social-icon {
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .sitemap-social-icon:hover {
+      color: var(--accent-orange);
+      transform: translateY(-1px);
+    }
+    @media (max-width: 768px) {
+      .sitemap-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -538,12 +698,68 @@
     </section>
 
     <!-- Closing Line -->
-    <footer class="closing-touch-line">
+    <div class="closing-touch-line">
       <span>If you'd like to learn more about the process or my role, feel free to get in touch.</span>
       <a href="mailto:malavikabpillai@gmail.com" class="touch-link">
         <span>Get in touch</span>
         <span>↗</span>
       </a>
+    </div>
+
+    <!-- Sitemap Footer (Always visible when scrolled down) -->
+    <footer class="sitemap-footer">
+      <div class="sitemap-grid">
+        
+        <!-- Column 1: Logo + Malavika Pillai + Subtitle -->
+        <div class="sitemap-col-author">
+          <img src="../malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img">
+          <div class="sitemap-author-info">
+            <h3 class="sitemap-author-name">Malavika Pillai</h3>
+            <p class="sitemap-author-role">UI/UX · Product Designer</p>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="sitemap-col-links">
+          <a href="../index.html#mainFlow" class="sitemap-link">Projects</a>
+          <a href="../about.html" class="sitemap-link">About</a>
+          <a href="../index.html#resume" class="sitemap-link" id="footerResumeLink">Resume</a>
+        </div>
+
+        <!-- Column 3: Contact & Socials -->
+        <div class="sitemap-col-contact">
+          <button class="sitemap-email-btn" id="sitemapEmailBtn" type="button" title="Click to copy email">
+            <span class="email-address-text">malavikapillaiofficial@gmail.com</span>
+            <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="email-toast" aria-live="polite">Gmail copied ✓</span>
+          </button>
+          <div class="sitemap-socials-row">
+            <a href="https://www.linkedin.com/in/malavika-pillai-b996ab371" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/malav.ikapillai/" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.behance.net/malavikapillai" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Behance" aria-label="Behance">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.171 3-2.404 0-4.39-1.077-4.39-4.42 0-2.937 1.834-4.58 4.292-4.58 3.093 0 4.085 2.26 3.69 4.872h-5.744c.05 1.174.605 2.128 2.27 2.128 1.119 0 1.637-.604 1.879-1.054l3.174.054zm-3.212-3.072c-.034-.985-.563-1.807-1.775-1.807-1.126 0-1.748.83-1.812 1.807h3.587zm-11.514 5.072h-7v-14h7.355c4.181 0 5.409 2.593 5.409 4.746 0 1.579-.81 3.142-2.313 3.687 2.112.51 2.822 2.264 2.822 4.244 0 2.457-1.571 4.323-6.273 4.323zm-4.133-8.292h3.282c1.724 0 2.46-.728 2.46-1.856 0-1.285-.886-1.852-2.46-1.852h-3.282v3.708zm0 6.292h3.535c1.882 0 2.766-.739 2.766-2.062 0-1.222-.884-2.062-2.766-2.062h-3.535v4.124z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
     </footer>
 
   </main>
@@ -562,7 +778,23 @@
           cursorSquare.style.left = `${cursorX}px`;
           cursorSquare.style.top = `${cursorY}px`;
         }
-      });
+  
+      // 3. Sitemap Email Copy Toast
+      const sitemapEmailBtn = document.getElementById('sitemapEmailBtn');
+      if (sitemapEmailBtn) {
+        sitemapEmailBtn.addEventListener('click', async () => {
+          const email = 'malavikapillaiofficial@gmail.com';
+          try {
+            await navigator.clipboard.writeText(email);
+            sitemapEmailBtn.classList.add('is-copied');
+            setTimeout(() => sitemapEmailBtn.classList.remove('is-copied'), 2400);
+          } catch {
+            sitemapEmailBtn.classList.add('is-copied');
+            setTimeout(() => sitemapEmailBtn.classList.remove('is-copied'), 2400);
+          }
+        });
+      }
+    });
 
       const interactiveTargets = document.querySelectorAll('a, button, input, .hud-pill, .meta-item, .simple-parts-item');
       interactiveTargets.forEach((el) => {
