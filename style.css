@@ -1653,15 +1653,22 @@ html:not(.preloader-done) body {
 
 .preloader-frame {
   position: relative;
-  width: 230px;
-  height: 230px;
+  width: 240px;
+  height: 240px;
   max-width: 70vw;
   max-height: 70vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f2f2f2;
-  overflow: hidden;
+  background: transparent;
+}
+
+.preloader-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: transparent;
 }
 
 .preloader-frame video,
@@ -1670,9 +1677,8 @@ html:not(.preloader-done) body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  mix-blend-mode: multiply;
   pointer-events: none;
-  display: block;
+  display: none; /* Managed by transparent Canvas; fallback displays if needed */
 }
 
 .preloader-skip-btn {
@@ -1917,12 +1923,12 @@ body.about-page .about-nav-bar {
 
 /* Behance Logo Image in Sitemap */
 .sitemap-behance-img {
-  height: 20px;
+  height: 14px;
   width: auto;
-  max-width: 34px;
+  max-width: 24px;
   object-fit: contain;
   display: block;
-  opacity: 0.75;
+  opacity: 0.72;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 

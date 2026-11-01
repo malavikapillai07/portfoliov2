@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   const sitePreloader = document.getElementById('sitePreloader');
   const preloaderVideo = document.getElementById('preloaderVideo');
+  const preloaderCanvas = document.getElementById('preloaderCanvas');
   const preloaderSkipBtn = document.getElementById('preloaderSkipBtn');
 
   if (sessionStorage.getItem('sitePreloaderShown') === 'true') {
     if (sitePreloader) sitePreloader.style.display = 'none';
+    document.documentElement.classList.add('preloader-done');
   } else if (sitePreloader && preloaderVideo) {
     preloaderVideo.playbackRate = 2.0;
     preloaderVideo.muted = true;
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sitePreloader.classList.add('fade-out');
       setTimeout(() => {
         sitePreloader.style.display = 'none';
+        document.documentElement.classList.add('preloader-done');
       }, 450);
     };
 
@@ -40,7 +43,54 @@ document.addEventListener('DOMContentLoaded', () => {
       preloaderSkipBtn.addEventListener('click', closePreloader);
     }
 
-    // Fallback safety timeout (at 2x speed, 10s video finishes in ~5s)
+    // Transparent Chroma-Key Canvas: removes background from video frames in real-time
+    if (preloaderCanvas) {
+      const ctx = preloaderCanvas.getContext('2d', { willReadFrequently: true });
+      let animId;
+
+      const renderKeyedFrame = () => {
+        if (hasPreloaderClosed) return;
+        if (preloaderVideo.readyState >= 2) {
+          const vw = preloaderVideo.videoWidth || 1280;
+          const vh = preloaderVideo.videoHeight || 720;
+          const size = Math.min(vw, vh);
+          const sx = (vw - size) / 2;
+          const sy = (vh - size) / 2;
+
+          ctx.drawImage(preloaderVideo, sx, sy, size, size, 0, 0, preloaderCanvas.width, preloaderCanvas.height);
+          try {
+            const frame = ctx.getImageData(0, 0, preloaderCanvas.width, preloaderCanvas.height);
+            const d = frame.data;
+            for (let i = 0; i < d.length; i += 4) {
+              const r = d[i], g = d[i + 1], b = d[i + 2];
+              const maxDiff = Math.max(Math.abs(r - 242), Math.abs(g - 242), Math.abs(b - 242));
+              if (maxDiff <= 9) {
+                d[i + 3] = 0; // Seamless transparent background
+              } else if (maxDiff < 24) {
+                d[i + 3] = Math.round(((maxDiff - 9) / 15) * 255); // smooth anti-aliased edge
+              }
+            }
+            ctx.putImageData(frame, 0, 0);
+          } catch (e) {
+            // If cross-origin or canvas security issue, fallback to video directly
+            preloaderCanvas.style.display = 'none';
+            preloaderVideo.style.display = 'block';
+          }
+        }
+        animId = requestAnimationFrame(renderKeyedFrame);
+      };
+
+      preloaderVideo.addEventListener('play', () => {
+        animId = requestAnimationFrame(renderKeyedFrame);
+      });
+      if (!preloaderVideo.paused) {
+        animId = requestAnimationFrame(renderKeyedFrame);
+      }
+    } else {
+      preloaderVideo.style.display = 'block';
+    }
+
+    // Fallback safety timeout (at 2x speed, video finishes in ~5s)
     setTimeout(closePreloader, 5600);
 
     const playPromise = preloaderVideo.play();
