@@ -764,6 +764,25 @@
       object-fit: cover;
     }
 
+    
+    .zigzag-header-row {
+      display: block;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .zigzag-header-row {
+        position: relative;
+        padding-left: 36px;
+      }
+      .zigzag-header-row .zigzag-dot {
+        position: absolute !important;
+        left: 0 !important;
+        top: 4px !important;
+        margin: 0 !important;
+      }
+    }
+
     .zigzag-dot {
       width: 16px;
       height: 16px;
@@ -1375,68 +1394,72 @@
           <path id="zigzagThreadPath34" d="" stroke="#68422d" stroke-width="2" opacity="0.22" fill="none" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
 
-        <!-- Step 1 (Left): Media on Top, Info, Dot at Bottom -->
+        <!-- Step 1 (Left): Media on Top, Header Row with Dot & Info -->
         <div class="zigzag-step step-1" id="stepNode1">
           <div class="zigzag-media-wrapper">
             <!-- Handwritten 'that’s me' annotation with curved arrow pointing to artisan 1 int gif -->
             <div class="thats-me-badge" aria-hidden="true">
               <span class="thats-me-label">that’s me</span>
               <svg class="curved-arrow-svg" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Curve sweeping to the left into the gif -->
                 <path d="M 54 12 C 40 6, 18 10, 8 26" stroke="#68422d" stroke-width="2.2" stroke-linecap="round" fill="none"/>
                 <path d="M 20 25 L 8 26 L 11 14" stroke="#68422d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
               </svg>
             </div>
             <div class="zigzag-media-box">
-            <img src="artisan 1 int.gif" alt="Week 1 — Craft Research & Fieldwork" class="zigzag-media-img" decoding="async" loading="lazy">
+              <img src="artisan 1 int.gif" alt="Week 1 — Craft Research & Fieldwork" class="zigzag-media-img" decoding="async" loading="lazy">
+            </div>
           </div>
+          <div class="zigzag-header-row">
+            <div class="zigzag-dot" id="dot1" aria-hidden="true"></div>
+            <div class="zigzag-info-box">
+              <h3 class="zigzag-week-title">Week 1</h3>
+              <h4 class="zigzag-stage-title">Craft Research &amp; Fieldwork</h4>
+              <p class="zigzag-desc">
+                Understanding the weaving traditions, handloom products, artisans, production processes, and heritage of Eravathody Handloom Society through on-site research and conversations with the people involved.
+              </p>
+            </div>
           </div>
-          <div class="zigzag-info-box">
-            <h3 class="zigzag-week-title">Week 1</h3>
-            <h4 class="zigzag-stage-title">Craft Research &amp; Fieldwork</h4>
-            <p class="zigzag-desc">
-              Understanding the weaving traditions, handloom products, artisans, production processes, and heritage of Eravathody Handloom Society through on-site research and conversations with the people involved.
-            </p>
-          </div>
-          <div class="zigzag-dot" id="dot1" aria-hidden="true"></div>
         </div>
 
-        <!-- Step 2 (Right): Dot, Info -->
+        <!-- Step 2 (Right): Header Row with Dot & Info -->
         <div class="zigzag-step step-2" id="stepNode2">
-          <div class="zigzag-dot" id="dot2" aria-hidden="true"></div>
-          <div class="zigzag-info-box">
-            <h3 class="zigzag-week-title">Week 2</h3>
-            <h4 class="zigzag-stage-title">Content Strategy</h4>
-            <p class="zigzag-desc">
-              Defining the website's objectives, information priorities, content structure, storytelling approach, and the way craft traditions, products, and artisan stories would be communicated digitally.
-            </p>
+          <div class="zigzag-header-row">
+            <div class="zigzag-dot" id="dot2" aria-hidden="true"></div>
+            <div class="zigzag-info-box">
+              <h3 class="zigzag-week-title">Week 2</h3>
+              <h4 class="zigzag-stage-title">Content Strategy</h4>
+              <p class="zigzag-desc">
+                Defining the website's objectives, information priorities, content structure, storytelling approach, and the way craft traditions, products, and artisan stories would be communicated digitally.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Step 3 (Left): Dot, Info -->
+        <!-- Step 3 (Left): Header Row with Dot & Info -->
         <div class="zigzag-step step-3" id="stepNode3">
-          <div class="zigzag-dot" id="dot3" aria-hidden="true"></div>
-          <div class="zigzag-info-box">
-            <h3 class="zigzag-week-title">Week 3</h3>
-            <h4 class="zigzag-stage-title">UX &amp; UI Design</h4>
-            <p class="zigzag-desc">
-              Translating the research into a clear website structure, developing the information architecture, establishing the visual direction, and designing the interface and wireframes.
-            </p>
+          <div class="zigzag-header-row">
+            <div class="zigzag-dot" id="dot3" aria-hidden="true"></div>
+            <div class="zigzag-info-box">
+              <h3 class="zigzag-week-title">Week 3</h3>
+              <h4 class="zigzag-stage-title">UX &amp; UI Design</h4>
+              <p class="zigzag-desc">
+                Translating the research into a clear website structure, developing the information architecture, establishing the visual direction, and designing the interface and wireframes.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Step 4 (Right): Dot, Info, Media on Bottom -->
+        <!-- Step 4 (Right): Header Row with Dot & Info -->
         <div class="zigzag-step step-4" id="stepNode4">
-          <div class="zigzag-dot" id="dot4" aria-hidden="true"></div>
-          <div class="zigzag-info-box">
-            <h3 class="zigzag-week-title">Week 4</h3>
-            <h4 class="zigzag-stage-title">AI-Assisted Development</h4>
-            <p class="zigzag-desc">
-              Using AI-assisted coding to translate the designs into a functioning website, refining the implementation, and bringing the digital experience together.
-            </p>
-          </div>
-          <div class="zigzag-media-box">
-            <img src="week 4.png" alt="Week 4 — AI-Assisted Development" class="zigzag-media-img" decoding="async" loading="lazy">
+          <div class="zigzag-header-row">
+            <div class="zigzag-dot" id="dot4" aria-hidden="true"></div>
+            <div class="zigzag-info-box">
+              <h3 class="zigzag-week-title">Week 4</h3>
+              <h4 class="zigzag-stage-title">AI-Assisted Development</h4>
+              <p class="zigzag-desc">
+                Using AI-assisted coding to translate the designs into a functioning website, refining the implementation, and bringing the digital experience together.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -1890,9 +1913,11 @@
 
         const isMobile = window.innerWidth <= 768;
         if (isMobile) {
+          const lineX = p1.x; // perfectly straight vertical line connecting all dots on left
           if (path123) {
-            path123.setAttribute('d', `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} L ${p3.x} ${p3.y} L ${p4.x} ${p4.y}`);
+            path123.setAttribute('d', `M ${lineX} ${p1.y} L ${lineX} ${p4.y}`);
             path123.style.opacity = '1';
+            path123.setAttribute('stroke', '#68422d');
             path123.setAttribute('stroke-width', '2.5');
           }
           if (path34) path34.setAttribute('d', '');

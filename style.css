@@ -1445,7 +1445,7 @@ body.cursor-click .cursor-square {
     flex-direction: column !important;
     row-gap: 0 !important;
     min-height: auto !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 64px !important;
   }
 
   .hero-left {
@@ -1531,8 +1531,8 @@ body.cursor-click .cursor-square {
 
   .mobile-role-strip {
     display: block !important;
-    margin-top: 50px !important;
-    margin-bottom: 12px !important;
+    margin-top: 14px !important;
+    margin-bottom: 0 !important;
   }
 
   .mobile-role-text {
@@ -1562,7 +1562,7 @@ body.cursor-click .cursor-square {
     line-height: 1.18 !important;
     letter-spacing: -0.03em !important;
     color: #141414 !important;
-    margin-top: 6px !important;
+    margin-top: 48px !important;
     margin-bottom: 0 !important;
     text-align: left !important;
     width: 100% !important;
