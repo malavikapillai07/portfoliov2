@@ -1935,24 +1935,28 @@ nav#main-nav a.active-link {
 }
 
 
-/* Sitemap Footer matching other pages */
+/* Sitemap Footer matching Landing Page */
 .sitemap-footer {
-  margin-top: 80px;
-  padding: 40px 0 24px;
+  margin-top: 65px;
+  padding: 40px 0 16px;
   border-top: 1px solid var(--border);
   font-family: var(--font-main);
+  width: 100%;
 }
+
 .sitemap-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1.2fr;
   gap: 36px;
   align-items: start;
 }
+
 .sitemap-col-author {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .sitemap-logo-img {
   height: 44px;
   width: auto;
@@ -1960,29 +1964,36 @@ nav#main-nav a.active-link {
   filter: invert(1);
   margin-left: -15px;
 }
+
 .sitemap-author-info {
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
+
 .sitemap-author-name {
   font-family: var(--font-main);
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--fg);
+  color: #ffffff;
   line-height: 1.2;
+  margin: 0;
 }
+
 .sitemap-author-role {
   font-size: 0.88rem;
   color: var(--muted);
   font-weight: 400;
+  margin: 0;
 }
+
 .sitemap-col-links {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
 .sitemap-link {
   font-size: 0.95rem;
   color: var(--muted);
@@ -1990,15 +2001,18 @@ nav#main-nav a.active-link {
   transition: color 0.2s ease, transform 0.2s ease;
   display: inline-block;
 }
+
 .sitemap-link:hover {
   color: var(--orange);
   transform: translateX(2px);
 }
+
 .sitemap-col-contact {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
+
 .sitemap-email-btn {
   font-family: var(--font-main);
   font-size: 0.95rem;
@@ -2015,26 +2029,31 @@ nav#main-nav a.active-link {
   text-align: left;
   transition: color 0.2s ease;
 }
+
 .sitemap-email-btn:hover {
   color: var(--orange);
 }
+
 .sitemap-email-btn .copy-icon {
   width: 14px;
   height: 14px;
   stroke: currentColor;
-  opacity: 0.7;
+  opacity: 0.65;
   flex-shrink: 0;
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
+
 .sitemap-email-btn:hover .copy-icon {
   opacity: 1;
   transform: scale(1.1);
 }
+
 .sitemap-email-btn.is-copied .copy-icon {
   stroke: var(--orange);
   opacity: 1;
   transform: scale(1.15);
 }
+
 .sitemap-email-btn .email-toast {
   position: absolute;
   bottom: calc(100% + 8px);
@@ -2051,12 +2070,13 @@ nav#main-nav a.active-link {
   pointer-events: none;
   opacity: 0;
   transform: translateY(4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 100;
   display: flex;
   align-items: center;
   gap: 5px;
 }
+
 .sitemap-email-btn .email-toast::after {
   content: "";
   position: absolute;
@@ -2066,16 +2086,19 @@ nav#main-nav a.active-link {
   border-style: solid;
   border-color: #ffffff transparent transparent transparent;
 }
+
 .sitemap-email-btn.is-copied .email-toast {
   opacity: 1;
   transform: translateY(0);
 }
+
 .sitemap-socials-row {
   display: flex;
   align-items: center;
   gap: 14px;
   color: var(--muted);
 }
+
 .sitemap-social-icon {
   color: var(--muted);
   text-decoration: none;
@@ -2084,28 +2107,31 @@ nav#main-nav a.active-link {
   justify-content: center;
   transition: color 0.2s ease, transform 0.2s ease;
 }
+
 .sitemap-social-icon:hover {
   color: var(--orange);
   transform: translateY(-1px);
 }
-@media (max-width: 768px) {
-  .sitemap-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
 
 .sitemap-behance-img {
-  width: 17px;
-  height: 17px;
+  height: 20px;
+  width: auto;
+  max-width: 34px;
   object-fit: contain;
   display: block;
   filter: invert(1);
-  opacity: 0.65;
+  opacity: 0.75;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .sitemap-social-icon:hover .sitemap-behance-img {
   opacity: 1;
   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .sitemap-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }

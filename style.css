@@ -1122,6 +1122,9 @@ body.cursor-click .cursor-square {
 }
 
 @media (max-width: 768px) {
+  .top-status-cluster {
+    display: none !important;
+  }
   .sitemap-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1914,11 +1917,12 @@ body.about-page .about-nav-bar {
 
 /* Behance Logo Image in Sitemap */
 .sitemap-behance-img {
-  width: 17px;
-  height: 17px;
+  height: 20px;
+  width: auto;
+  max-width: 34px;
   object-fit: contain;
   display: block;
-  opacity: 0.65;
+  opacity: 0.75;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -1927,7 +1931,6 @@ body.about-page .about-nav-bar {
   transform: translateY(-2px);
 }
 
-.top-status-cluster,
 .mobile-nav-footer {
   display: none !important;
 }
