@@ -281,8 +281,6 @@
     }
 
     .hero-illustration-img {
-      transform: scale(1.08) translateY(2.5%);
-      transform-origin: center top;
       width: 100%;
       height: auto;
       display: block;
@@ -1072,6 +1070,60 @@
         gap: 30px;
       }
     }
+  
+    .presentation-slide-card {
+      width: 100%;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      margin-top: 18px;
+    }
+    .presentation-slide-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .persona-block-wrapper {
+      margin-bottom: 64px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .persona-block-wrapper:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .persona-block-header {
+      margin-bottom: 18px;
+    }
+    .persona-badge-tag {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--brand-teal);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .persona-heading-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 4px;
+    }
+    .persona-duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    @media (max-width: 768px) {
+      .persona-duo-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1127,7 +1179,7 @@
       </div>
 
       <div class="hero-illustration-box">
-        <img src="assets/Kochi Metro App Redesign.png" alt="Kochi Metro App Redesign Cover" class="hero-illustration-img kmrl-cover-hero" loading="eager">
+        <img src="assets/Kochi Metro App Redesign (1).png" alt="Kochi Metro App Redesign Cover" class="hero-illustration-img" loading="eager">
       </div>
     </section>
 
@@ -1174,23 +1226,32 @@
       </div>
     </section>
 
-    <!-- Section 3: App Store Reviews & Fieldwork Insights -->
+        <!-- Section 3: App Store Reviews & Fieldwork Insights -->
     <section class="cs-section">
       <div class="cs-section-header">
         <span class="cs-step-tag">03 · User Feedback</span>
         <h2 class="cs-section-title">Real Commuter Frustrations</h2>
       </div>
       <p class="cs-body-paragraph">
-        Despite being the official transit platform, recent app store reviews reveal recurring friction points, ticketing timeouts, and confusion between the planner and booking sections.
+        Despite being an established platform for Kochi1 users, the app still falls short in everyday use. Recent app store reviews reveal recurring frustrations, usability issues, and gaps in the experience:
       </p>
 
-      <div class="reviews-masonry">
-        <img src="assets/img_4.png" alt="User review: Card balance recharge lag" class="review-chip-img">
-        <img src="assets/img_5.png" alt="User review: Multimodal confusion" class="review-chip-img">
-        <img src="assets/img_7.png" alt="User review: QR ticket generation delay" class="review-chip-img">
-        <img src="assets/img_8.png" alt="User review: Navigation loop frustration" class="review-chip-img">
-        <img src="assets/img_9.png" alt="User review: Water metro route missing" class="review-chip-img">
-        <img src="assets/img_11.png" alt="User review: Profile save feedback missing" class="review-chip-img">
+      <!-- Authentic Reviews Presentation Slide -->
+      <div class="presentation-slide-card" style="margin-bottom: 36px;">
+        <img src="assets/pdf_review_page.png" alt="Play Store and App Store Commuter Reviews" class="presentation-slide-img" loading="lazy">
+      </div>
+
+      <div class="cs-section-header" style="margin-top: 48px;">
+        <span class="cs-step-tag">03.1 · Social Proof & Fieldwork</span>
+        <h2 class="cs-section-title">Viral Reel &amp; Commuter Reactions</h2>
+      </div>
+      <p class="cs-body-paragraph">
+        Reactions and comments from viral Instagram reels show how ticket turnstile anxiety, scanner delays, and navigation confusion impact daily transit habits:
+      </p>
+
+      <!-- Authentic Reel & Comments Presentation Slide -->
+      <div class="presentation-slide-card">
+        <img src="assets/pdf_reel_comments_page.png" alt="Viral Instagram Reel and Commuter Comments" class="presentation-slide-img" loading="lazy">
       </div>
     </section>
 

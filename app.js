@@ -10,6 +10,22 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Lenis Smooth Inertial Scroll (Buttery fluid motion matching inspo)
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 0.95,
+      touchMultiplier: 1.2
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+
 
   // =========================================================================
   // 0. Site Launch Preloader Overlay (2x speed, muted, cropped, pure white bg)

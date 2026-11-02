@@ -810,14 +810,7 @@ body.cursor-click .cursor-square {
 }
 
 
-.project-thumb-img.kmrl-cover-thumb {
-  transform: scale(1.09) translateY(2.8%) translateZ(0) !important;
-  transform-origin: center top !important;
-}
 
-.project-entry:hover .project-thumb-img.kmrl-cover-thumb {
-  transform: scale(1.14) translateY(2.8%) translateZ(0) !important;
-}
 
 .project-info {
   display: flex;
@@ -1324,8 +1317,8 @@ body.cursor-click .cursor-square {
 
 .mobile-nav-link {
   font-family: var(--font-main);
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 500;
   color: #141414;
   text-decoration: none;
   letter-spacing: -0.01em;
@@ -1376,8 +1369,8 @@ body.cursor-click .cursor-square {
 
 .mobile-nav-link {
   font-family: var(--font-main);
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 0.84rem;
+  font-weight: 500;
   color: #141414;
   text-decoration: none;
   letter-spacing: -0.02em;
@@ -2114,5 +2107,145 @@ body.about-page .about-nav-bar {
   }
   .exp-description {
     font-size: 0.9rem;
+  }
+}
+
+
+/* ==========================================================================
+   Other Projects Section (Matching User Reference Image)
+   ========================================================================== */
+.other-projects-section {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 110px;
+}
+
+.other-projects-title {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.other-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  width: 100%;
+}
+
+.other-project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.other-project-thumb-frame {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--card-radius);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px dashed rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.other-project-card:hover .other-project-thumb-frame {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--accent-orange);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.other-project-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 8px;
+}
+
+.other-project-mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.other-project-arrow {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.other-project-card:hover .other-project-arrow {
+  color: var(--accent-orange);
+  transform: translate(2px, -2px);
+}
+
+.other-project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.other-project-heading {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.other-project-desc {
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Lenis Smooth Inertial Scroll Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .other-projects-section {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+  .other-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .mobile-nav-link {
+    font-size: 0.84rem !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+  }
+  .mobile-nav-link span:last-child {
+    font-size: 0.84rem !important;
   }
 }
