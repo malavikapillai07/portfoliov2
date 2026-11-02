@@ -1076,6 +1076,99 @@
       border: none !important;
       box-shadow: none !important;
     }
+    
+    /* Persona Portrait & Scenario Duo Layout */
+    .persona-duo-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 18px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 840px) {
+      .persona-duo-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+    .persona-portrait-card-wrap {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: transparent;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .persona-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .persona-scenario-content-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 30px 26px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.025);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+    }
+    .scenario-tag-label {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--teal-primary, #1c95a6);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .scenario-headline {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.35;
+    }
+    .scenario-body-text {
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .scenario-friction-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(28, 149, 166, 0.07);
+      border: 1px solid rgba(28, 149, 166, 0.18);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      color: #116875;
+      line-height: 1.4;
+      margin-top: 4px;
+    }
+    .storyboard-card-wrap,
+    .empathy-card-wrap {
+      width: 100%;
+      margin-top: 24px;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .storyboard-strip-img,
+    .empathy-map-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .presentation-slide-card {
       width: 100%;
       border-radius: var(--card-radius);
@@ -1150,12 +1243,7 @@
       <span style="color:var(--text-muted); font-size: 0.82rem; margin-left: 2px;">/ Kochi 1 Redesign</span>
     </a>
 
-    <div class="hud-right-group">
-      <a href="Kochi1_App_Redesign_UX_Case_Study.pdf" target="_blank" class="hud-pill hud-pdf-btn">
-        <span>PDF Deck (29P)</span>
-        <span>↗</span>
-      </a>
-    </div>
+    
   </header>
 
   <!-- 5. Main Case Study Content Container (Fixed Width: 760px) -->
@@ -1372,7 +1460,7 @@
       </p>
     </section>
 
-        <!-- Section 7: The Three Personas -->
+            <!-- Section 7: The Three Personas -->
     <section class="cs-section">
       <div class="cs-section-header">
         <span class="cs-step-tag">07 · User Personas</span>
@@ -1389,21 +1477,31 @@
           <h3 class="persona-heading-title">Rahul Ajith · 24, Graduate Trainee</h3>
         </div>
         
-        <div class="persona-duo-grid">
-          <div class="presentation-slide-card">
-            <img src="assets/persona1_card.png" alt="Persona 1: Rahul Ajith Profile, Goals &amp; Pains" class="presentation-slide-img" loading="lazy">
+        <!-- Duo: Portrait Card + Scenario Content -->
+        <div class="persona-duo-layout">
+          <div class="persona-portrait-card-wrap">
+            <img src="assets/persona1_portrait.png" alt="Rahul Ajith · Persona Profile Card" class="persona-portrait-img" loading="lazy">
           </div>
-          <div class="presentation-slide-card">
-            <img src="assets/persona1_scenario.png" alt="Persona 1: Rahul Ajith Transit Scenario" class="presentation-slide-img" loading="lazy">
+          <div class="persona-scenario-content-card">
+            <span class="scenario-tag-label">Transit Scenario</span>
+            <h4 class="scenario-headline">The Rush-Hour Turnstile Rush</h4>
+            <p class="scenario-body-text">
+              Rahul is rushing to meet a friend at MG Road. He purchases a QR ticket on Kochi1 while walking into the station. At the gate, the scanner fails to read his QR code twice. Anxious and embarrassed with a queue forming behind him, he steps aside unsure if his ticket expired or if the app froze.
+            </p>
+            <div class="scenario-friction-pill">
+              <strong>Key Friction:</strong> Turnstile scanning latency, ticket expiry ambiguity, and anxious queue pressure.
+            </div>
           </div>
         </div>
 
-        <div class="presentation-slide-card" style="margin-top: 20px;">
-          <img src="assets/persona1_storyboard.png" alt="Persona 1: Rahul Ajith Illustrated Storyboard" class="presentation-slide-img" loading="lazy">
+        <!-- Illustrated Storyboard -->
+        <div class="storyboard-card-wrap">
+          <img src="assets/persona1_storyboard.png" alt="Rahul Ajith · Illustrated Journey Storyboard" class="storyboard-strip-img" loading="lazy">
         </div>
 
-        <div class="presentation-slide-card" style="margin-top: 20px;">
-          <img src="assets/persona1_empathy.png" alt="Persona 1: Rahul Ajith 4-Quadrant Empathy Map" class="presentation-slide-img" loading="lazy">
+        <!-- 4-Quadrant Empathy Map -->
+        <div class="empathy-card-wrap">
+          <img src="assets/persona1_empathy.png" alt="Rahul Ajith · 4-Quadrant Empathy Map" class="empathy-map-img" loading="lazy">
         </div>
       </div>
 
@@ -1414,21 +1512,31 @@
           <h3 class="persona-heading-title">Anu Natan · 26, Marketing Executive</h3>
         </div>
         
-        <div class="persona-duo-grid">
-          <div class="presentation-slide-card">
-            <img src="assets/persona2_card.png" alt="Persona 2: Anu Natan Profile, Goals &amp; Pains" class="presentation-slide-img" loading="lazy">
+        <!-- Duo: Portrait Card + Scenario Content -->
+        <div class="persona-duo-layout">
+          <div class="persona-portrait-card-wrap">
+            <img src="assets/persona2_portrait.png" alt="Anu Natan · Persona Profile Card" class="persona-portrait-img" loading="lazy">
           </div>
-          <div class="presentation-slide-card">
-            <img src="assets/persona2_scenario.png" alt="Persona 2: Anu Natan Transit Scenario" class="presentation-slide-img" loading="lazy">
+          <div class="persona-scenario-content-card">
+            <span class="scenario-tag-label">Transit Scenario</span>
+            <h4 class="scenario-headline">The Water Metro Connection</h4>
+            <p class="scenario-body-text">
+              Anu wants to take the Water Metro from High Court to Vypeen before catching a feeder bus to work. She opens Kochi1 to check boat departure times. The app buries boat timings beneath multiple obscure submenus, causing her to arrive at the terminal just as the boat pulls away.
+            </p>
+            <div class="scenario-friction-pill">
+              <strong>Key Friction:</strong> Disjointed multimodal navigation, separate schedules, and lack of real-time departure countdowns.
+            </div>
           </div>
         </div>
 
-        <div class="presentation-slide-card" style="margin-top: 20px;">
-          <img src="assets/persona2_storyboard.png" alt="Persona 2: Anu Natan Illustrated Storyboard" class="presentation-slide-img" loading="lazy">
+        <!-- Illustrated Storyboard -->
+        <div class="storyboard-card-wrap">
+          <img src="assets/persona2_storyboard.png" alt="Anu Natan · Illustrated Journey Storyboard" class="storyboard-strip-img" loading="lazy">
         </div>
 
-        <div class="presentation-slide-card" style="margin-top: 20px;">
-          <img src="assets/persona2_empathy.png" alt="Persona 2: Anu Natan 4-Quadrant Empathy Map" class="presentation-slide-img" loading="lazy">
+        <!-- 4-Quadrant Empathy Map -->
+        <div class="empathy-card-wrap">
+          <img src="assets/persona2_empathy.png" alt="Anu Natan · 4-Quadrant Empathy Map" class="empathy-map-img" loading="lazy">
         </div>
       </div>
 
@@ -1439,21 +1547,31 @@
           <h3 class="persona-heading-title">Meera Ram · 32, High School Teacher</h3>
         </div>
         
-        <div class="persona-duo-grid">
-          <div class="presentation-slide-card">
-            <img src="assets/persona3_card.png" alt="Persona 3: Meera Ram Profile, Goals &amp; Pains" class="presentation-slide-img" loading="lazy">
+        <!-- Duo: Portrait Card + Scenario Content -->
+        <div class="persona-duo-layout">
+          <div class="persona-portrait-card-wrap">
+            <img src="assets/persona3_portrait.png" alt="Meera Ram · Persona Profile Card" class="persona-portrait-img" loading="lazy">
           </div>
-          <div class="presentation-slide-card">
-            <img src="assets/persona3_scenario.png" alt="Persona 3: Meera Ram Transit Scenario" class="presentation-slide-img" loading="lazy">
+          <div class="persona-scenario-content-card">
+            <span class="scenario-tag-label">Transit Scenario</span>
+            <h4 class="scenario-headline">The Cross-City Medical Appointment</h4>
+            <p class="scenario-body-text">
+              Meera needs to travel from Fort Kochi to Edappally for an important medical appointment. The navigation bar displays both “Planner” and “Book Tickets”, leaving her unsure which to select. The search results present Water Metro, Metro, and bus in a dense, visual bundle without transfer directions, increasing her anxiety.
+            </p>
+            <div class="scenario-friction-pill">
+              <strong>Key Friction:</strong> Confusing dual taxonomy ("Planner" vs "Book Tickets"), dense route icons, and transit transfer stress.
+            </div>
           </div>
         </div>
 
-        <div class="presentation-slide-card" style="margin-top: 20px;">
-          <img src="assets/persona3_storyboard.png" alt="Persona 3: Meera Ram Illustrated Storyboard" class="presentation-slide-img" loading="lazy">
+        <!-- Illustrated Storyboard -->
+        <div class="storyboard-card-wrap">
+          <img src="assets/persona3_storyboard.png" alt="Meera Ram · Illustrated Journey Storyboard" class="storyboard-strip-img" loading="lazy">
         </div>
 
-        <div class="presentation-slide-card" style="margin-top: 20px;">
-          <img src="assets/persona3_empathy.png" alt="Persona 3: Meera Ram 4-Quadrant Empathy Map" class="presentation-slide-img" loading="lazy">
+        <!-- 4-Quadrant Empathy Map -->
+        <div class="empathy-card-wrap">
+          <img src="assets/persona3_empathy.png" alt="Meera Ram · 4-Quadrant Empathy Map" class="empathy-map-img" loading="lazy">
         </div>
       </div>
     </section>
