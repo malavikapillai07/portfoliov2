@@ -270,6 +270,7 @@
     }
 
     .hero-illustration-box {
+      overflow: hidden;
       width: 100%;
       border-radius: var(--card-radius);
       overflow: hidden;
@@ -280,6 +281,8 @@
     }
 
     .hero-illustration-img {
+      transform: scale(1.08) translateY(2.5%);
+      transform-origin: center top;
       width: 100%;
       height: auto;
       display: block;
@@ -957,6 +960,24 @@
       gap: 40px;
     }
 
+    .sitemap-col-author {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sitemap-logo-img {
+      height: 44px;
+      width: auto;
+      align-self: flex-start;
+      opacity: 1;
+      image-rendering: -webkit-optimize-contrast;
+      margin-left: -15px;
+    }
+    .sitemap-author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
     .sitemap-col-author h3 {
       font-size: 1.1rem;
       font-weight: 700;
@@ -1107,7 +1128,7 @@
       </div>
 
       <div class="hero-illustration-box">
-        <img src="assets/img_1.png" alt="Kochi Metro Train and Commuters Illustration" class="hero-illustration-img" loading="eager">
+        <img src="assets/Kochi Metro App Redesign.png" alt="Kochi Metro App Redesign Cover" class="hero-illustration-img kmrl-cover-hero" loading="eager">
       </div>
     </section>
 
@@ -1606,8 +1627,11 @@
     <footer class="sitemap-footer">
       <div class="sitemap-grid">
         <div class="sitemap-col-author">
-          <h3>Malavika Pillai</h3>
-          <p>UI/UX &amp; Product Designer</p>
+          <img src="../malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img" decoding="async">
+          <div class="sitemap-author-info">
+            <h3 class="sitemap-author-name">Malavika Pillai</h3>
+            <p class="sitemap-author-role">UI/UX · Product Designer</p>
+          </div>
         </div>
 
         <div class="sitemap-col">

@@ -286,7 +286,8 @@ body.cursor-click .cursor-square {
   width: auto;
   max-width: 100%;
   display: block;
-  mix-blend-mode: multiply;
+  opacity: 1;
+  image-rendering: -webkit-optimize-contrast;
   transition: transform 0.2s ease;
 }
 
@@ -807,6 +808,16 @@ body.cursor-click .cursor-square {
   transform: scale(1.038) translateZ(0);
 }
 
+
+.project-thumb-img.kmrl-cover-thumb {
+  transform: scale(1.09) translateY(2.8%) translateZ(0) !important;
+  transform-origin: center top !important;
+}
+
+.project-entry:hover .project-thumb-img.kmrl-cover-thumb {
+  transform: scale(1.14) translateY(2.8%) translateZ(0) !important;
+}
+
 .project-info {
   display: flex;
   flex-direction: column;
@@ -968,7 +979,8 @@ body.cursor-click .cursor-square {
   height: 44px;
   width: auto;
   align-self: flex-start;
-  mix-blend-mode: multiply;
+  opacity: 1;
+  image-rendering: -webkit-optimize-contrast;
   margin-left: -15px; /* Align flush with text */
 }
 
@@ -1464,22 +1476,25 @@ body.cursor-click .cursor-square {
   }
 
   .logo-flip-container {
-    height: 44px !important;
-    width: 46px !important;
+    height: 46px !important;
+    width: 80px !important;
     flex-shrink: 0 !important;
   }
 
   .malu-logo-img {
-    height: 44px !important;
-    width: 46px !important;
+    height: 46px !important;
+    width: auto !important;
+    max-width: 100% !important;
     object-fit: contain !important;
     display: block !important;
     margin-left: 0 !important;
+    opacity: 1 !important;
+    image-rendering: -webkit-optimize-contrast !important;
   }
 
   .malu-picture-img {
-    height: 44px !important;
-    width: 44px !important;
+    height: 46px !important;
+    width: 46px !important;
     border-radius: 10px !important;
     object-fit: cover !important;
   }
