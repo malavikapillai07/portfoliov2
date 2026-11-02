@@ -612,6 +612,7 @@
       transform: translateY(-2px);
     }
   </style>
+  <link rel="stylesheet" href="../image-preview.css">
 </head>
 <body>
 
@@ -715,7 +716,7 @@
     <!-- Closing Line -->
     <div class="closing-touch-line">
       <span>If you'd like to learn more about the process or my role, feel free to get in touch.</span>
-      <a href="#sitemapFooter" class="touch-link" id="getInTouchBtn">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=malavikapillaiofficial@gmail.com&su=Discuss%20further%20more..." class="touch-link" id="getInTouchBtn" target="_blank" rel="noopener noreferrer">
         <span>Get in touch</span>
         <span>↗</span>
       </a>
@@ -834,9 +835,22 @@
         if (progressBar) progressBar.style.width = `${progress}%`;
       };
       updateProgressBar();
+      // Get in touch: Opens Gmail with recipient & subject prefilled to discuss further
+      const touchBtn = document.getElementById('getInTouchBtn');
+      if (touchBtn) {
+        touchBtn.addEventListener('click', function(e) {
+          const isTouchOrMobile = ('ontouchstart' in window) || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+          if (isTouchOrMobile) {
+            e.preventDefault();
+            window.location.href = 'mailto:malavikapillaiofficial@gmail.com?subject=Discuss%20further%20more...';
+          }
+        });
+      }
+
       window.addEventListener('scroll', updateProgressBar, { passive: true });
       window.addEventListener('resize', updateProgressBar, { passive: true });
     });
   </script>
+  <script src="../image-preview.js"></script>
 </body>
 </html>

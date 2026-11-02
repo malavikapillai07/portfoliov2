@@ -343,9 +343,10 @@ body.cursor-click .cursor-square {
 
 .role-text {
   font-family: var(--font-mono);
-  font-size: 0.73rem;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #666666;
   text-transform: uppercase;
   transition: color 0.15s ease;
 }
@@ -2122,12 +2123,12 @@ body.about-page .about-nav-bar {
 
 .other-projects-title {
   font-family: var(--font-mono);
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #666666;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .other-projects-grid {
@@ -2142,6 +2143,8 @@ body.about-page .about-nav-bar {
   flex-direction: column;
   gap: 14px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .other-project-thumb-frame {

@@ -1,0 +1,106 @@
+/* Image Preview Lightbox (Universal across all projects) */
+.img-preview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(10, 10, 10, 0.90);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.img-preview-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.img-preview-dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 95vw;
+  max-height: 92vh;
+}
+
+.img-preview-image {
+  max-width: 92vw;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform: scale(0.96);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: zoom-out;
+  background: rgba(18, 18, 18, 0.7);
+}
+
+.img-preview-overlay.is-active .img-preview-image {
+  transform: scale(1);
+}
+
+.img-preview-caption {
+  margin-top: 14px;
+  font-family: 'Space Mono', monospace, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  max-width: 82vw;
+  line-height: 1.45;
+  pointer-events: none;
+}
+
+.img-preview-close {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(28, 28, 28, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1000000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.img-preview-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.08);
+}
+
+body.img-preview-locked {
+  overflow: hidden !important;
+}
+
+/* Cursor on previewable images and gifs */
+.has-img-preview {
+  cursor: zoom-in !important;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.has-img-preview:hover {
+  filter: brightness(1.02);
+}
