@@ -19,9 +19,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloaderCanvas = document.getElementById('preloaderCanvas');
   const preloaderSkipBtn = document.getElementById('preloaderSkipBtn');
 
+  // Mobile Automatic 5-second Logo Flip Loop
+  // Defined globally so it starts ONLY when the screen is actually revealed to the user
+  let mobileFlipInterval = null;
+  function startMobileLogoFlipTimer() {
+    const flipContainer = document.getElementById('logoFlipContainer');
+    if (!flipContainer || mobileFlipInterval) return;
+    // Guaranteed on initial load: LOGO is shown first (never photo first)
+    flipContainer.classList.remove('is-flipped');
+    let isFlippedMobile = false;
+
+    mobileFlipInterval = setInterval(() => {
+      if (window.innerWidth <= 768) {
+        isFlippedMobile = !isFlippedMobile;
+        if (isFlippedMobile) {
+          flipContainer.classList.add('is-flipped'); // Flips to photo after 5 seconds
+        } else {
+          flipContainer.classList.remove('is-flipped'); // Flips back to logo 5s later
+        }
+      }
+    }, 5000);
+  }
+
   if (sessionStorage.getItem('sitePreloaderShown') === 'true') {
     if (sitePreloader) sitePreloader.style.display = 'none';
     document.documentElement.classList.add('preloader-done');
+    startMobileLogoFlipTimer();
   } else if (sitePreloader && preloaderVideo) {
     preloaderVideo.playbackRate = 2.0;
     preloaderVideo.muted = true;
@@ -35,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         sitePreloader.style.display = 'none';
         document.documentElement.classList.add('preloader-done');
+        startMobileLogoFlipTimer();
       }, 450);
     };
 
@@ -100,6 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
         closePreloader();
       });
     }
+  } else {
+    startMobileLogoFlipTimer();
   }
 
   // =========================================================================
@@ -136,29 +162,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const brandLogoWrap = document.getElementById('brandLogoWrap');
   const nameBlock = document.getElementById('nameBlock');
 
-  // Mobile Automatic 5-second Logo Flip Loop
-  if (logoFlipContainer) {
-    let isFlippedMobile = false;
-    setInterval(() => {
-      if (window.innerWidth <= 768) {
-        isFlippedMobile = !isFlippedMobile;
-        if (isFlippedMobile) {
-          logoFlipContainer.classList.add('is-flipped');
-        } else {
-          logoFlipContainer.classList.remove('is-flipped');
-        }
-      }
-    }, 5000);
-  }
-
+  // Desktop 3D flip on hover
   if (logoFlipContainer) {
     const flipTargets = [authorTitle, brandLogoWrap, nameBlock].filter(Boolean);
     flipTargets.forEach(target => {
       target.addEventListener('mouseenter', () => {
-        logoFlipContainer.classList.add('is-flipped');
+        if (window.innerWidth > 768) {
+          logoFlipContainer.classList.add('is-flipped');
+        }
       });
       target.addEventListener('mouseleave', () => {
-        logoFlipContainer.classList.remove('is-flipped');
+        if (window.innerWidth > 768) {
+          logoFlipContainer.classList.remove('is-flipped');
+        }
       });
     });
   }

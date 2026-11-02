@@ -232,7 +232,7 @@ body.cursor-click .cursor-square {
 .logo-flip-container {
   position: relative;
   height: 54px;
-  width: 88px;
+  width: 56px;
   cursor: pointer;
 }
 
@@ -1464,21 +1464,24 @@ body.cursor-click .cursor-square {
   }
 
   .logo-flip-container {
-    height: 52px !important;
-    width: 52px !important;
+    height: 44px !important;
+    width: 46px !important;
+    flex-shrink: 0 !important;
   }
 
   .malu-logo-img {
-    height: 52px !important;
-    width: 52px !important;
+    height: 44px !important;
+    width: 46px !important;
     object-fit: contain !important;
+    display: block !important;
     margin-left: 0 !important;
   }
 
   .malu-picture-img {
-    height: 52px !important;
-    width: 52px !important;
-    border-radius: 12px !important;
+    height: 44px !important;
+    width: 44px !important;
+    border-radius: 10px !important;
+    object-fit: cover !important;
   }
 
   .author-identity-text {
@@ -1488,11 +1491,38 @@ body.cursor-click .cursor-square {
   }
 
   .author-title {
-    font-size: 1.18rem !important;
-    line-height: 1.12 !important;
+    font-size: 1.25rem !important;
+    line-height: 1.08 !important;
     font-weight: 700 !important;
     letter-spacing: -0.02em !important;
     margin: 0 !important;
+  }
+
+  /* Prevent touch from triggering stuck hover on mobile */
+  .name-block:hover .logo-face-front,
+  .brand-logo-wrap:hover .logo-face-front {
+    transform: rotateY(0deg) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .name-block:hover .logo-face-back,
+  .brand-logo-wrap:hover .logo-face-back {
+    transform: rotateY(180deg) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .logo-flip-container.is-flipped .logo-face-front {
+    transform: rotateY(-180deg) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .logo-flip-container.is-flipped .logo-face-back {
+    transform: rotateY(0deg) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 
   .mobile-name-break {
