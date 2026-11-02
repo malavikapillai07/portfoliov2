@@ -461,7 +461,7 @@
       align-self: flex-start;
       opacity: 1;
       image-rendering: -webkit-optimize-contrast;
-      margin-left: -15px;
+      margin-left: 0;
     }
     .sitemap-author-info {
       display: flex;
@@ -626,12 +626,12 @@
 
   <!-- Floating HUD / Navigation -->
   <header class="floating-hud">
-    <a href="../index.html" class="hud-pill" title="Return to main portfolio">
+    <a href="../index.html" class="hud-pill" title="Return to Projects">
       <span class="hud-tag-dot"></span>
       <span>← Projects</span>
-      <span style="color: var(--text-muted); font-size: 0.74rem;">| Overview</span>
+      <span style="color: var(--text-muted); font-size: 0.82rem; margin-left: 2px;">/ LoopLinks Internship</span>
     </a>
-    </header>
+  </header>
 
   <!-- Centred Column Stage (720px - 760px wide) -->
   <main class="case-study-stage">
@@ -715,14 +715,14 @@
     <!-- Closing Line -->
     <div class="closing-touch-line">
       <span>If you'd like to learn more about the process or my role, feel free to get in touch.</span>
-      <a href="mailto:malavikabpillai@gmail.com" class="touch-link">
+      <a href="#sitemapFooter" class="touch-link" id="getInTouchBtn">
         <span>Get in touch</span>
         <span>↗</span>
       </a>
     </div>
 
     <!-- Sitemap Footer (Always visible when scrolled down) -->
-    <footer class="sitemap-footer">
+    <footer class="sitemap-footer" id="sitemapFooter">
       <div class="sitemap-grid">
         
         <!-- Column 1: Logo + Malavika Pillai + Subtitle -->

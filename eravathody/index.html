@@ -1123,7 +1123,7 @@
       align-self: flex-start;
       opacity: 1;
       image-rendering: -webkit-optimize-contrast;
-      margin-left: -15px;
+      margin-left: 0;
     }
     .sitemap-author-info {
       display: flex;
@@ -1264,24 +1264,23 @@
     .hero-video-frame {
       position: relative;
       width: 100%;
-      height: 480px;
-      min-height: 380px;
-      max-height: 520px;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      max-height: none;
+      min-height: auto;
       border-radius: var(--card-radius);
       overflow: hidden;
       margin: 24px 0;
-      background: #f3eee8;
+      background: #000;
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
 
     .hero-video-gif {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: 18% 12%;
-      transform: scale(1.48);
-      transform-origin: 18% 15%;
+      object-fit: contain;
+      transform: none;
       display: block;
     }
 
@@ -1314,12 +1313,11 @@
 
   <!-- Floating HUD / Navigation -->
   <header class="floating-hud">
-    <a href="../index.html" class="hud-pill" title="Return to main portfolio">
+    <a href="../index.html" class="hud-pill" title="Return to Projects">
       <span class="hud-tag-dot"></span>
-      <span>← Malavika Pillai</span>
-      <span style="color: var(--text-muted); font-size: 0.74rem;">/ Case Study</span>
+      <span>← Projects</span>
+      <span style="color: var(--text-muted); font-size: 0.82rem; margin-left: 2px;">/ Eravathody Website Redesign</span>
     </a>
-    <div class="hud-right-cluster"></div>
   </header>
 
   <!-- Focused Centered Column Stage -->

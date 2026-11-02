@@ -231,7 +231,7 @@ body.cursor-click .cursor-square {
 
 .logo-flip-container {
   position: relative;
-  height: 54px;
+  height: 48px;
   width: 56px;
   cursor: pointer;
 }
@@ -282,9 +282,10 @@ body.cursor-click .cursor-square {
 }
 
 .malu-logo-img {
-  height: 52px;
-  width: auto;
+  height: 100%;
+  width: 100%;
   max-width: 100%;
+  object-fit: contain;
   display: block;
   opacity: 1;
   image-rendering: -webkit-optimize-contrast;
@@ -292,8 +293,8 @@ body.cursor-click .cursor-square {
 }
 
 .malu-picture-img {
-  height: 52px;
-  width: 52px;
+  height: 48px;
+  width: 48px;
   object-fit: cover;
   object-position: top center;
   border-radius: 14px;
@@ -981,7 +982,7 @@ body.cursor-click .cursor-square {
   align-self: flex-start;
   opacity: 1;
   image-rendering: -webkit-optimize-contrast;
-  margin-left: -15px; /* Align flush with text */
+  margin-left: 0;
 }
 
 .sitemap-author-info {
@@ -1476,14 +1477,14 @@ body.cursor-click .cursor-square {
   }
 
   .logo-flip-container {
-    height: 46px !important;
-    width: 80px !important;
+    height: 44px !important;
+    width: 52px !important;
     flex-shrink: 0 !important;
   }
 
   .malu-logo-img {
-    height: 46px !important;
-    width: auto !important;
+    height: 100% !important;
+    width: 100% !important;
     max-width: 100% !important;
     object-fit: contain !important;
     display: block !important;
@@ -1493,8 +1494,8 @@ body.cursor-click .cursor-square {
   }
 
   .malu-picture-img {
-    height: 46px !important;
-    width: 46px !important;
+    height: 44px !important;
+    width: 44px !important;
     border-radius: 10px !important;
     object-fit: cover !important;
   }
@@ -1991,4 +1992,127 @@ body.about-page .about-nav-bar {
 
 .mobile-nav-footer {
   display: none !important;
+}
+
+
+/* ==========================================================================
+   About Page - My Experience Section (matching user reference)
+   ========================================================================== */
+.experience-section {
+  margin-top: 20px;
+  margin-bottom: 110px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.experience-section-heading {
+  font-family: var(--font-main);
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin-bottom: 36px;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.exp-logo-frame {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #f8f7f5;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  margin-top: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.exp-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.exp-header {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.exp-role-title {
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.exp-company {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.exp-meta {
+  font-family: var(--font-main);
+  font-size: 0.86rem;
+  color: #767676;
+  font-weight: 400;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+.exp-description {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: #4a4a4a;
+  margin: 0;
+  max-width: 720px;
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    margin-bottom: 60px;
+    padding-top: 32px;
+  }
+  .experience-section-heading {
+    font-size: 1.45rem;
+    margin-bottom: 24px;
+  }
+  .experience-item {
+    gap: 14px;
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+  }
+  .exp-logo-frame {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+  .exp-role-title {
+    font-size: 0.98rem;
+  }
+  .exp-description {
+    font-size: 0.9rem;
+  }
 }
