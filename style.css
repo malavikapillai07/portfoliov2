@@ -231,8 +231,8 @@ body.cursor-click .cursor-square {
 
 .logo-flip-container {
   position: relative;
-  height: 48px;
-  width: 56px;
+  height: 40px;
+  width: 47px;
   cursor: pointer;
 }
 
@@ -293,11 +293,11 @@ body.cursor-click .cursor-square {
 }
 
 .malu-picture-img {
-  height: 48px;
-  width: 48px;
+  height: 40px;
+  width: 40px;
   object-fit: cover;
   object-position: top center;
-  border-radius: 14px;
+  border-radius: 10px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   border: 1.5px solid rgba(0, 0, 0, 0.08);
   display: block;
