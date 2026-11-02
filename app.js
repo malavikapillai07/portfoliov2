@@ -433,15 +433,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'Traditional stock photos erode user trust when the physical product arrives looking different. We engineered an authentic visual taxonomy: natural tactile textures, transparent ingredient labeling, and pastel swatch system that matches actual produce freshness.',
         'Across 1,200+ SKU shoots, product return disputes dropped by 38%, establishing a recognizable benchmark for digital merchandising.'
       ]
-    },
-    'flaneur-redesign': {
-      title: 'Flâneur Website Redesign',
-      image: 'assets/chocolate_laptop.jpg',
-      paragraphs: [
-        'Designing a digital flagship for Flâneur, an artisanal chocolate atelier, crafted in a 12-hour high-intensity design sprint under evolving constraints.',
-        'The aesthetic translates sensory chocolate notes into molten dark stone tones, warm amber backlight, and responsive editorial typography.',
-        'Features interactive cocoa-percentage tasting profiles, bespoke gift curation builders, and seamless micro-animations.'
-      ]
     }
   };
 

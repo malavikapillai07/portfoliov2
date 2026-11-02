@@ -1071,6 +1071,11 @@
       }
     }
   
+    .presentation-slide-card.transparent-slide {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
     .presentation-slide-card {
       width: 100%;
       border-radius: var(--card-radius);
@@ -1238,7 +1243,7 @@
       </p>
 
       <!-- Authentic Reviews Presentation Slide -->
-      <div class="presentation-slide-card" style="margin-bottom: 36px;">
+      <div class="presentation-slide-card transparent-slide" style="margin-bottom: 36px;">
         <img src="assets/pdf_review_page.png" alt="Play Store and App Store Commuter Reviews" class="presentation-slide-img" loading="lazy">
       </div>
 
@@ -1251,7 +1256,7 @@
       </p>
 
       <!-- Authentic Reel & Comments Presentation Slide -->
-      <div class="presentation-slide-card">
+      <div class="presentation-slide-card transparent-slide">
         <img src="assets/pdf_reel_comments_page.png" alt="Viral Instagram Reel and Commuter Comments" class="presentation-slide-img" loading="lazy">
       </div>
     </section>
@@ -1367,7 +1372,7 @@
       </p>
     </section>
 
-    <!-- Section 7: The Three Personas -->
+        <!-- Section 7: The Three Personas -->
     <section class="cs-section">
       <div class="cs-section-header">
         <span class="cs-step-tag">07 · User Personas</span>
@@ -1378,225 +1383,77 @@
       </p>
 
       <!-- PERSONA 1: Rahul Ajith -->
-      <div class="persona-container">
-        <div class="persona-top-row">
-          <div class="persona-avatar-wrap">
-            <img src="assets/img_31.png" alt="Rahul Ajith" class="persona-avatar-img">
+      <div class="persona-block-wrapper">
+        <div class="persona-block-header">
+          <span class="persona-badge-tag">Persona 01 · Daily Metro Commuter</span>
+          <h3 class="persona-heading-title">Rahul Ajith · 24, Graduate Trainee</h3>
+        </div>
+        
+        <div class="persona-duo-grid">
+          <div class="presentation-slide-card">
+            <img src="assets/persona1_card.png" alt="Persona 1: Rahul Ajith Profile, Goals &amp; Pains" class="presentation-slide-img" loading="lazy">
           </div>
-          <div class="persona-identity">
-            <h3>Rahul Ajith</h3>
-            <div class="persona-tagline">24, Male · Graduate Trainee · Kochi</div>
-            <div class="persona-traits-row">
-              <span class="trait-badge">Tech-Savvy</span>
-              <span class="trait-badge">Fast-Paced</span>
-              <span class="trait-badge">Budget-Conscious</span>
-              <span class="trait-badge">Daily Metro User</span>
-            </div>
+          <div class="presentation-slide-card">
+            <img src="assets/persona1_scenario.png" alt="Persona 1: Rahul Ajith Transit Scenario" class="presentation-slide-img" loading="lazy">
           </div>
         </div>
 
-        <div class="persona-details-grid">
-          <div class="persona-col-card">
-            <div class="persona-col-title pain">Pain Points</div>
-            <ul class="bullet-list">
-              <li>QR ticket scanning errors at entry turnstiles</li>
-              <li>Unclear ticket validity expiration windows</li>
-              <li>Card balance lag after online recharge</li>
-            </ul>
-          </div>
-          <div class="persona-col-card">
-            <div class="persona-col-title goal">Goals</div>
-            <ul class="bullet-list">
-              <li>Book tickets in under 15 seconds</li>
-              <li>Never miss the scheduled metro train</li>
-              <li>Trust real-time balance updates</li>
-            </ul>
-          </div>
+        <div class="presentation-slide-card" style="margin-top: 20px;">
+          <img src="assets/persona1_storyboard.png" alt="Persona 1: Rahul Ajith Illustrated Storyboard" class="presentation-slide-img" loading="lazy">
         </div>
 
-        <div class="persona-scenario-box">
-          <strong>Scenario: The Rush-Hour Rush</strong>
-          Rahul is rushing to meet a friend at MG Road. He purchases a QR ticket on Kochi1 while walking into the station. At the gate, the scanner fails to read his QR code twice. Anxious and embarrassed with a queue forming behind him, he steps aside unsure if his ticket expired or if the app froze.
-        </div>
-
-        <div class="storyboard-wrapper">
-          <div class="storyboard-title">Storyboard · Rahul's Journey</div>
-          <img src="assets/img_30.png" alt="Rahul Ajith Storyboard" class="storyboard-img">
-        </div>
-
-        <!-- Empathy Map -->
-        <div class="empathy-map-card">
-          <div class="empathy-title">Empathy Map · Rahul Ajith</div>
-          <div class="empathy-quadrant-grid">
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Says</span>
-              <p>“My ticket is valid, so why isn’t it scanning?”</p>
-              <p>“Will my money be refunded if it fails?”</p>
-            </div>
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Does</span>
-              <p>Rapidly checks phone screen brightness at turnstile.</p>
-              <p>Steps out of line to refresh app balance.</p>
-            </div>
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Feels</span>
-              <p>Frustrated by delayed confirmation states.</p>
-              <p>Anxious about holding up the commuter queue.</p>
-            </div>
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Thinks</span>
-              <p>“Buying a physical token would have been faster.”</p>
-              <p>“Why doesn’t the app save my offline QR ticket?”</p>
-            </div>
-          </div>
+        <div class="presentation-slide-card" style="margin-top: 20px;">
+          <img src="assets/persona1_empathy.png" alt="Persona 1: Rahul Ajith 4-Quadrant Empathy Map" class="presentation-slide-img" loading="lazy">
         </div>
       </div>
 
       <!-- PERSONA 2: Anu Natan -->
-      <div class="persona-container">
-        <div class="persona-top-row">
-          <div class="persona-avatar-wrap">
-            <img src="assets/img_34.png" alt="Anu Natan" class="persona-avatar-img">
+      <div class="persona-block-wrapper">
+        <div class="persona-block-header">
+          <span class="persona-badge-tag">Persona 02 · Multimodal Commuter</span>
+          <h3 class="persona-heading-title">Anu Natan · 26, Marketing Executive</h3>
+        </div>
+        
+        <div class="persona-duo-grid">
+          <div class="presentation-slide-card">
+            <img src="assets/persona2_card.png" alt="Persona 2: Anu Natan Profile, Goals &amp; Pains" class="presentation-slide-img" loading="lazy">
           </div>
-          <div class="persona-identity">
-            <h3>Anu Natan</h3>
-            <div class="persona-tagline">26, Female · Marketing Executive · Kochi</div>
-            <div class="persona-traits-row">
-              <span class="trait-badge">Multimodal Commuter</span>
-              <span class="trait-badge">Schedule-Oriented</span>
-              <span class="trait-badge">Water Metro User</span>
-            </div>
+          <div class="presentation-slide-card">
+            <img src="assets/persona2_scenario.png" alt="Persona 2: Anu Natan Transit Scenario" class="presentation-slide-img" loading="lazy">
           </div>
         </div>
 
-        <div class="persona-details-grid">
-          <div class="persona-col-card">
-            <div class="persona-col-title pain">Pain Points</div>
-            <ul class="bullet-list">
-              <li>Cannot easily locate Water Metro schedules</li>
-              <li>Separate screens for boat and train timings</li>
-              <li>Unclear transfer walking distances between hubs</li>
-            </ul>
-          </div>
-          <div class="persona-col-card">
-            <div class="persona-col-title goal">Goals</div>
-            <ul class="bullet-list">
-              <li>Seamlessly connect Water Metro with feeder bus</li>
-              <li>View reliable departure countdown timers</li>
-              <li>Plan scenic commute routes without second-guessing</li>
-            </ul>
-          </div>
+        <div class="presentation-slide-card" style="margin-top: 20px;">
+          <img src="assets/persona2_storyboard.png" alt="Persona 2: Anu Natan Illustrated Storyboard" class="presentation-slide-img" loading="lazy">
         </div>
 
-        <div class="persona-scenario-box">
-          <strong>Scenario: The Water Metro Connection</strong>
-          Anu wants to take the Water Metro from High Court to Vypeen before catching a feeder bus to work. She opens Kochi1 to check boat departure times. The app buries boat timings beneath multiple obscure submenus, causing her to arrive at the terminal just as the boat pulls away.
-        </div>
-
-        <div class="storyboard-wrapper">
-          <div class="storyboard-title">Storyboard · Anu's Journey</div>
-          <img src="assets/img_33.png" alt="Anu Natan Storyboard" class="storyboard-img">
-        </div>
-
-        <!-- Empathy Map -->
-        <div class="empathy-map-card">
-          <div class="empathy-title">Empathy Map · Anu Natan</div>
-          <div class="empathy-quadrant-grid">
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Says</span>
-              <p>“Where can I find Water Metro timings quickly?”</p>
-              <p>“Why is transit information scattered in different places?”</p>
-            </div>
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Does</span>
-              <p>Taps back and forth between Planner and Metro lines.</p>
-              <p>Switches to Google Maps to verify terminal location.</p>
-            </div>
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Feels</span>
-              <p>Disappointed by disjointed multimodal integration.</p>
-              <p>Hesitant to rely solely on Kochi1 for time-critical trips.</p>
-            </div>
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Thinks</span>
-              <p>“Kochi1 should be the single source of truth for all transit.”</p>
-              <p>“Why does a combined trip feel like 3 separate journeys?”</p>
-            </div>
-          </div>
+        <div class="presentation-slide-card" style="margin-top: 20px;">
+          <img src="assets/persona2_empathy.png" alt="Persona 2: Anu Natan 4-Quadrant Empathy Map" class="presentation-slide-img" loading="lazy">
         </div>
       </div>
 
       <!-- PERSONA 3: Meera Ram -->
-      <div class="persona-container">
-        <div class="persona-top-row">
-          <div class="persona-avatar-wrap">
-            <img src="assets/img_37.png" alt="Meera Ram" class="persona-avatar-img">
+      <div class="persona-block-wrapper">
+        <div class="persona-block-header">
+          <span class="persona-badge-tag">Persona 03 · Occasional &amp; Cautious Commuter</span>
+          <h3 class="persona-heading-title">Meera Ram · 32, High School Teacher</h3>
+        </div>
+        
+        <div class="persona-duo-grid">
+          <div class="presentation-slide-card">
+            <img src="assets/persona3_card.png" alt="Persona 3: Meera Ram Profile, Goals &amp; Pains" class="presentation-slide-img" loading="lazy">
           </div>
-          <div class="persona-identity">
-            <h3>Meera Ram</h3>
-            <div class="persona-tagline">32, Female · High School Teacher · Kochi</div>
-            <div class="persona-traits-row">
-              <span class="trait-badge">Cautious</span>
-              <span class="trait-badge">Organized</span>
-              <span class="trait-badge">Overwhelmed by Jargon</span>
-            </div>
+          <div class="presentation-slide-card">
+            <img src="assets/persona3_scenario.png" alt="Persona 3: Meera Ram Transit Scenario" class="presentation-slide-img" loading="lazy">
           </div>
         </div>
 
-        <div class="persona-details-grid">
-          <div class="persona-col-card">
-            <div class="persona-col-title pain">Pain Points</div>
-            <ul class="bullet-list">
-              <li>Confusion between “Planner” and “Book Tickets” options</li>
-              <li>Cluttered route recommendations with complex transfer icons</li>
-              <li>Fear of taking the wrong direction or missing connecting bus</li>
-            </ul>
-          </div>
-          <div class="persona-col-card">
-            <div class="persona-col-title goal">Goals</div>
-            <ul class="bullet-list">
-              <li>Clear, linear step-by-step guidance from origin to destination</li>
-              <li>Know exactly which platform and gate to use</li>
-              <li>Feel calm and reassured throughout the journey</li>
-            </ul>
-          </div>
+        <div class="presentation-slide-card" style="margin-top: 20px;">
+          <img src="assets/persona3_storyboard.png" alt="Persona 3: Meera Ram Illustrated Storyboard" class="presentation-slide-img" loading="lazy">
         </div>
 
-        <div class="persona-scenario-box">
-          <strong>Scenario: The Cross-City Appointment</strong>
-          Meera needs to travel from Fort Kochi to Edappally for an important medical appointment. The navigation bar displays both “Planner” and “Book Tickets”, leaving her unsure which to select. The search results present Water Metro, Metro, and bus in a dense, visual bundle without transfer directions, increasing her anxiety.
-        </div>
-
-        <div class="storyboard-wrapper">
-          <div class="storyboard-title">Storyboard · Meera's Journey</div>
-          <img src="assets/img_36.png" alt="Meera Ram Storyboard" class="storyboard-img">
-        </div>
-
-        <!-- Empathy Map -->
-        <div class="empathy-map-card">
-          <div class="empathy-title">Empathy Map · Meera Ram</div>
-          <div class="empathy-quadrant-grid">
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Says</span>
-              <p>“Planner or Book Tickets? Aren’t they the same?”</p>
-              <p>“How do I know where to change from ferry to train?”</p>
-            </div>
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Does</span>
-              <p>Opens planner, enters destination, gets overwhelmed, and closes app.</p>
-              <p>Asks a fellow commuter at the station counter for help.</p>
-            </div>
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Feels</span>
-              <p>Overwhelmed by dense technical route diagrams.</p>
-              <p>Stressed about arriving late to her appointment.</p>
-            </div>
-            <div class="quadrant-box">
-              <span class="quadrant-tag">Thinks</span>
-              <p>“I just want the app to tell me the easiest route simply.”</p>
-              <p>“I don’t have time to decode complicated icons.”</p>
-            </div>
-          </div>
+        <div class="presentation-slide-card" style="margin-top: 20px;">
+          <img src="assets/persona3_empathy.png" alt="Persona 3: Meera Ram 4-Quadrant Empathy Map" class="presentation-slide-img" loading="lazy">
         </div>
       </div>
     </section>

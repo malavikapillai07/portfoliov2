@@ -2029,6 +2029,12 @@ body.about-page .about-nav-bar {
 }
 
 .exp-logo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4px;
+  box-sizing: border-box;
   width: 44px;
   height: 44px;
   border-radius: 10px;
