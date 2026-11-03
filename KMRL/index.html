@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kochi1 Metro App Redesign — Case Study · Malavika Pillai</title>
+  <link rel="icon" type="image/png" href="../fav icon.PNG">
 
   <!-- Google Fonts: Plus Jakarta Sans & Space Mono (matching portfolio) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1142,21 +1143,23 @@
       margin-top: 14px;
     }
     .persona-neat-wrap {
-      width: 100%;
-      max-width: 520px;
-      margin: 0 auto;
-      border: none !important;
-      box-shadow: none !important;
-      background: transparent !important;
-    }
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
     .persona-neat-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-      border: none !important;
-      box-shadow: none !important;
-    }
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.04));
+}
     .storyboard-card-wrap {
       width: 100%;
       background: transparent !important;
@@ -1234,6 +1237,80 @@
         grid-template-columns: 1fr;
         gap: 16px;
       }
+    }
+
+  
+    /* Information Architecture Diagrams */
+    .ia-diagram-wrap {
+      margin-top: 18px;
+      background: transparent;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      padding: 8px;
+    }
+    .ia-diagram-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      cursor: zoom-in;
+      transition: transform 0.2s ease;
+    }
+    .ia-diagram-img:hover {
+      transform: scale(1.01);
+    }
+
+    /* User Flow Cards */
+    .flow-diagram-card {
+      background: #ffffff;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--card-radius);
+      padding: 28px 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.025);
+    }
+    .flow-card-header {
+      margin-bottom: 18px;
+    }
+    .flow-pill-tag {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--teal-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .flow-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.015em;
+      margin: 0;
+    }
+    .flow-diagram-wrap {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #ffffff;
+      padding: 12px 8px;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: center;
+    }
+    .flow-diagram-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      cursor: zoom-in;
+      transition: transform 0.2s ease;
+    }
+    .flow-diagram-img:hover {
+      transform: scale(1.01);
     }
 
   </style>
@@ -1612,9 +1689,8 @@
           <span class="ia-badge">Current Structure</span>
           <h4>Existing Information Architecture</h4>
           <p>Multi-layered navigation with redundant menu tiers, overlapping planner routes, and fragmented card balance services.</p>
-          <div class="ia-placeholder-area">
-            <div class="ia-placeholder-title">[ Existing Information Architecture Diagram ]</div>
-            <div class="ia-placeholder-desc">Reserved area for current Kochi1 sitemap, deep navigation paths, and directory taxonomy.</div>
+          <div class="ia-diagram-wrap">
+            <img src="existing_IA_web.png" data-full="existing IA.png" alt="Existing Information Architecture Diagram" class="ia-diagram-img" loading="lazy">
           </div>
         </div>
 
@@ -1623,9 +1699,8 @@
           <span class="ia-badge">Proposed Redesign</span>
           <h4>Redesigned Information Architecture</h4>
           <p>Streamlined hierarchy: unified multimodal ticketing, real-time timetable integration, and direct one-tap card management.</p>
-          <div class="ia-placeholder-area">
-            <div class="ia-placeholder-title">[ Redesigned Information Architecture Diagram ]</div>
-            <div class="ia-placeholder-desc">Reserved area for streamlined sitemap, simplified bottom navigation, and unified journey paths.</div>
+          <div class="ia-diagram-wrap">
+            <img src="REDESIGNED IA.png" data-full="REDESIGNED IA.png" alt="Redesigned Information Architecture Diagram" class="ia-diagram-img" loading="lazy">
           </div>
         </div>
       </div>
@@ -1641,18 +1716,36 @@
         Step-by-step task flows designed to eliminate friction across metro booking, multimodal transfers, and payment validation:
       </p>
 
-      <div class="flow-full-card">
-        <h4>Key Task Decision Flows</h4>
-        <div class="flow-pill-row">
-          <span class="flow-pill-item">Flow 1: Quick QR Metro Ticket</span>
-          <span class="flow-pill-item">Flow 2: Multimodal Route Planning</span>
-          <span class="flow-pill-item">Flow 3: Card Recharge &amp; Balance</span>
+      <!-- User Flow 1 -->
+      <div class="flow-diagram-card">
+        <div class="flow-card-header">
+          <span class="flow-pill-tag">User Flow 01</span>
+          <h4 class="flow-card-title">Quick QR Metro Ticket Booking</h4>
         </div>
-        <div class="flow-empty-box">
-          <div class="ia-placeholder-title" style="font-size:1.05rem;">[ User Flow Diagrams ]</div>
-          <div class="ia-placeholder-desc" style="max-width:380px;">
-            Clearly marked empty area for comprehensive user flow diagrams, decision nodes, error recovery states, and screen transitions.
-          </div>
+        <div class="flow-diagram-wrap">
+          <img src="user_flow_1_web.png" data-full="user flow 1.png" alt="User Flow 1: Quick QR Metro Ticket Booking" class="flow-diagram-img" loading="lazy">
+        </div>
+      </div>
+
+      <!-- User Flow 2 -->
+      <div class="flow-diagram-card">
+        <div class="flow-card-header">
+          <span class="flow-pill-tag">User Flow 02</span>
+          <h4 class="flow-card-title">Multimodal Route Planning &amp; Live Tracking</h4>
+        </div>
+        <div class="flow-diagram-wrap">
+          <img src="user_flow_2_web.png" data-full="user flow 2.png" alt="User Flow 2: Multimodal Route Planning & Live Tracking" class="flow-diagram-img" loading="lazy">
+        </div>
+      </div>
+
+      <!-- User Flow 3 -->
+      <div class="flow-diagram-card">
+        <div class="flow-card-header">
+          <span class="flow-pill-tag">User Flow 03</span>
+          <h4 class="flow-card-title">Smart Card Recharge &amp; Instant Balance Check</h4>
+        </div>
+        <div class="flow-diagram-wrap">
+          <img src="user_flow_3_web.png" data-full="user flow 3.png" alt="User Flow 3: Smart Card Recharge & Instant Balance Check" class="flow-diagram-img" loading="lazy">
         </div>
       </div>
     </section>

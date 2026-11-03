@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eravathody Handloom Society — Case Study · Malavika Pillai</title>
+  <link rel="icon" type="image/png" href="../fav icon.PNG">
 
   <!-- Google Fonts: Plus Jakarta Sans & Space Mono (matching portfolio) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1389,7 +1390,7 @@
       <div class="zigzag-process-canvas" id="zigzagProcessCanvas">
         <svg class="zigzag-svg" id="zigzagThreadSvg">
           <!-- Weeks 1 -> 2 -> 3 full opacity -->
-          <path id="zigzagThreadPath123" d="" stroke="#68422d" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          <path id="zigzagThreadPath123" d="" stroke="#68422d" stroke-width="2" opacity="0.22" fill="none" stroke-linecap="round" stroke-linejoin="round" />
           <!-- Week 3 -> 4 subtle lesser opacity -->
           <path id="zigzagThreadPath34" d="" stroke="#68422d" stroke-width="2" opacity="0.22" fill="none" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
@@ -1887,7 +1888,7 @@
           const lineX = p1.x; // perfectly straight vertical line connecting all dots on left
           if (path123) {
             path123.setAttribute('d', `M ${lineX} ${p1.y} L ${lineX} ${p4.y}`);
-            path123.style.opacity = '1';
+            path123.style.opacity = '0.22';
             path123.setAttribute('stroke', '#68422d');
             path123.setAttribute('stroke-width', '2.5');
           }
@@ -1895,7 +1896,7 @@
         } else {
           if (path123) {
             path123.setAttribute('d', `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} L ${p3.x} ${p3.y}`);
-            path123.style.opacity = '1';
+            path123.style.opacity = '0.22';
           }
           if (path34) {
             path34.setAttribute('d', `M ${p3.x} ${p3.y} L ${p4.x} ${p4.y}`);
