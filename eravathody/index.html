@@ -1070,9 +1070,9 @@
        ========================================================================== */
     .final-website-breakout {
       position: relative;
-      width: min(1080px, calc(100vw - 40px));
-      margin-left: calc((100% - min(1080px, calc(100vw - 40px))) / 2);
-      margin-right: calc((100% - min(1080px, calc(100vw - 40px))) / 2);
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .final-website-header-row {
@@ -1270,10 +1270,11 @@
       color: var(--text-main, #111111);
     }
 
-    /* Screen Viewport with Scaled Desktop Canvas */
+    /* Screen Viewport with Scaled Desktop Canvas (16:10 Proportional Desktop Ratio) */
     .desktop-screen-viewport {
       width: 100%;
-      height: 640px;
+      aspect-ratio: 16 / 10;
+      height: auto;
       position: relative;
       overflow: hidden;
       background: #ffffff;
@@ -1290,16 +1291,16 @@
 
     /* Studio Display Aluminum Stand & Desk Base */
     .monitor-stand-neck {
-      width: 140px;
-      height: 40px;
+      width: 115px;
+      height: 32px;
       background: linear-gradient(to bottom, #d6d4ce 0%, #b8b5ad 100%);
       clip-path: polygon(14% 0%, 86% 0%, 100% 100%, 0% 100%);
       box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     .monitor-stand-base {
-      width: 260px;
-      height: 11px;
+      width: 210px;
+      height: 9px;
       background: linear-gradient(to bottom, #dbd8d2 0%, #bebbb3 100%);
       border-radius: 4px 4px 2px 2px;
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.85);
@@ -1311,16 +1312,13 @@
         align-items: flex-start;
         gap: 16px;
       }
-      .desktop-screen-viewport {
-        height: 500px;
-      }
       .monitor-stand-neck {
-        width: 110px;
-        height: 30px;
+        width: 96px;
+        height: 26px;
       }
       .monitor-stand-base {
-        width: 200px;
-        height: 9px;
+        width: 175px;
+        height: 8px;
       }
       .browser-dots {
         width: 44px;
@@ -1328,9 +1326,6 @@
     }
 
     @media (max-width: 600px) {
-      .desktop-screen-viewport {
-        height: 380px;
-      }
       .desktop-browser-topbar {
         padding: 8px 12px;
       }
@@ -1339,11 +1334,11 @@
         padding: 5px 10px;
       }
       .monitor-stand-neck {
-        width: 80px;
-        height: 22px;
+        width: 76px;
+        height: 20px;
       }
       .monitor-stand-base {
-        width: 150px;
+        width: 140px;
         height: 7px;
       }
     }
