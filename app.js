@@ -378,8 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Resume links open MalavikaPillaiResume2026.pdf directly
-  );
-  }
 
 
   // =========================================================================
