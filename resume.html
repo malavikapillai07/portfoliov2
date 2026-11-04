@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Malavika Pillai</title>
+  <link rel="icon" type="image/png" href="fav icon.PNG">
+  <meta name="description" content="Resume of Malavika Pillai — UI/UX & Product Designer.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body.resume-page .page-stage {
+      padding-top: 90px;
+    }
+
+    body.resume-page .about-nav-bar {
+      position: fixed;
+      top: 28px;
+      left: max(20px, calc(50% - 450px));
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      z-index: 10000;
+      pointer-events: none;
+    }
+
+    body.resume-page .about-nav-bar .back-circle-btn {
+      pointer-events: auto;
+      background: rgba(241, 241, 239, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .resume-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .resume-page-title {
+      font-family: var(--font-main);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .resume-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .resume-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #141414;
+      color: #ffffff;
+      font-family: var(--font-main);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .resume-download-btn:hover {
+      background: var(--accent-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 77, 34, 0.25);
+    }
+
+    .resume-viewer-frame {
+      width: 100%;
+      height: 1120px;
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-bottom: 80px;
+    }
+
+    .resume-pdf-embed {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      body.resume-page .page-stage {
+        padding: 80px 20px 60px !important;
+      }
+      body.resume-page .about-nav-bar {
+        position: fixed !important;
+        top: 18px !important;
+        left: 20px !important;
+      }
+      .resume-viewer-frame {
+        height: 78vh;
+        min-height: 540px;
+      }
+      .resume-page-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body class="resume-page">
+
+  <!-- Single Square Orange Cursor -->
+  <div id="cursor-square" class="cursor-square" aria-hidden="true"></div>
+
+  <!-- Background Blueprint Layer: permanent 36% opacity -->
+  <div class="bg-blueprint-layer" id="bgBlueprint" aria-hidden="true"></div>
+
+  <!-- Top Right Header Cluster: Live Time & Location (Kochi) -->
+  <aside class="top-status-cluster" aria-label="Status & Controls">
+    <div class="live-location-time" id="liveTimeWidget" title="Local time in Kochi">
+      <span class="live-status-indicator"></span>
+      <span class="time-digits" id="kochiTime">--:--</span>,
+      <span class="location-name">Kochi</span>
+    </div>
+  </aside>
+
+  <!-- Centered Content Stage -->
+  <main class="page-stage">
+
+    <!-- Floating Back Navigation -->
+    <nav class="about-nav-bar" aria-label="Navigation">
+      <a href="index.html" class="back-circle-btn" aria-label="Back to home" title="Back to home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Header Row -->
+    <div class="resume-header-row">
+      <h1 class="resume-page-title">Resume</h1>
+      <div class="resume-actions">
+        <a href="MalavikaPillaiResume2026.pdf" download="MalavikaPillaiResume2026.pdf" class="resume-download-btn">
+          <span>Download PDF</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Embedded Resume Viewer -->
+    <div class="resume-viewer-frame">
+      <iframe src="MalavikaPillaiResume2026.pdf#toolbar=0&navpanes=0&view=FitH" title="Malavika Pillai Resume 2026" class="resume-pdf-embed"></iframe>
+    </div>
+
+    <!-- Sitemap Footer -->
+    <footer class="sitemap-footer">
+      <div class="sitemap-grid">
+        
+        <!-- Column 1: Logo + Malavika Pillai + Subtitle -->
+        <div class="sitemap-col-author">
+          <img src="malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img" loading="lazy" decoding="async">
+          <div class="sitemap-author-info">
+            <h3 class="sitemap-author-name">Malavika Pillai</h3>
+            <p class="sitemap-author-role">UI/UX · Product Designer</p>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="sitemap-col-links">
+          <a href="index.html#mainFlow" class="sitemap-link">Projects</a>
+          <a href="about.html" class="sitemap-link">About</a>
+          <a href="resume.html" class="sitemap-link" id="footerResumeLink">Resume</a>
+        </div>
+
+        <!-- Column 3: Contact & Socials -->
+        <div class="sitemap-col-contact">
+          <button class="sitemap-email-btn" id="sitemapEmailBtn" type="button" title="Click to copy email">
+            <span class="email-address-text">malavikapillaiofficial@gmail.com</span>
+            <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="email-toast" aria-live="polite">Gmail copied ✓</span>
+          </button>
+          <div class="sitemap-socials-row">
+            <a href="https://www.linkedin.com/in/malavika-pillai-b996ab371" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/malav.ikapillai/" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.behance.net/malavikapillai" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Behance" aria-label="Behance">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/malavikapillai07" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="GitHub" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
