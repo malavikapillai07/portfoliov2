@@ -69,8 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.classList.add('preloader-done');
     startMobileLogoFlipTimer();
   } else if (sitePreloader && preloaderVideo) {
+    preloaderVideo.defaultPlaybackRate = 2.0;
     preloaderVideo.playbackRate = 2.0;
     preloaderVideo.muted = true;
+    preloaderVideo.addEventListener('loadedmetadata', () => {
+      preloaderVideo.playbackRate = 2.0;
+    });
+    preloaderVideo.addEventListener('play', () => {
+      preloaderVideo.playbackRate = 2.0;
+    });
 
     let hasPreloaderClosed = false;
     let fallbackTimer = null;
@@ -99,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Safety timeout: Never hold visitor waiting if video stalls
-    fallbackTimer = setTimeout(closePreloader, 2200);
+    fallbackTimer = setTimeout(closePreloader, 6000);
 
     // Transparent Chroma-Key Canvas: removes background from video frames in real-time
     if (preloaderCanvas) {
