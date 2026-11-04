@@ -1643,15 +1643,17 @@ html.preloader-done .hero-headline .statement-line:nth-child(3)::after {
   }
 
   body.about-page .page-stage {
-    padding: 24px 20px 60px !important;
+    padding: 80px 20px 60px !important;
   }
 
   body.about-page .about-nav-bar {
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-    margin-bottom: 24px !important;
+    position: fixed !important;
+    top: 18px !important;
+    left: 20px !important;
+    margin-bottom: 0 !important;
     display: flex !important;
+    z-index: 10000 !important;
+    pointer-events: none !important;
   }
 
   .about-story-layout {
@@ -1784,17 +1786,27 @@ html:not(.preloader-done) body {
    ========================================================================== */
 /* Dedicated About Page Stage Spacing & Aligned Top Bar */
 body.about-page .page-stage {
-  padding-top: 60px;
+  padding-top: 90px;
 }
 
 body.about-page .about-nav-bar {
-  position: relative;
-  top: 0;
-  left: 0;
-  margin-bottom: 28px;
+  position: fixed;
+  top: 28px;
+  left: max(20px, calc(50% - 450px));
+  margin-bottom: 0;
   display: flex;
   align-items: center;
-  z-index: 10;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+body.about-page .about-nav-bar .back-circle-btn {
+  pointer-events: auto;
+  background: rgba(241, 241, 239, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .about-story-layout {
