@@ -969,17 +969,17 @@
 
     /* Sitemap Footer */
     .sitemap-footer {
-      border-top: 1px solid var(--border-subtle);
-      padding: 70px 0 50px;
       margin-top: 80px;
+      padding: 40px 0 24px;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-main);
     }
-
     .sitemap-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 2fr 1fr 1.2fr;
+      gap: 36px;
+      align-items: start;
     }
-
     .sitemap-col-author {
       display: flex;
       flex-direction: column;
@@ -998,53 +998,143 @@
       flex-direction: column;
       gap: 3px;
     }
-    .sitemap-col-author h3 {
-      font-size: 1.1rem;
+    .sitemap-author-name {
+      font-family: var(--font-main);
+      font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin: 0;
     }
-
-    .sitemap-col-author p {
+    .sitemap-author-role {
       font-size: 0.88rem;
       color: var(--text-muted);
+      font-weight: 400;
+      margin: 0;
     }
-
-    .sitemap-col-title {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .sitemap-links-list {
-      list-style: none;
+    .sitemap-col-links {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
-
     .sitemap-link {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
       text-decoration: none;
-      color: var(--text-main);
-      font-size: 0.9rem;
-      font-weight: 500;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    .sitemap-link:hover {
+      color: #ff5500;
+      transform: translateX(2px);
+    }
+    .sitemap-col-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .sitemap-email-btn {
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      transition: opacity 0.2s;
+      gap: 7px;
+      position: relative;
+      text-align: left;
+      transition: color 0.2s ease;
     }
-
-    .sitemap-link:hover {
-      opacity: 0.6;
+    .sitemap-email-btn:hover {
+      color: #ff5500;
     }
-
-    .sitemap-link-img {
-      width: 18px;
-      height: 18px;
+    .sitemap-email-btn .copy-icon {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      opacity: 0.65;
+      flex-shrink: 0;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    .sitemap-email-btn:hover .copy-icon {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    .sitemap-email-btn.is-copied .copy-icon {
+      stroke: #ff5500;
+      opacity: 1;
+      transform: scale(1.15);
+    }
+    .sitemap-email-btn .email-toast {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 0;
+      background: #181818;
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      padding: 5px 11px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .sitemap-email-btn .email-toast::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 18px;
+      border-width: 4px;
+      border-style: solid;
+      border-color: #181818 transparent transparent transparent;
+    }
+    .sitemap-email-btn.is-copied .email-toast {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .sitemap-socials-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--text-secondary);
+    }
+    .sitemap-social-icon {
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .sitemap-social-icon:hover {
+      color: #ff5500;
+      transform: translateY(-1px);
+    }
+    .sitemap-behance-img {
+      height: 14px;
+      width: auto;
+      max-width: 24px;
       object-fit: contain;
+      display: block;
+      opacity: 0.72;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .sitemap-social-icon:hover .sitemap-behance-img {
+      opacity: 1;
+      transform: translateY(-2px);
     }
 
     @media (max-width: 768px) {
@@ -1516,7 +1606,7 @@
       </p>
 
       <div class="heuristic-diagram-frame">
-        <img src="heuristic_web.png" data-full-src="heuristic.png" data-full="heuristic.png" alt="KMRL Heuristic Evaluation Audit" class="heuristic-diagram-img" loading="lazy" decoding="async">
+        <img src="heuristic_web.png" data-full-src="heuristic_web.png" data-full="heuristic_web.png" alt="KMRL Heuristic Evaluation Audit" class="heuristic-diagram-img" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -1693,7 +1783,7 @@
             <p>Multi-layered navigation with redundant menu tiers, overlapping planner routes, buried ticketing entryways, and fragmented card balance services.</p>
           </div>
           <div class="ia-diagram-full-frame">
-            <img src="existing_IA_web.png" data-full-src="existing IA.png" data-full="existing IA.png" alt="Existing Information Architecture Diagram" class="ia-diagram-img" loading="lazy" decoding="async">
+            <img src="existing_IA_web.png" data-full-src="existing_IA_web.png" data-full="existing_IA_web.png" alt="Existing Information Architecture Diagram" class="ia-diagram-img" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -1705,7 +1795,7 @@
             <p>Streamlined hierarchy: unified multimodal ticketing, real-time timetable integration, direct one-tap card management, and transparent feeder bus/water metro pathways.</p>
           </div>
           <div class="ia-diagram-full-frame">
-            <img src="Redesigned IA.png" data-full-src="Redesigned IA.png" data-full="Redesigned IA.png" alt="Redesigned Information Architecture Diagram" class="ia-diagram-img" loading="lazy" decoding="async">
+            <img src="Redesigned IA.png" data-full-src="Redesigned IA.png" data-full="Redesigned IA.png" alt="Redesigned Information Architecture Diagram" class="ia-diagram-img" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='Redesigned_IA_web.png';">
           </div>
         </div>
       </div>
@@ -1728,7 +1818,7 @@
           <h4 class="flow-card-title">Quick QR Metro Ticket Booking</h4>
         </div>
         <div class="flow-diagram-wrap">
-          <img src="user_flow_1_web.png" data-full="user flow 1.png" alt="User Flow 1: Quick QR Metro Ticket Booking" class="flow-diagram-img" loading="lazy" decoding="async">
+          <img src="user_flow_1_web.png" data-full-src="user_flow_1_web.png" data-full="user_flow_1_web.png" alt="User Flow 1: Quick QR Metro Ticket Booking" class="flow-diagram-img" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -1739,7 +1829,7 @@
           <h4 class="flow-card-title">Multimodal Route Planning &amp; Live Tracking</h4>
         </div>
         <div class="flow-diagram-wrap">
-          <img src="user_flow_2_web.png" data-full="user flow 2.png" alt="User Flow 2: Multimodal Route Planning & Live Tracking" class="flow-diagram-img" loading="lazy" decoding="async">
+          <img src="user_flow_2_web.png" data-full-src="user_flow_2_web.png" data-full="user_flow_2_web.png" alt="User Flow 2: Multimodal Route Planning & Live Tracking" class="flow-diagram-img" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -1750,7 +1840,7 @@
           <h4 class="flow-card-title">Smart Card Recharge &amp; Instant Balance Check</h4>
         </div>
         <div class="flow-diagram-wrap">
-          <img src="user_flow_3_web.png" data-full="user flow 3.png" alt="User Flow 3: Smart Card Recharge & Instant Balance Check" class="flow-diagram-img" loading="lazy" decoding="async">
+          <img src="user_flow_3_web.png" data-full-src="user_flow_3_web.png" data-full="user_flow_3_web.png" alt="User Flow 3: Smart Card Recharge & Instant Balance Check" class="flow-diagram-img" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -1780,37 +1870,56 @@
     <!-- Sitemap Footer -->
     <footer class="sitemap-footer">
       <div class="sitemap-grid">
+        <!-- Column 1: Logo + Malavika Pillai + Subtitle -->
         <div class="sitemap-col-author">
-          <img src="../malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img" decoding="async">
+          <img src="../malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img" loading="lazy" decoding="async">
           <div class="sitemap-author-info">
             <h3 class="sitemap-author-name">Malavika Pillai</h3>
             <p class="sitemap-author-role">UI/UX · Product Designer</p>
           </div>
         </div>
 
-        <div class="sitemap-col">
-          <div class="sitemap-col-title">Portfolio</div>
-          <ul class="sitemap-links-list">
-            <li><a href="../index.html" class="sitemap-link">Projects</a></li>
-            <li><a href="../about.html" class="sitemap-link">About Me</a></li>
-            <li><a href="../eravathody/index.html" class="sitemap-link">Eravathody Handloom</a></li>
-            <li><a href="../ReflexLabsAI (1)/ReflexLabsAI/reflexlabs-casestudy-v3.html" class="sitemap-link">ReflexLabs AI</a></li>
-          </ul>
+        <!-- Column 2: Navigation Links -->
+        <div class="sitemap-col-links">
+          <a href="../index.html#mainFlow" class="sitemap-link">Projects</a>
+          <a href="../about.html" class="sitemap-link">About</a>
+          <a href="../index.html#resume" class="sitemap-link" id="footerResumeLink">Resume</a>
         </div>
 
-        <div class="sitemap-col">
-          <div class="sitemap-col-title">Connect</div>
-          <ul class="sitemap-links-list">
-            <li>
-              <a href="https://www.behance.net/malavikapillai" target="_blank" rel="noopener" class="sitemap-link">
-                <img src="../behance logo.png" alt="Behance" class="sitemap-link-img" loading="lazy" decoding="async">
-                <span>Behance</span>
-              </a>
-            </li>
-            <li>
-              <a href="mailto:malavika.pillai07@gmail.com" class="sitemap-link">Email</a>
-            </li>
-          </ul>
+        <!-- Column 3: Contact & Socials -->
+        <div class="sitemap-col-contact">
+          <button class="sitemap-email-btn" id="sitemapEmailBtn" type="button" title="Click to copy email">
+            <span class="email-address-text">malavikapillaiofficial@gmail.com</span>
+            <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="email-toast" aria-live="polite">Gmail copied ✓</span>
+          </button>
+          <div class="sitemap-socials-row">
+            <a href="https://www.linkedin.com/in/malavika-pillai-b996ab371" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/malav.ikapillai/" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.behance.net/malavikapillai" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Behance" aria-label="Behance">
+              <img src="../behance logo.png" alt="Behance" class="sitemap-behance-img" loading="lazy" decoding="async">
+            </a>
+            <a href="https://github.com/malavikapillai07" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="GitHub" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -1843,6 +1952,22 @@
 
       window.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
       window.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
+    }
+
+    // 3. Sitemap Email Copy Toast
+    const sitemapEmailBtn = document.getElementById('sitemapEmailBtn');
+    if (sitemapEmailBtn) {
+      sitemapEmailBtn.addEventListener('click', async () => {
+        const email = 'malavikapillaiofficial@gmail.com';
+        try {
+          await navigator.clipboard.writeText(email);
+          sitemapEmailBtn.classList.add('is-copied');
+          setTimeout(() => sitemapEmailBtn.classList.remove('is-copied'), 2400);
+        } catch {
+          sitemapEmailBtn.classList.add('is-copied');
+          setTimeout(() => sitemapEmailBtn.classList.remove('is-copied'), 2400);
+        }
+      });
     }
   </script>
 
