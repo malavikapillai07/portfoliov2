@@ -377,11 +377,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (btnResume) {
-    btnResume.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('Malavika Pillai — Resume (Product Designer in the making)\nExperience, Projects & Case Studies.');
-    });
+  // Resume links open MalavikaPillaiResume2026.pdf directly
+  );
   }
 
 
