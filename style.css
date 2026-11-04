@@ -1618,7 +1618,7 @@ html.preloader-done #sitePreloader {
 
 html:not(.preloader-done),
 html:not(.preloader-done) body {
-  background-color: #F2F2F2 !important;
+  background-color: #ffffff !important;
   background-image: none !important;
 }
 
@@ -1627,7 +1627,7 @@ html:not(.preloader-done) body {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #F2F2F2 !important;
+  background-color: #ffffff !important;
   z-index: 99999999;
   display: flex;
   align-items: center;
@@ -1661,6 +1661,8 @@ html:not(.preloader-done) body {
   object-fit: contain;
   display: block;
   background: transparent;
+  -webkit-mask-image: radial-gradient(circle, #000 68%, transparent 98%);
+  mask-image: radial-gradient(circle, #000 68%, transparent 98%);
 }
 
 .preloader-frame video,
@@ -1671,6 +1673,11 @@ html:not(.preloader-done) body {
   object-fit: contain;
   pointer-events: none;
   display: none; /* Managed by transparent Canvas; fallback displays if needed */
+  background: transparent;
+  filter: brightness(1.08) contrast(1.06);
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(circle, #000 64%, transparent 96%);
+  mask-image: radial-gradient(circle, #000 64%, transparent 96%);
 }
 
 .preloader-skip-btn {

@@ -121,17 +121,26 @@ document.addEventListener('DOMContentLoaded', () => {
           const sx = (vw - size) / 2;
           const sy = (vh - size) / 2;
 
+          ctx.clearRect(0, 0, preloaderCanvas.width, preloaderCanvas.height);
           ctx.drawImage(preloaderVideo, sx, sy, size, size, 0, 0, preloaderCanvas.width, preloaderCanvas.height);
           try {
             const frame = ctx.getImageData(0, 0, preloaderCanvas.width, preloaderCanvas.height);
             const d = frame.data;
+            // Dynamically sample top-left & top-right corner pixels to get exact decoded background RGB
+            const bgR = d[0] || 242;
+            const bgG = d[1] || 242;
+            const bgB = d[2] || 242;
             for (let i = 0; i < d.length; i += 4) {
               const r = d[i], g = d[i + 1], b = d[i + 2];
-              const maxDiff = Math.max(Math.abs(r - 242), Math.abs(g - 242), Math.abs(b - 242));
-              if (maxDiff <= 9) {
-                d[i + 3] = 0; // Seamless transparent background
-              } else if (maxDiff < 24) {
-                d[i + 3] = Math.round(((maxDiff - 9) / 15) * 255); // smooth anti-aliased edge
+              const diffFromBg = Math.max(Math.abs(r - bgR), Math.abs(g - bgG), Math.abs(b - bgB));
+              const minCh = Math.min(r, g, b);
+              const maxCh = Math.max(r, g, b);
+              const isLightNeutral = minCh > 218 && (maxCh - minCh) <= 12;
+
+              if (diffFromBg <= 18 || isLightNeutral) {
+                d[i + 3] = 0; // 100% transparent background
+              } else if (diffFromBg < 36) {
+                d[i + 3] = Math.round(((diffFromBg - 18) / 18) * 255); // Smooth anti-aliased edge
               }
             }
             ctx.putImageData(frame, 0, 0);
