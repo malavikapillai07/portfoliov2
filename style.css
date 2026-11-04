@@ -656,27 +656,6 @@ html.preloader-done .hero-headline .statement-line:nth-child(3)::after {
   animation-delay: 0.52s;
 }
 
-/* Periodic replay class triggered by JS loop */
-html.preloader-done .hero-headline.is-replaying .statement-line::after {
-  animation: kineticBlockPulse 1.1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-}
-
-html.preloader-done .hero-headline.is-replaying .statement-line:nth-child(1)::after {
-  animation-delay: 0s;
-}
-html.preloader-done .hero-headline.is-replaying .statement-line:nth-child(2)::after {
-  animation-delay: 0.18s;
-}
-html.preloader-done .hero-headline.is-replaying .statement-line:nth-child(3)::after {
-  animation-delay: 0.36s;
-}
-
-/* Interactive hover: hovering a line reveals the bold black-bar white-text block */
-.hero-headline .statement-line:hover::after {
-  animation: none !important;
-  clip-path: inset(0 0% 0 0) !important;
-}
-
 @keyframes kineticTextSlideUp {
   0%, 32% {
     transform: translateY(115%);
@@ -689,21 +668,6 @@ html.preloader-done .hero-headline.is-replaying .statement-line:nth-child(3)::af
 }
 
 @keyframes kineticBlockSweep {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  38% {
-    clip-path: inset(0 0% 0 0);
-  }
-  62% {
-    clip-path: inset(0 0% 0 0);
-  }
-  100% {
-    clip-path: inset(0 0% 0 100%);
-  }
-}
-
-@keyframes kineticBlockPulse {
   0% {
     clip-path: inset(0 100% 0 0);
   }
