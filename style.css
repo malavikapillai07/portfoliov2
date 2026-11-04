@@ -580,7 +580,7 @@ body.cursor-click .cursor-square {
   max-width: 100%;
 }
 
-/* Headline Statement: Original font-size (1.55rem), left-aligned with Projects nav above */
+/* Headline Statement: Original font-size (1.55rem), left-aligned with Kinetic 'REVEALING' Block Animation */
 .hero-headline {
   font-family: var(--font-main);
   font-size: 1.55rem;
@@ -593,13 +593,129 @@ body.cursor-click .cursor-square {
   background: none;
   border: none;
   box-shadow: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
   text-align: left;
 }
 
 .hero-headline .statement-line {
-  display: block;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
   white-space: nowrap;
+  overflow: hidden;
+  padding: 1px 8px;
+  margin: 0 -8px;
+  border-radius: 2px;
+}
+
+.hero-headline .statement-line-inner {
+  display: inline-block;
+  transform: translateY(115%);
+  opacity: 0;
+}
+
+/* Inverted Black-Block White-Text Kinetic Layer (matching 'REVEALING' reference video) */
+.hero-headline .statement-line::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  padding: 1px 8px;
+  background-color: #141414;
+  color: #ffffff;
+  white-space: inherit;
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0);
+  will-change: clip-path;
+  transition: clip-path 0.42s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Trigger staggered kinetic block reveal once preloader completes */
+html.preloader-done .hero-headline .statement-line-inner {
+  animation: kineticTextSlideUp 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+html.preloader-done .hero-headline .statement-line::after {
+  animation: kineticBlockSweep 1.15s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+html.preloader-done .hero-headline .statement-line:nth-child(1) .statement-line-inner,
+html.preloader-done .hero-headline .statement-line:nth-child(1)::after {
+  animation-delay: 0.08s;
+}
+
+html.preloader-done .hero-headline .statement-line:nth-child(2) .statement-line-inner,
+html.preloader-done .hero-headline .statement-line:nth-child(2)::after {
+  animation-delay: 0.30s;
+}
+
+html.preloader-done .hero-headline .statement-line:nth-child(3) .statement-line-inner,
+html.preloader-done .hero-headline .statement-line:nth-child(3)::after {
+  animation-delay: 0.52s;
+}
+
+/* Periodic replay class triggered by JS loop */
+html.preloader-done .hero-headline.is-replaying .statement-line::after {
+  animation: kineticBlockPulse 1.1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+html.preloader-done .hero-headline.is-replaying .statement-line:nth-child(1)::after {
+  animation-delay: 0s;
+}
+html.preloader-done .hero-headline.is-replaying .statement-line:nth-child(2)::after {
+  animation-delay: 0.18s;
+}
+html.preloader-done .hero-headline.is-replaying .statement-line:nth-child(3)::after {
+  animation-delay: 0.36s;
+}
+
+/* Interactive hover: hovering a line reveals the bold black-bar white-text block */
+.hero-headline .statement-line:hover::after {
+  animation: none !important;
+  clip-path: inset(0 0% 0 0) !important;
+}
+
+@keyframes kineticTextSlideUp {
+  0%, 32% {
+    transform: translateY(115%);
+    opacity: 0;
+  }
+  48%, 100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes kineticBlockSweep {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  38% {
+    clip-path: inset(0 0% 0 0);
+  }
+  62% {
+    clip-path: inset(0 0% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 100%);
+  }
+}
+
+@keyframes kineticBlockPulse {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  38% {
+    clip-path: inset(0 0% 0 0);
+  }
+  62% {
+    clip-path: inset(0 0% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 100%);
+  }
 }
 
 .mobile-name-break {

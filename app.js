@@ -35,6 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloaderCanvas = document.getElementById('preloaderCanvas');
   const preloaderSkipBtn = document.getElementById('preloaderSkipBtn');
 
+
+  // Kinetic 'REVEALING' Headline Periodic Loop
+  const heroKineticHeadline = document.getElementById('heroKineticHeadline');
+  if (heroKineticHeadline) {
+    setInterval(() => {
+      if (!document.documentElement.classList.contains('preloader-done')) return;
+      if (heroKineticHeadline.matches(':hover')) return;
+      heroKineticHeadline.classList.remove('is-replaying');
+      void heroKineticHeadline.offsetWidth; // Force reflow to restart animation
+      heroKineticHeadline.classList.add('is-replaying');
+    }, 5500);
+  }
+
   // Mobile Automatic 5-second Logo Flip Loop
   // Defined globally so it starts ONLY when the screen is actually revealed to the user
   let mobileFlipInterval = null;
