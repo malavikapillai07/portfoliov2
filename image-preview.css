@@ -91,8 +91,38 @@
   transform: scale(1.08);
 }
 
-body.img-preview-locked {
+body.img-preview-locked,
+html.img-preview-locked {
   overflow: hidden !important;
+  cursor: auto !important;
+}
+
+html.img-preview-locked *,
+body.img-preview-locked * {
+  cursor: auto;
+}
+
+html.img-preview-locked .cursor-square,
+body.img-preview-locked .cursor-square {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.img-preview-overlay {
+  cursor: auto;
+}
+
+.img-preview-overlay.is-active {
+  cursor: auto;
+}
+
+.img-preview-overlay.is-active .img-preview-close {
+  cursor: pointer !important;
+}
+
+.img-preview-overlay.is-active .img-preview-image {
+  cursor: zoom-out !important;
 }
 
 /* Cursor on previewable images and gifs */

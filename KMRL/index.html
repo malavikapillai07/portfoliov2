@@ -460,52 +460,32 @@
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
     }
 
-    /* Heuristics Cards */
-    .heuristic-card {
+    /* Heuristics Evaluation Diagram */
+    .heuristic-diagram-frame {
+      margin-top: 24px;
       background: #ffffff;
       border: 1px solid var(--border-medium);
       border-radius: var(--card-radius);
-      padding: 30px;
-      margin-bottom: 24px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.025);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
 
-    .heuristic-badge {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--teal-primary);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
+    .heuristic-diagram-img {
+      width: 100%;
+      height: auto;
       display: block;
+      object-fit: contain;
+      border-radius: 8px;
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
     }
 
-    .heuristic-card h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      margin-bottom: 10px;
-    }
-
-    .heuristic-card p {
-      font-size: 0.98rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .heuristic-why {
-      background: #fafafa;
-      border-radius: 10px;
-      padding: 12px 16px;
-      font-size: 0.92rem;
-      color: #333333;
-      border-left: 3px solid var(--teal-primary);
-    }
-
-    .heuristic-why strong {
-      color: var(--teal-dark);
+    .heuristic-diagram-img:hover {
+      transform: scale(1.008);
     }
 
     /* Persona Deep Dive Section */
@@ -722,62 +702,103 @@
       margin-bottom: 6px;
     }
 
-    /* Information Architecture Placeholders */
-    .ia-section-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+    /* Information Architecture Stacked Full-Frame Layout */
+    .ia-stacked-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
       margin: 28px 0;
     }
 
-    .ia-box {
-      border: 2px dashed #b8dbe1;
-      border-radius: 16px;
+    .ia-card-full {
+      width: 100%;
       background: #ffffff;
-      padding: 26px 22px;
-      display: flex;
-      flex-direction: column;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--card-radius);
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.025);
+      box-sizing: border-box;
+      transition: box-shadow 0.25s ease;
     }
 
-    .ia-box.redesign {
-      border-color: #a4d339;
-      background: #fcfffa;
+    .ia-card-full:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .ia-card-full.existing {
+      border-top: 4px solid #8e9aaf;
+    }
+
+    .ia-card-full.redesign {
+      border-top: 4px solid var(--teal-primary);
+    }
+
+    .ia-card-header {
+      margin-bottom: 20px;
     }
 
     .ia-badge {
       display: inline-block;
-      align-self: flex-start;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 20px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .ia-box.existing .ia-badge {
-      background: var(--teal-light);
-      color: var(--teal-primary);
+    .ia-card-full.existing .ia-badge {
+      background: rgba(142, 154, 175, 0.15);
+      color: #3b4252;
     }
 
-    .ia-box.redesign .ia-badge {
-      background: var(--lime-light);
-      color: var(--lime-dark);
+    .ia-card-full.redesign .ia-badge {
+      background: rgba(0, 168, 150, 0.12);
+      color: var(--teal-dark);
     }
 
-    .ia-box h4 {
-      font-size: 1.1rem;
+    .ia-card-header h3 {
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      letter-spacing: -0.015em;
+      margin-bottom: 8px;
     }
 
-    .ia-box p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-      margin-bottom: 20px;
+    .ia-card-header p {
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      max-width: 860px;
+    }
+
+    .ia-diagram-full-frame {
+      width: 100%;
+      background: #fafafc;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 16px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .ia-diagram-full-frame img {
+      width: 100%;
+      height: auto;
+      max-height: 82vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 8px;
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
+    }
+
+    .ia-diagram-full-frame img:hover {
+      transform: scale(1.008);
     }
 
     .ia-placeholder-area {
@@ -1143,23 +1164,29 @@
       margin-top: 14px;
     }
     .persona-neat-wrap {
-  width: 100%;
-  max-width: 380px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-}
+      width: 100%;
+      max-width: 260px;
+      margin: 18px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+    }
     .persona-neat-img {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  background: transparent;
-  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.04));
-}
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 12px;
+      filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.05));
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
+    }
+    .persona-neat-img:hover {
+      transform: scale(1.02);
+    }
     .storyboard-card-wrap {
       width: 100%;
       background: transparent !important;
@@ -1364,7 +1391,7 @@
       </div>
 
       <div class="hero-illustration-box">
-        <img src="assets/Kochi Metro App Redesign (1).png" alt="Kochi Metro App Redesign Cover" class="hero-illustration-img" loading="eager">
+        <img src="assets/Kochi Metro App Redesign (1).png" alt="Kochi Metro App Redesign Cover" class="hero-illustration-img" loading="eager" decoding="async" fetchpriority="high">
       </div>
     </section>
 
@@ -1423,7 +1450,7 @@
 
       <!-- Authentic Reviews Presentation Slide -->
       <div class="presentation-slide-card transparent-slide" style="margin-bottom: 36px;">
-        <img src="assets/pdf_review_page.png" alt="Play Store and App Store Commuter Reviews" class="presentation-slide-img" loading="lazy">
+        <img src="assets/pdf_review_page.png" alt="Play Store and App Store Commuter Reviews" class="presentation-slide-img" loading="lazy" decoding="async">
       </div>
 
       <div class="cs-section-header" style="margin-top: 48px;">
@@ -1436,7 +1463,7 @@
 
       <!-- Authentic Reel & Comments Presentation Slide -->
       <div class="presentation-slide-card transparent-slide">
-        <img src="assets/pdf_reel_comments_page.png" alt="Viral Instagram Reel and Commuter Comments" class="presentation-slide-img" loading="lazy">
+        <img src="assets/pdf_reel_comments_page.png" alt="Viral Instagram Reel and Commuter Comments" class="presentation-slide-img" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -1479,43 +1506,17 @@
     </section>
 
     <!-- Section 5: Heuristic Evaluation -->
-    <section class="cs-section">
+    <section class="cs-section" id="heuristic-evaluation">
       <div class="cs-section-header">
         <span class="cs-step-tag">05 · UX Audit</span>
         <h2 class="cs-section-title">Heuristic Evaluation</h2>
       </div>
       <p class="cs-body-paragraph">
-        Using Nielsen’s usability heuristics to identify fundamental interface breakdowns across core flows:
+        Evaluating the existing Kochi1 transit interface against Nielsen’s usability heuristics to identify fundamental interface breakdowns, feedback gaps, and navigational clutter across core flows:
       </p>
 
-      <!-- Heuristic 1 -->
-      <div class="heuristic-card">
-        <span class="heuristic-badge">Heuristic 01 · Feedback</span>
-        <h3>Visibility of System Status</h3>
-        <p>After editing profile information and pressing “Save Changes”, there is no visible confirmation such as “Changes saved” or a success state.</p>
-        <div class="heuristic-why">
-          <strong>Why it matters:</strong> The user is left in doubt whether their profile, email, or emergency contact was updated or if the request timed out.
-        </div>
-      </div>
-
-      <!-- Heuristic 2 -->
-      <div class="heuristic-card">
-        <span class="heuristic-badge">Heuristic 02 · Mental Models</span>
-        <h3>Match Between System and Real World</h3>
-        <p>On the homepage, the “Offers” button suggests the user will view transit or merchant discounts. Instead, it opens an unorganized category directory (tourist attractions, ATMs, fuel stations), with “Offers” nested again inside.</p>
-        <div class="heuristic-why">
-          <strong>Why it matters:</strong> The label breaks user expectations and forces commuters to hunt through disjointed categories.
-        </div>
-      </div>
-
-      <!-- Heuristic 3 -->
-      <div class="heuristic-card">
-        <span class="heuristic-badge">Heuristic 03 · Navigation</span>
-        <h3>Consistency and Standards</h3>
-        <p>When a commuter selects “Offers”, they reach a screen with another “Offers” button and must select it a second time to view discounts.</p>
-        <div class="heuristic-why">
-          <strong>Why it matters:</strong> Creates unnecessary recursive clicks, adds visual clutter, and breaks expected mobile navigation standards.
-        </div>
+      <div class="heuristic-diagram-frame">
+        <img src="heuristic_web.png" data-full-src="heuristic.png" data-full="heuristic.png" alt="KMRL Heuristic Evaluation Audit" class="heuristic-diagram-img" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -1582,19 +1583,19 @@
         <!-- 2. Storyboard -->
         <h4 class="persona-sub-heading">Storyboard · Commute Journey</h4>
         <div class="storyboard-card-wrap">
-          <img src="assets/img_30.png" alt="Rahul Ajith · Illustrated Journey Storyboard" class="storyboard-strip-img" loading="lazy">
+          <img src="assets/img_30.png" alt="Rahul Ajith · Illustrated Journey Storyboard" class="storyboard-strip-img" loading="lazy" decoding="async">
         </div>
 
         <!-- 3. Persona -->
         <h4 class="persona-sub-heading">Persona Profile</h4>
         <div class="persona-neat-wrap">
-          <img src="assets/persona1_portrait.png" alt="Rahul Ajith · Persona Profile Card" class="persona-neat-img" loading="lazy">
+          <img src="assets/persona1_portrait.png" alt="Rahul Ajith · Persona Profile Card" class="persona-neat-img" loading="lazy" decoding="async">
         </div>
 
         <!-- 4. Empathy Map -->
         <h4 class="persona-sub-heading">Empathy Map</h4>
         <div class="empathy-card-wrap">
-          <img src="assets/persona1_empathy.png" alt="Rahul Ajith · 4-Quadrant Empathy Map" class="empathy-map-img" loading="lazy">
+          <img src="assets/persona1_empathy.png" alt="Rahul Ajith · 4-Quadrant Empathy Map" class="empathy-map-img" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -1619,19 +1620,19 @@
         <!-- 2. Storyboard -->
         <h4 class="persona-sub-heading">Storyboard · Commute Journey</h4>
         <div class="storyboard-card-wrap">
-          <img src="assets/img_33.png" alt="Anu Natan · Illustrated Journey Storyboard" class="storyboard-strip-img" loading="lazy">
+          <img src="assets/img_33.png" alt="Anu Natan · Illustrated Journey Storyboard" class="storyboard-strip-img" loading="lazy" decoding="async">
         </div>
 
         <!-- 3. Persona -->
         <h4 class="persona-sub-heading">Persona Profile</h4>
         <div class="persona-neat-wrap">
-          <img src="assets/persona2_portrait.png" alt="Anu Natan · Persona Profile Card" class="persona-neat-img" loading="lazy">
+          <img src="assets/persona2_portrait.png" alt="Anu Natan · Persona Profile Card" class="persona-neat-img" loading="lazy" decoding="async">
         </div>
 
         <!-- 4. Empathy Map -->
         <h4 class="persona-sub-heading">Empathy Map</h4>
         <div class="empathy-card-wrap">
-          <img src="assets/persona2_empathy.png" alt="Anu Natan · 4-Quadrant Empathy Map" class="empathy-map-img" loading="lazy">
+          <img src="assets/persona2_empathy.png" alt="Anu Natan · 4-Quadrant Empathy Map" class="empathy-map-img" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -1656,25 +1657,25 @@
         <!-- 2. Storyboard -->
         <h4 class="persona-sub-heading">Storyboard · Commute Journey</h4>
         <div class="storyboard-card-wrap">
-          <img src="assets/img_36.png" alt="Meera Ram · Illustrated Journey Storyboard" class="storyboard-strip-img" loading="lazy">
+          <img src="assets/img_36.png" alt="Meera Ram · Illustrated Journey Storyboard" class="storyboard-strip-img" loading="lazy" decoding="async">
         </div>
 
         <!-- 3. Persona -->
         <h4 class="persona-sub-heading">Persona Profile</h4>
         <div class="persona-neat-wrap">
-          <img src="assets/persona3_portrait.png" alt="Meera Ram · Persona Profile Card" class="persona-neat-img" loading="lazy">
+          <img src="assets/persona3_portrait.png" alt="Meera Ram · Persona Profile Card" class="persona-neat-img" loading="lazy" decoding="async">
         </div>
 
         <!-- 4. Empathy Map -->
         <h4 class="persona-sub-heading">Empathy Map</h4>
         <div class="empathy-card-wrap">
-          <img src="assets/persona3_empathy.png" alt="Meera Ram · 4-Quadrant Empathy Map" class="empathy-map-img" loading="lazy">
+          <img src="assets/persona3_empathy.png" alt="Meera Ram · 4-Quadrant Empathy Map" class="empathy-map-img" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
 
     <!-- Section 8: Information Architecture -->
-    <section class="cs-section">
+    <section class="cs-section" id="information-architecture">
       <div class="cs-section-header">
         <span class="cs-step-tag">08 · Structure</span>
         <h2 class="cs-section-title">Information Architecture</h2>
@@ -1683,24 +1684,28 @@
         Restructuring the Kochi1 transit ecosystem from a fragmented, multi-layer hierarchy into an intuitive multimodal pathway that unifies ticketing, navigation, and smart card management:
       </p>
 
-      <div class="ia-section-grid">
-        <!-- Existing IA -->
-        <div class="ia-box existing">
-          <span class="ia-badge">Current Structure</span>
-          <h4>Existing Information Architecture</h4>
-          <p>Multi-layered navigation with redundant menu tiers, overlapping planner routes, and fragmented card balance services.</p>
-          <div class="ia-diagram-wrap">
-            <img src="existing_IA_web.png" data-full="existing IA.png" alt="Existing Information Architecture Diagram" class="ia-diagram-img" loading="lazy">
+      <div class="ia-stacked-layout">
+        <!-- Existing IA: Full Frame First -->
+        <div class="ia-card-full existing">
+          <div class="ia-card-header">
+            <span class="ia-badge">Current Structure · Baseline</span>
+            <h3>Existing Information Architecture</h3>
+            <p>Multi-layered navigation with redundant menu tiers, overlapping planner routes, buried ticketing entryways, and fragmented card balance services.</p>
+          </div>
+          <div class="ia-diagram-full-frame">
+            <img src="existing_IA_web.png" data-full-src="existing IA.png" data-full="existing IA.png" alt="Existing Information Architecture Diagram" class="ia-diagram-img" loading="lazy" decoding="async">
           </div>
         </div>
 
-        <!-- Redesigned IA -->
-        <div class="ia-box redesign">
-          <span class="ia-badge">Proposed Redesign</span>
-          <h4>Redesigned Information Architecture</h4>
-          <p>Streamlined hierarchy: unified multimodal ticketing, real-time timetable integration, and direct one-tap card management.</p>
-          <div class="ia-diagram-wrap">
-            <img src="REDESIGNED IA.png" data-full="REDESIGNED IA.png" alt="Redesigned Information Architecture Diagram" class="ia-diagram-img" loading="lazy">
+        <!-- Redesigned IA: Full Frame at Bottom -->
+        <div class="ia-card-full redesign">
+          <div class="ia-card-header">
+            <span class="ia-badge">Proposed Redesign · Streamlined Hierarchy</span>
+            <h3>Redesigned Information Architecture</h3>
+            <p>Streamlined hierarchy: unified multimodal ticketing, real-time timetable integration, direct one-tap card management, and transparent feeder bus/water metro pathways.</p>
+          </div>
+          <div class="ia-diagram-full-frame">
+            <img src="Redesigned IA.png" data-full-src="Redesigned IA.png" data-full="Redesigned IA.png" alt="Redesigned Information Architecture Diagram" class="ia-diagram-img" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -1723,7 +1728,7 @@
           <h4 class="flow-card-title">Quick QR Metro Ticket Booking</h4>
         </div>
         <div class="flow-diagram-wrap">
-          <img src="user_flow_1_web.png" data-full="user flow 1.png" alt="User Flow 1: Quick QR Metro Ticket Booking" class="flow-diagram-img" loading="lazy">
+          <img src="user_flow_1_web.png" data-full="user flow 1.png" alt="User Flow 1: Quick QR Metro Ticket Booking" class="flow-diagram-img" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -1734,7 +1739,7 @@
           <h4 class="flow-card-title">Multimodal Route Planning &amp; Live Tracking</h4>
         </div>
         <div class="flow-diagram-wrap">
-          <img src="user_flow_2_web.png" data-full="user flow 2.png" alt="User Flow 2: Multimodal Route Planning & Live Tracking" class="flow-diagram-img" loading="lazy">
+          <img src="user_flow_2_web.png" data-full="user flow 2.png" alt="User Flow 2: Multimodal Route Planning & Live Tracking" class="flow-diagram-img" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -1745,7 +1750,7 @@
           <h4 class="flow-card-title">Smart Card Recharge &amp; Instant Balance Check</h4>
         </div>
         <div class="flow-diagram-wrap">
-          <img src="user_flow_3_web.png" data-full="user flow 3.png" alt="User Flow 3: Smart Card Recharge & Instant Balance Check" class="flow-diagram-img" loading="lazy">
+          <img src="user_flow_3_web.png" data-full="user flow 3.png" alt="User Flow 3: Smart Card Recharge & Instant Balance Check" class="flow-diagram-img" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -1798,7 +1803,7 @@
           <ul class="sitemap-links-list">
             <li>
               <a href="https://www.behance.net/malavikapillai" target="_blank" rel="noopener" class="sitemap-link">
-                <img src="../behance logo.png" alt="Behance" class="sitemap-link-img">
+                <img src="../behance logo.png" alt="Behance" class="sitemap-link-img" loading="lazy" decoding="async">
                 <span>Behance</span>
               </a>
             </li>
@@ -1830,7 +1835,7 @@
         cursor.style.top = e.clientY + 'px';
       });
 
-      const interactiveElements = document.querySelectorAll('a, button, .stat-callout-card, .persona-container, .heuristic-card, .comp-col');
+      const interactiveElements = document.querySelectorAll('a, button, .stat-callout-card, .persona-container, .heuristic-diagram-frame, .ia-card-full, .flow-diagram-card, .comp-col');
       interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
         el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));

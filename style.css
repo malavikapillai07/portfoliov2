@@ -1286,20 +1286,20 @@ body.cursor-click .cursor-square {
 
 .mobile-nav-content {
   position: absolute;
-  top: 72px;
+  top: 56px;
   right: 20px;
-  width: 200px;
+  width: 195px;
   height: auto;
-  background: rgba(255, 255, 255, 0.84);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
-  border-radius: 20px;
-  padding: 16px;
+  border-radius: 16px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   transform: translateY(-8px) scale(0.96);
   transform-origin: top right;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
@@ -1312,8 +1312,9 @@ body.cursor-click .cursor-square {
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin: 0;
+  gap: 4px;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .mobile-nav-link {
@@ -1338,63 +1339,7 @@ body.cursor-click .cursor-square {
 }
 
 .mobile-nav-footer {
-  padding-top: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
-}
-
-.mobile-kochi-time {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  color: #666666;
-  padding-left: 6px;
-}
-
-.mobile-nav-close {
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  line-height: 1;
-  color: #141414;
-  cursor: pointer;
-}
-
-.mobile-nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  margin: 36px 0 auto;
-}
-
-.mobile-nav-link {
-  font-family: var(--font-main);
-  font-size: 0.84rem;
-  font-weight: 500;
-  color: #141414;
-  text-decoration: none;
-  letter-spacing: -0.02em;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.mobile-nav-link:hover {
-  color: var(--accent-orange);
-  transform: translateX(4px);
-}
-
-.mobile-nav-footer {
-  padding-top: 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.mobile-kochi-time {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+  display: none !important;
 }
 
 @media (max-width: 860px) {
@@ -1614,7 +1559,7 @@ body.cursor-click .cursor-square {
   }
 
   .hero-project-card {
-    margin-bottom: 40px;
+    margin-bottom: 36px !important;
   }
 
   body.about-page .page-stage {
@@ -2054,6 +1999,12 @@ body.about-page .about-nav-bar {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
 }
 
+.exp-logo-frame.exp-logo-reflex {
+  background: #0d1017;
+  border-color: rgba(0, 0, 0, 0.15);
+  padding: 4px;
+}
+
 .exp-content {
   display: flex;
   flex-direction: column;
@@ -2250,13 +2201,16 @@ html.lenis, html.lenis body {
 }
 
 @media (max-width: 768px) {
+  .hero-project-card {
+    margin-bottom: 36px !important;
+  }
   .other-projects-section {
     margin-top: 30px;
     margin-bottom: 60px;
   }
   .other-projects-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
   }
   .mobile-nav-link {
     font-size: 0.84rem !important;

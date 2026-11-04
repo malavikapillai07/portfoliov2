@@ -32,9 +32,22 @@
 
   <!-- Instant Session Check: Only play preloader on first site entry, never on re-visits -->
   <script>
-    if (sessionStorage.getItem('sitePreloaderShown') === 'true') {
-      document.documentElement.classList.add('preloader-done');
-    }
+    try {
+      if (sessionStorage.getItem('sitePreloaderShown') === 'true') {
+        document.documentElement.classList.add('preloader-done');
+      }
+    } catch (e) {}
+    // Inline safety fallback: if video stalls or any script encounters an issue, reveal page automatically
+    setTimeout(function() {
+      var pl = document.getElementById('sitePreloader');
+      if (pl && pl.style.display !== 'none' && !pl.classList.contains('fade-out')) {
+        pl.classList.add('fade-out');
+        setTimeout(function() {
+          pl.style.display = 'none';
+          document.documentElement.classList.add('preloader-done');
+        }, 350);
+      }
+    }, 2200);
   </script>
 
   <!-- Site Launch Preloader Overlay (compact, cute centered animation) -->
@@ -43,7 +56,7 @@
       <canvas id="preloaderCanvas" class="preloader-canvas" width="360" height="360"></canvas>
       <video id="preloaderVideo" class="preloader-video" src="preloader.mp4" playsinline muted autoplay></video>
     </div>
-    <button id="preloaderSkipBtn" class="preloader-skip-btn" type="button" aria-label="Skip preloader">Skip ↗</button>
+    <button id="preloaderSkipBtn" class="preloader-skip-btn" type="button" aria-label="Skip preloader" onclick="(function(){var p=document.getElementById('sitePreloader');if(p){p.style.display='none';document.documentElement.classList.add('preloader-done');}})()">Skip ↗</button>
   </aside>
 
   <!-- Single Square Orange Cursor -->
@@ -255,7 +268,7 @@
           
           <!-- Column 1: Logo + Malavika Pillai + Subtitle -->
           <div class="sitemap-col-author">
-            <img src="malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img" decoding="async">
+            <img src="malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img" loading="lazy" decoding="async">
             <div class="sitemap-author-info">
               <h3 class="sitemap-author-name">Malavika Pillai</h3>
               <p class="sitemap-author-role">UI/UX · Product Designer</p>
@@ -295,7 +308,7 @@
                 </svg>
               </a>
               <a href="https://www.behance.net/malavikapillai" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Behance" aria-label="Behance">
-                <img src="behance logo.png" alt="Behance" class="sitemap-behance-img" decoding="async">
+                <img src="behance logo.png" alt="Behance" class="sitemap-behance-img" loading="lazy" decoding="async">
               </a>
             </div>
           </div>

@@ -57,7 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000);
   }
 
-  if (sessionStorage.getItem('sitePreloaderShown') === 'true') {
+  let preloaderShown = false;
+  try {
+    preloaderShown = sessionStorage.getItem('sitePreloaderShown') === 'true';
+  } catch (e) {
+    preloaderShown = false;
+  }
+
+  if (preloaderShown) {
     if (sitePreloader) sitePreloader.style.display = 'none';
     document.documentElement.classList.add('preloader-done');
     startMobileLogoFlipTimer();
@@ -66,27 +73,37 @@ document.addEventListener('DOMContentLoaded', () => {
     preloaderVideo.muted = true;
 
     let hasPreloaderClosed = false;
+    let fallbackTimer = null;
+    let animId = null;
+
     const closePreloader = () => {
       if (hasPreloaderClosed) return;
       hasPreloaderClosed = true;
-      sessionStorage.setItem('sitePreloaderShown', 'true');
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+      if (animId) cancelAnimationFrame(animId);
+      try {
+        sessionStorage.setItem('sitePreloaderShown', 'true');
+      } catch (e) {}
       sitePreloader.classList.add('fade-out');
       setTimeout(() => {
         sitePreloader.style.display = 'none';
         document.documentElement.classList.add('preloader-done');
         startMobileLogoFlipTimer();
-      }, 450);
+      }, 350);
     };
 
     preloaderVideo.addEventListener('ended', closePreloader);
+    preloaderVideo.addEventListener('error', closePreloader);
     if (preloaderSkipBtn) {
       preloaderSkipBtn.addEventListener('click', closePreloader);
     }
 
+    // Safety timeout: Never hold visitor waiting if video stalls
+    fallbackTimer = setTimeout(closePreloader, 2200);
+
     // Transparent Chroma-Key Canvas: removes background from video frames in real-time
     if (preloaderCanvas) {
       const ctx = preloaderCanvas.getContext('2d', { willReadFrequently: true });
-      let animId;
 
       const renderKeyedFrame = () => {
         if (hasPreloaderClosed) return;
@@ -130,15 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
       preloaderVideo.style.display = 'block';
     }
 
-    // Fallback safety timeout (at 2x speed, video finishes in ~5s)
-    setTimeout(closePreloader, 5600);
-
     const playPromise = preloaderVideo.play();
     if (playPromise !== undefined) {
-      playPromise.catch((err) => {
-        console.warn('Preloader play notification:', err);
-        closePreloader();
-      });
+      playPromise.catch(() => closePreloader());
     }
   } else {
     startMobileLogoFlipTimer();

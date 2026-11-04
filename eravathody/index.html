@@ -558,29 +558,80 @@
       font-weight: 400;
     }
 
-    /* Wireframes Grid */
+    /* Wireframes Grid - High Visibility 2-Column Responsive Layout */
     .wireframes-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    .wireframe-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--card-radius);
+      padding: 22px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.025);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .wireframe-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
+    }
+
+    .wireframe-card-header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding-bottom: 12px;
+    }
+
+    .wireframe-card-badge {
+      font-family: var(--font-mono, monospace);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8c7355;
+    }
+
+    .wireframe-card-title {
+      font-family: var(--font-display, serif);
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 0;
     }
 
     .wireframe-visual-box {
-      border-radius: 14px;
-      background: #f7f4ef;
-      border: 1px solid var(--border-subtle);
-      aspect-ratio: 3 / 4;
+      border-radius: 10px;
+      background: #fbf9f6;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 12px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      box-sizing: border-box;
     }
 
     .wireframe-visual-box img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 6px;
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
+    }
+
+    .wireframe-visual-box img:hover {
+      transform: scale(1.015);
     }
 
     /* Design System Foundations */
@@ -1014,25 +1065,287 @@
       display: block;
     }
 
-    /* Final Website Video Cropping */
-    .final-video-container {
+    /* ==========================================================================
+       Desktop View Setup (Studio Display Monitor & Scaled 1280px Desktop Canvas)
+       ========================================================================== */
+    .final-website-breakout {
+      position: relative;
+      width: min(1080px, calc(100vw - 40px));
+      margin-left: calc((100% - min(1080px, calc(100vw - 40px))) / 2);
+      margin-right: calc((100% - min(1080px, calc(100vw - 40px))) / 2);
+    }
+
+    .final-website-header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .desktop-view-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .desktop-view-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: #efebe4;
+      border: 1px solid #dcd7ce;
+      border-radius: 999px;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #68422d;
+      letter-spacing: 0.04em;
+    }
+
+    .desktop-live-hint {
+      font-family: var(--font-mono, monospace);
+      font-size: 0.72rem;
+      color: var(--text-muted, #777777);
+      letter-spacing: 0.02em;
+    }
+
+    .live-site-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--text-main, #141414);
+      color: #ffffff !important;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
+    }
+
+    .live-site-btn:hover {
+      background: #333333;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+      color: #ffffff !important;
+    }
+
+    /* Desktop Monitor Device Setup */
+    .desktop-monitor-setup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
-      height: 440px;
-      border-radius: var(--card-radius);
-      overflow: hidden;
-      background: #000000;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-      margin: 24px 0;
+      margin: 20px 0 0;
+    }
+
+    .desktop-monitor-frame {
+      width: 100%;
+      background: #181818;
+      border-radius: 20px;
+      padding: 10px 10px 14px;
+      box-shadow: 0 28px 70px -15px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
       position: relative;
     }
-    .final-video-cropped {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transform: scale(1.06);
+
+    .monitor-bezel-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 0 7px;
+    }
+
+    .monitor-camera {
+      width: 6px;
+      height: 6px;
+      background: #090909;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      box-shadow: inset 0 0 2px #000;
       display: block;
+    }
+
+    .monitor-screen-inner {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Browser Chrome inside Monitor */
+    .desktop-browser-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 16px;
+      background: #f1efea;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      gap: 14px;
+    }
+
+    .browser-dots {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      width: 56px;
+    }
+
+    .browser-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .browser-dot.red { background: #ff5f56; }
+    .browser-dot.yellow { background: #ffbd2e; }
+    .browser-dot.green { background: #27c93f; }
+
+    .desktop-address-bar {
+      flex: 1;
+      max-width: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.72rem;
+      color: var(--text-muted, #666666);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    .browser-lock-icon {
+      color: #27c93f;
+      flex-shrink: 0;
+    }
+
+    .browser-url-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    .browser-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: 56px;
+      justify-content: flex-end;
+    }
+
+    .browser-action-btn {
+      color: var(--text-muted, #777777);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .browser-action-btn:hover {
+      background: rgba(0, 0, 0, 0.07);
+      color: var(--text-main, #111111);
+    }
+
+    /* Screen Viewport with Scaled Desktop Canvas */
+    .desktop-screen-viewport {
+      width: 100%;
+      height: 640px;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .desktop-scaled-iframe {
+      width: 1280px;
+      height: 800px;
+      border: none;
+      display: block;
+      background: #ffffff;
+      transform-origin: 0 0;
+    }
+
+    /* Studio Display Aluminum Stand & Desk Base */
+    .monitor-stand-neck {
+      width: 140px;
+      height: 40px;
+      background: linear-gradient(to bottom, #d6d4ce 0%, #b8b5ad 100%);
+      clip-path: polygon(14% 0%, 86% 0%, 100% 100%, 0% 100%);
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .monitor-stand-base {
+      width: 260px;
+      height: 11px;
+      background: linear-gradient(to bottom, #dbd8d2 0%, #bebbb3 100%);
+      border-radius: 4px 4px 2px 2px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.85);
+    }
+
+    @media (max-width: 900px) {
+      .final-website-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .desktop-screen-viewport {
+        height: 500px;
+      }
+      .monitor-stand-neck {
+        width: 110px;
+        height: 30px;
+      }
+      .monitor-stand-base {
+        width: 200px;
+        height: 9px;
+      }
+      .browser-dots {
+        width: 44px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .desktop-screen-viewport {
+        height: 380px;
+      }
+      .desktop-browser-topbar {
+        padding: 8px 12px;
+      }
+      .desktop-address-bar {
+        font-size: 0.68rem;
+        padding: 5px 10px;
+      }
+      .monitor-stand-neck {
+        width: 80px;
+        height: 22px;
+      }
+      .monitor-stand-base {
+        width: 150px;
+        height: 7px;
+      }
     }
 
     /* Intentional Interactions 1-by-1 Stacking */
@@ -1261,27 +1574,27 @@
       }
     }
   
-    /* Hero Screen Video Walkthrough: Cropped & Zoomed to hide bottom-right diamond */
+    /* Hero Screen Video Walkthrough: Frame adjusted to fit 902x580 video exactly */
     .hero-video-frame {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 902 / 580;
       height: auto;
-      max-height: none;
-      min-height: auto;
       border-radius: var(--card-radius);
       overflow: hidden;
-      margin: 24px 0;
-      background: #000;
+      margin: 28px 0;
+      background: #000000;
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-video-gif {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      transform: none;
+      object-fit: cover;
       display: block;
     }
 
@@ -1402,8 +1715,8 @@
             <div class="thats-me-badge" aria-hidden="true">
               <span class="thats-me-label">that’s me</span>
               <svg class="curved-arrow-svg" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 54 12 C 40 6, 18 10, 8 26" stroke="#68422d" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-                <path d="M 20 25 L 8 26 L 11 14" stroke="#68422d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M 6 12 C 20 6, 42 10, 52 26" stroke="#68422d" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                <path d="M 40 25 L 52 26 L 49 14" stroke="#68422d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
               </svg>
             </div>
             <div class="zigzag-media-box">
@@ -1589,7 +1902,7 @@
       </p>
 
       <div class="media-frame" style="margin-top: 24px; border: 1px solid var(--border-subtle); border-radius: var(--card-radius); overflow: hidden; background: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);">
-        <img src="Eravathody Handloom Website Sitemap.png" alt="Eravathody Handloom Website Sitemap &amp; Information Architecture" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <img src="Eravathody Handloom Website Sitemap.png" alt="Eravathody Handloom Website Sitemap &amp; Information Architecture" style="width: 100%; height: auto; display: block;" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -1601,19 +1914,53 @@
     <section class="case-section" id="wireframes">
       <h2 class="section-title">Wireframes</h2>
       <p class="section-para">
-        Initial low-fidelity layout studies focused on establishing natural visual rhythms, content hierarchy, and seamless desktop-to-mobile breakpoints.
+        Low-fidelity structural wireframes establishing information hierarchy, storytelling cadence, product discovery pathways, and visual balance across key user touchpoints:
       </p>
 
       <div class="wireframes-grid">
-        <div class="wireframe-visual-box">
-          <span class="frame-caption">[Wireframe: Home &amp; Hero Cadence]</span>
-        </div>
-        <div class="wireframe-visual-box">
-          <span class="frame-caption">[Wireframe: Product Catalogue &amp; Grid]</span>
-        </div>
-        <div class="wireframe-visual-box">
-          <span class="frame-caption">[Wireframe: Artisan Profiles &amp; Detail Modal]</span>
-        </div>
+        <!-- 01: Home Page -->
+        <article class="wireframe-card">
+          <div class="wireframe-card-header">
+            <span class="wireframe-card-badge">01 · Landing Experience</span>
+            <h3 class="wireframe-card-title">Home Page Wireframe</h3>
+          </div>
+          <div class="wireframe-visual-box">
+            <img src="low home.png" data-full-src="low home.png" data-full="low home.png" alt="Eravathody Handloom - Home Page Wireframe" class="case-study-img" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <!-- 02: About Us Page -->
+        <article class="wireframe-card">
+          <div class="wireframe-card-header">
+            <span class="wireframe-card-badge">02 · Brand Heritage</span>
+            <h3 class="wireframe-card-title">About Us Wireframe</h3>
+          </div>
+          <div class="wireframe-visual-box">
+            <img src="low about us.png" data-full-src="low about us.png" data-full="low about us.png" alt="Eravathody Handloom - About Us Page Wireframe" class="case-study-img" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <!-- 03: Products Page -->
+        <article class="wireframe-card">
+          <div class="wireframe-card-header">
+            <span class="wireframe-card-badge">03 · E-Commerce Discovery</span>
+            <h3 class="wireframe-card-title">Product Page Wireframe</h3>
+          </div>
+          <div class="wireframe-visual-box">
+            <img src="low products.png" data-full-src="low products.png" data-full="low products.png" alt="Eravathody Handloom - Product Page Wireframe" class="case-study-img" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <!-- 04: Gallery Page -->
+        <article class="wireframe-card">
+          <div class="wireframe-card-header">
+            <span class="wireframe-card-badge">04 · Visual Storytelling</span>
+            <h3 class="wireframe-card-title">Gallery Page Wireframe</h3>
+          </div>
+          <div class="wireframe-visual-box">
+            <img src="low gallery.png" data-full-src="low gallery.png" data-full="low gallery.png" alt="Eravathody Handloom - Gallery Page Wireframe" class="case-study-img" loading="lazy" decoding="async">
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1691,24 +2038,79 @@
 
     <!-- ======================================================================
          12. FINAL WEBSITE
-         Completed website screens and presentation
+         Live Interactive Desktop Website Showcase
          ====================================================================== -->
     <section class="case-section" id="final-website">
-      <h2 class="section-title">Final Website</h2>
-      <p class="section-para">
-        The completed website brings together 83 years of artisan history and contemporary web standards across six bespoke pages.
-      </p>
-
-      <div class="final-video-container" aria-label="Completed Website Screens">
-        <video src="video at beginning.mp4" autoplay loop muted playsinline class="final-video-cropped"></video>
-      </div>
-
-      <div class="showcase-row-2" style="margin-top: 20px;">
-        <div class="media-frame" style="min-height: 280px;">
-          <span class="frame-caption">[Screen 01: Product Catalogue &amp; Heritage Collections]</span>
+      <div class="final-website-breakout">
+        <div class="final-website-header-row">
+          <div>
+            <h2 class="section-title">Final Website</h2>
+            <p class="section-para" style="margin-bottom: 0;">
+              The completed website brings together 83 years of artisan history and contemporary web standards across six bespoke pages.
+            </p>
+            <div class="desktop-view-tag-row">
+              <span class="desktop-view-badge">🖥️ Live Desktop View · 1280px</span>
+              <span class="desktop-live-hint">Scroll inside monitor to navigate live site</span>
+            </div>
+          </div>
+          <a href="https://malavikapillai07.github.io/EravathodyHandloomSociety/Home%20pg/index.html" target="_blank" rel="noopener noreferrer" class="live-site-btn" aria-label="Open live website in new tab">
+            <span>Open Live Site</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
         </div>
-        <div class="media-frame" style="min-height: 280px;">
-          <span class="frame-caption">[Screen 02: Artisan Portrait Gallery &amp; Society Timeline]</span>
+
+        <!-- Studio Display Desktop Monitor Setup -->
+        <div class="desktop-monitor-setup" aria-label="Interactive Desktop Website Showcase">
+          <div class="desktop-monitor-frame">
+            <div class="monitor-bezel-top" aria-hidden="true">
+              <span class="monitor-camera"></span>
+            </div>
+
+            <div class="monitor-screen-inner">
+              <div class="desktop-browser-topbar">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="browser-dot red"></span>
+                  <span class="browser-dot yellow"></span>
+                  <span class="browser-dot green"></span>
+                </div>
+                <div class="desktop-address-bar">
+                  <svg class="browser-lock-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <span class="browser-url-text">malavikapillai07.github.io/EravathodyHandloomSociety</span>
+                </div>
+                <div class="browser-actions">
+                  <a href="https://malavikapillai07.github.io/EravathodyHandloomSociety/Home%20pg/index.html" target="_blank" rel="noopener noreferrer" class="browser-action-btn" title="Open full site in new tab" aria-label="Open full site in new tab">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Desktop Scaled Viewport -->
+              <div class="desktop-screen-viewport" id="desktopScreenViewport">
+                <iframe 
+                  id="desktopIframe"
+                  src="https://malavikapillai07.github.io/EravathodyHandloomSociety/Home%20pg/index.html" 
+                  title="Eravathody Handloom Society Desktop Website" 
+                  class="desktop-scaled-iframe"
+                  loading="lazy"
+                  allow="fullscreen"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Studio Display Stand & Base -->
+          <div class="monitor-stand-neck" aria-hidden="true"></div>
+          <div class="monitor-stand-base" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -1793,7 +2195,7 @@
         
         <!-- Column 1: Logo + Malavika Pillai + Subtitle -->
         <div class="sitemap-col-author">
-          <img src="../malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img" decoding="async">
+          <img src="../malu logo black.PNG" alt="Malavika Pillai Logo" class="sitemap-logo-img" loading="lazy" decoding="async">
           <div class="sitemap-author-info">
             <h3 class="sitemap-author-name">Malavika Pillai</h3>
             <p class="sitemap-author-role">UI/UX · Product Designer</p>
@@ -1833,7 +2235,7 @@
               </svg>
             </a>
             <a href="https://www.behance.net/malavikapillai" target="_blank" rel="noopener noreferrer" class="sitemap-social-icon" title="Behance" aria-label="Behance">
-              <img src="behance logo.png" alt="Behance" class="sitemap-behance-img" decoding="async">
+              <img src="behance logo.png" alt="Behance" class="sitemap-behance-img" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
@@ -1942,6 +2344,27 @@
       document.addEventListener('mouseenter', () => {
         if (cursorSquare) cursorSquare.style.opacity = '1';
       });
+
+      // 3. Desktop Iframe Scaling (Maintains 1280px Desktop Viewport)
+      const desktopViewport = document.getElementById('desktopScreenViewport');
+      const desktopIframe = document.getElementById('desktopIframe');
+      const updateDesktopScale = () => {
+        if (!desktopViewport || !desktopIframe) return;
+        const DESKTOP_WIDTH = 1280;
+        const containerWidth = desktopViewport.clientWidth;
+        const containerHeight = desktopViewport.clientHeight;
+        if (!containerWidth || !containerHeight) return;
+        const scale = containerWidth / DESKTOP_WIDTH;
+        desktopIframe.style.width = DESKTOP_WIDTH + 'px';
+        desktopIframe.style.height = (containerHeight / scale) + 'px';
+        desktopIframe.style.transform = 'scale(' + scale + ')';
+        desktopIframe.style.transformOrigin = '0 0';
+      };
+      updateDesktopScale();
+      window.addEventListener('resize', updateDesktopScale);
+      if (window.ResizeObserver && desktopViewport) {
+        new ResizeObserver(updateDesktopScale).observe(desktopViewport);
+      }
 
       // 2. Reading Progress Bar (Brown Craft Line)
       const progressBar = document.getElementById('topProgressBar');
