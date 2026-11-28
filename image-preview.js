@@ -92,6 +92,7 @@
       loc.includes('/eravathody') ||
       loc.includes('/looplink') ||
       loc.includes('/reflexlabs') ||
+      loc.includes('/checkout') ||
       document.querySelector('.case-study-stage, .cs-container, .case-container, .cs-section, .case-section, #wireframes, #heuristic-evaluation') !== null
     );
   }
