@@ -95,6 +95,8 @@ body.cursor-click .cursor-square {
   opacity: 0.36; /* Permanent 36% opacity */
   pointer-events: none;
   z-index: 0;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* ==========================================================================
